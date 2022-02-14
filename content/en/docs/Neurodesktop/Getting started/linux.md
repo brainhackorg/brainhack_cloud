@@ -39,7 +39,7 @@ http://localhost:8080/#/?username=user&password=password
 ```
 
 {{< alert >}}
-If using Chrome, a pop-up may open with the text: 
+If using Chrome, a pop-up may open with the text:
 ```
 "http://localhost:8080 wants to
 See text and images copied to the clipboard".
@@ -81,7 +81,7 @@ Refer to https://docs.docker.com/engine/install/centos/
 
 One example to install docker in a yum-based distribution could look like this:
 <pre class="language-shell command-line" data-prompt="$">
-<code>sudo dnf install -y yum-utils 
+<code>sudo dnf install -y yum-utils
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io
 sudo systemctl enable docker
@@ -199,7 +199,7 @@ To enable both VNC and RDP, startup Neurodesktop using the following command:
 {{< alert >}}
 VNC allows for multiple desktop connections to same instance
 
-Note: Neurodesktop VNC on the browser currently does not support auto-resolution 
+Note: Neurodesktop VNC on the browser currently does not support auto-resolution
 {{< /alert >}}
 
 ### Using a VNC Client

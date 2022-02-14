@@ -18,7 +18,7 @@ ssh -L 8080:127.0.0.1:8080 USER@IP
 ```
 
 ### 2. Install Docker
-Install Docker on the cloud instance from here: https://docs.docker.com/get-docker/. Additional information available here: https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker 
+Install Docker on the cloud instance from here: https://docs.docker.com/get-docker/. Additional information available here: https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/#installing-docker
 
 ### 3. Run Neurodesktop
 Create a local folder ~/neurodesktop-storage on the cloud instance to store persistent data (data that will not disappear if neurodesktop is stopped)
@@ -28,7 +28,7 @@ Download and run the following executable on the cloud instance
 https://github.com/NeuroDesk/neurodesktop/raw/main/Linux_run_Neurodesk/NeuroDesktop.run
 
 #### Option 2: Using Terminal
-1. Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it 
+1. Type the folowing command on the cloud instance to automatically download the neurodesktop container and run it
 
 {{< params/neurodesktop/linux/default >}}
 <!-- neurodesktop version found in neurodesk.github.io/data/neurodesktop.toml -->
@@ -67,10 +67,10 @@ Notice that any data that were saved outside of /neurodesktop-storage would be l
 <code>sudo docker stop neurodesktop && sudo docker rm neurodesktop</code>
 </pre>
 
-## Portforwarding to an iOS ipad 
+## Portforwarding to an iOS ipad
 You can also connect to this cloud instance from your iOS device :) For this install https://webssh.net/documentation/help/networking/port-forwarding/ and create a tunnel (the tool is free for one connection). Start the docker container in a screen session and then connect to it from your ios device in the browser.
 
-## Cloud-provider specific Tutorials 
+## Cloud-provider specific Tutorials
 | Cloud provider | link                                                                                    |
 |----------------|-----------------------------------------------------------------------------------------|
 | Oracle         | https://mri.sbollmann.net/index.php/2020/12/08/run-neurodesk-on-oracle-cloud-free-tier/ |
@@ -110,7 +110,7 @@ To enable both VNC and RDP, startup Neurodesktop using the following command:
 {{< alert >}}
 VNC allows for multiple desktop connections to same instance
 
-Note: Neurodesktop VNC on the browser currently does not support auto-resolution 
+Note: Neurodesktop VNC on the browser currently does not support auto-resolution
 {{< /alert >}}
 
 ### Using a VNC Client

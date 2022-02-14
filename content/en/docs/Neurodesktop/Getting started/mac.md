@@ -12,10 +12,10 @@ description: >
 
 ## Quickstart
 ### 1. Install Docker
-Install Docker from here: https://docs.docker.com/get-docker/ 
+Install Docker from here: https://docs.docker.com/get-docker/
 
 ### 2. Run Neurodesktop
-Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage 
+Create a local folder where the downloaded applications will be stored, e.g. ~/neurodesktop-storage
 
 1. Open a terminal, and type the folowing command to automatically download the neurodesktop container and run it
 
@@ -87,7 +87,7 @@ docker run --shm-size=1gb -it --privileged --name neurodesktop -v ~/neurodesktop
 {{< alert >}}
 VNC allows for multiple desktop connections to same instance
 
-Note: Neurodesktop VNC on the browser currently does not support auto-resolution 
+Note: Neurodesktop VNC on the browser currently does not support auto-resolution
 {{< /alert >}}
 
 ### Using a VNC Client

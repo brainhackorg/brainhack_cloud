@@ -26,7 +26,7 @@ echo "Steffen.Bollmann@cai.uq.edu.au
 >  *Cqyn12sqTCxo
 >  FSxgcvGkNR59Y" >> ~/.license
 
-export FS_LICENSE=~/.license 
+export FS_LICENSE=~/.license
 ```
 
 Setup FreeSurfer:

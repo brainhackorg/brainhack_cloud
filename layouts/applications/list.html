@@ -28,16 +28,16 @@
 		  aria-label="Case-insensitive search by title, content, or publish date"
 		  placeholder="Search by application name or category"
 		  >
-	
+
 		<ul id="list">
-			
+
 		{{ range .Site.Data.applist.list }}
-		<li>	
-			{{ .application }} 
+		<li>
+			{{ .application }}
 			{{ range .categories }}
 			<a class="taxonomy-term">{{ . }}</a>
 			{{ end }}
-	
+
 		</li>
 		{{ end }}
 		</ul>

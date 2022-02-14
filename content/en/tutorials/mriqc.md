@@ -14,4 +14,3 @@ Open a terminal and run:
 ```
 
 ```
-

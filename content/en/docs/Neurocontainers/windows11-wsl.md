@@ -16,21 +16,21 @@ Follow the instructions to enable Windows Subsystem for Linux 2 in Windows 11: h
 <code>
 sudo apt install make
 export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
-wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
-sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz 
-rm go$VERSION.$OS-$ARCH.tar.gz 
-export GOPATH=${HOME}/go 
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin 
-mkdir -p $GOPATH/src/github.com/sylabs 
-cd $GOPATH/src/github.com/sylabs 
-wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz 
-tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz 
-cd singularity-ce-${SINGULARITY_VERSION} 
-./mconfig --prefix=/usr/local/singularity 
-make -C builddir 
-sudo make -C builddir install 
-cd .. 
-sudo rm -rf singularity-ce-${SINGULARITY_VERSION} 
+wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
+rm go$VERSION.$OS-$ARCH.tar.gz
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+mkdir -p $GOPATH/src/github.com/sylabs
+cd $GOPATH/src/github.com/sylabs
+wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
+tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
+cd singularity-ce-${SINGULARITY_VERSION}
+./mconfig --prefix=/usr/local/singularity
+make -C builddir
+sudo make -C builddir install
+cd ..
+sudo rm -rf singularity-ce-${SINGULARITY_VERSION}
 sudo rm -rf /usr/local/go $GOPATH </code>
 </pre>
 

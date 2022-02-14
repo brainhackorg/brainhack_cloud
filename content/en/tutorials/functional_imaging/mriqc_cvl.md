@@ -4,12 +4,12 @@ linkTitle: "mriqc"
 weight: 1
 tags: ["mriqc", "documentation", "preprocessing"]
 author: Kelly G. Garner
-description: > 
+description: >
   A brief guide to using mriqc with neurodesk, using data from the STRIAVISE project.
 ---
 
 
-> _This tutorial was created by Kelly G. Garner._ 
+> _This tutorial was created by Kelly G. Garner._
 >
 > Email: [getkellygarner@gmail.com](mailto:getkellygarner@gmailc.om)
 >
@@ -18,7 +18,7 @@ description: >
 > Twitter: [@garnertheory](https://twitter.com/garner_theory)
 >
 
-> This workflow documents how to use mriqc with neurodesk and provides some details that may help you troubleshoot some common problems I found along the way. 
+> This workflow documents how to use mriqc with neurodesk and provides some details that may help you troubleshoot some common problems I found along the way.
 
 ---
 
@@ -31,7 +31,7 @@ description: >
 
 # Steps
 
-## Open mriqc 
+## Open mriqc
 
 From the applications go Neurodesk -> Functional Imaging -> mriqc and select the latest version of mriqc. This should take you to a terminal window with mriqc loaded. <p>
 
@@ -73,7 +73,7 @@ mriqc /path/to/your/data \ # this is the top level of your data folder
          -v # be verbal mriqc, tell me what you are doing
 ```
 
-To make either of yours files executable, navigate via the terminal to the same folder in which this file is saved. If you list the files in the folder by using the command `ls` you should see your file with the name printed in white. 
+To make either of yours files executable, navigate via the terminal to the same folder in which this file is saved. If you list the files in the folder by using the command `ls` you should see your file with the name printed in white.
 
 ![pre_exec](/mriqc_cvl/pre_exec.png 'pre_exec') <!-- ![filename without extension](/subfolder_name/filename.png '[filename without extension')  -->
 

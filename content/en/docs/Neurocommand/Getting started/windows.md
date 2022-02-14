@@ -10,9 +10,9 @@ description: >
 For more information on WSL: [https://docs.microsoft.com/en-us/windows/wsl](https://docs.microsoft.com/en-us/windows/wsl)
 
 ### Setting up
-1. Setup WSL2 using the following instructions _(Ubuntu 18.04 recommended)_  
+1. Setup WSL2 using the following instructions _(Ubuntu 18.04 recommended)_
 [https://docs.microsoft.com/en-us/windows/wsl/install-win10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
-_Proceed until a Ubuntu bash shell is available from the Windows Host_  
+_Proceed until a Ubuntu bash shell is available from the Windows Host_
 _Run the remaining commands in the Bash shell_
 2. `sudo apt-get install lxde` to install LXDE desktop in WSL
 3. Reboot

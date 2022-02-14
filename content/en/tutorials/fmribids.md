@@ -12,7 +12,7 @@ _build:
 ## Download demo data
 Here we would also like to show how to combine tools from different containers using the module system. Open a terminal and run:
 ```
-ml datalad/0.13.3 
+ml datalad/0.13.3
 cd /neurodesktop-storage/
 datalad create bids-conversion
 cd bids-conversion/
@@ -21,4 +21,3 @@ datalad clone --dataset . https://github.com/datalad/example-dicom-functional.gi
 
 Use this data set?:
 https://www.fil.ion.ucl.ac.uk/spm/data/mmfaces/
-

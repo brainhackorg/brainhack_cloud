@@ -46,18 +46,18 @@ you need make and this will depend on your HPC, but something along these lines 
 <pre class="language-batch command-line" data-prompt=">">
 <code>
 export SINGULARITY_VERSION=3.9.3 VERSION=1.17.2 OS=linux ARCH=amd64
-wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz 
-tar -C ~/tools/ -xzvf go$VERSION.$OS-$ARCH.tar.gz 
-rm go$VERSION.$OS-$ARCH.tar.gz 
-export GOPATH=~/tools/go 
-export PATH=~/tools/go/bin:${PATH}:${GOPATH}/bin 
-mkdir -p $GOPATH/src/github.com/sylabs 
-cd $GOPATH/src/github.com/sylabs 
-wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz 
-tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz 
-cd singularity-ce-${SINGULARITY_VERSION} 
-./mconfig --without-suid --prefix=~/tools/singularity 
-make -C builddir 
+wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+tar -C ~/tools/ -xzvf go$VERSION.$OS-$ARCH.tar.gz
+rm go$VERSION.$OS-$ARCH.tar.gz
+export GOPATH=~/tools/go
+export PATH=~/tools/go/bin:${PATH}:${GOPATH}/bin
+mkdir -p $GOPATH/src/github.com/sylabs
+cd $GOPATH/src/github.com/sylabs
+wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
+tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
+cd singularity-ce-${SINGULARITY_VERSION}
+./mconfig --without-suid --prefix=~/tools/singularity
+make -C builddir
 make -C builddir install
 export PATH=~/tools/singularity/bin:${PATH}</code>
 </pre>

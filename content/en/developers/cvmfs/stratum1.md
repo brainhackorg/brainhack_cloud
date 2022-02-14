@@ -8,13 +8,13 @@ description: >
 
 The stratum 1 servers for the desktop are configured here: https://github.com/NeuroDesk/neurodesktop/blob/main/Dockerfile
 
-If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy. 
+If you want more speed in a region one way could be to setup another Stratum 1 server or a proxy.
 
 # Setup a Stratum 1 server:
 <pre class="language-shell command-line" data-prompt="$">
 <code>sudo yum install -y https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
 sudo yum install -y cvmfs-server squid
-sudo yum install -y python3-mod_wsgi 
+sudo yum install -y python3-mod_wsgi
 
 sudo sed -i 's/Listen 80/Listen 127.0.0.1:8080/' /etc/httpd/conf/httpd.conf
 
@@ -74,8 +74,8 @@ echo '*/5 * * * * root output=$(/usr/bin/cvmfs_server snapshot -a -i 2>&1) || ec
 sudo yum install iptables
 sudo iptables -t nat -A PREROUTING -p tcp -m tcp --dport 80 -j REDIRECT --to-ports 8000
 
-sudo systemctl disable firewalld 
-sudo systemctl stop firewalld 
+sudo systemctl disable firewalld
+sudo systemctl stop firewalld
 # make sure that port 80 is open in the real firewall
 
 sudo cvmfs_server update-geodb</code>

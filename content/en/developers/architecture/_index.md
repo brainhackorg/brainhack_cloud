@@ -5,4 +5,3 @@ weight: 1
 description: >
   The architecture of the Neurodesk ecosystem
 ---
-

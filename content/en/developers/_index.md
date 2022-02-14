@@ -9,5 +9,3 @@ menu:
 description: >
   Documentation for Developers
 ---
-
-

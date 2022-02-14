@@ -3,12 +3,12 @@ title: "Analysing EEG Data with MNE"
 linkTitle: "MNE-Python: EEG"
 weight: 1
 description: >
-  Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode. 
+  Use mne-python to load, pre-process, and plot example EEG data in a jupyter notebook through vscode.
 ---
 
 ## Getting started
 
-To begin, navigate to Neurodesk->Electrophysiology->mne->vscodeGUI 0.23.4 in the menu. This version of vscode has been installed in a software container together with the a conda environment containing MNE-python. Note that if you open any other version of vscode in Neurodesk, you will not be able to access the MNE conda environment. 
+To begin, navigate to Neurodesk->Electrophysiology->mne->vscodeGUI 0.23.4 in the menu. This version of vscode has been installed in a software container together with the a conda environment containing MNE-python. Note that if you open any other version of vscode in Neurodesk, you will not be able to access the MNE conda environment.
 
 ![EEGtut0](/EEG_Tutorial/EEGtut0.png 'EEGtut0')
 
@@ -34,9 +34,9 @@ Then, select mne-0.23.4 from the dropdown menu, which should look something like
 
 ## Activate the MNE conda environment in the terminal
 
-Next, we'll activate the same MNE environment in a terminal. From the top menu in vscode, select Terminal->New Terminal, or hit [Ctrl]+[Shift]+[`]. 
+Next, we'll activate the same MNE environment in a terminal. From the top menu in vscode, select Terminal->New Terminal, or hit [Ctrl]+[Shift]+[`].
 
-If this is your first time using vscode in this container, you may have to initialise conda by typing `conda init bash` in the bash terminal. After initialising bash, you will have to close and then reopen the terminal. 
+If this is your first time using vscode in this container, you may have to initialise conda by typing `conda init bash` in the bash terminal. After initialising bash, you will have to close and then reopen the terminal.
 
 Once you have initialised conda, you can activate the MNE environment in the terminal:
 
@@ -44,18 +44,18 @@ Once you have initialised conda, you can activate the MNE environment in the ter
 conda activate mne-0.23.4
 ```
 
-You should now see "(mne-0.23.4)" ahead of the current line in the terminal. 
+You should now see "(mne-0.23.4)" ahead of the current line in the terminal.
 
 ## Download sample data
 
 In the terminal (in which you have activated the MNE environment), input the following code to download some BIDS formatted sample EEG data:
 
-> Remember to update the path to the location you are storing this tutorial! 
+> Remember to update the path to the location you are storing this tutorial!
 
 ```
 pip install osfclient
 osf -p C689U fetch Data_sample.zip /neurodesktop-storage/EEGDEMO/Data_sample.zip
-unzip Data_sample.zip 
+unzip Data_sample.zip
 ```
 
 This is a small dataset with only 5 EEG channels from a single participant. The participant is viewing a frequency tagged display and is cued to attend to dots tagged at one frequency or another (6 Hz, 7.5 Hz) for long, 15 s trials. To read more about the dataset, click [here]( https://osf.io/c689u/)
@@ -65,7 +65,7 @@ To make sure our plots retain their interactivity, set the following line at the
 ```
 %matplotlib qt
 ```
-This will mean your figures pop out as individual, interactive plots that will allow you to explore the data, rather than as static, inline plots. You can switch “qt” to “inline” to switch back to default, inline plotting. 
+This will mean your figures pop out as individual, interactive plots that will allow you to explore the data, rather than as static, inline plots. You can switch “qt” to “inline” to switch back to default, inline plotting.
 
 ## Loading and processing data
 > NOTE: MNE has many helpful tutorials which delve into data processing and analysis using MNE-python in much further detail. These can be found [here]( https://mne.tools/stable/auto_tutorials/index.html)
@@ -107,12 +107,12 @@ montage = {'Iz':  [0, -110, -40],
 montageuse = mne.channels.make_dig_montage(ch_pos=montage, lpa=[-82.5, -19.2, -46], nasion=[0, 83.2, -38.3], rpa=[82.2, -19.2, -46]) # based on mne help file on setting 10-20 montage
 ```
 
-Next, lets visualise the data. 
+Next, lets visualise the data.
 ```
 raw.plot()
 ```
 
-This should open an interactive window in which you can scroll through the data. See the MNE documentation for help on how to customise this plot. 
+This should open an interactive window in which you can scroll through the data. See the MNE documentation for help on how to customise this plot.
 
 ![EEGtut6](/EEG_Tutorial/EEGtut6.png 'EEGtut6')
 
@@ -148,7 +148,7 @@ eeg_data = raw.copy().pick_types(eeg=True, exclude=['TRIG'])
 eeg_data.info.set_montage(montageuse)
 
 # Interpolate
-eeg_data_interp = eeg_data.copy().interpolate_bads(reset_bads=True) 
+eeg_data_interp = eeg_data.copy().interpolate_bads(reset_bads=True)
 
 # Filter Data
 eeg_data_interp.filter(l_freq=1, h_freq=45, h_trans_bandwidth=0.1)
@@ -156,21 +156,21 @@ eeg_data_interp.filter(l_freq=1, h_freq=45, h_trans_bandwidth=0.1)
 
 Let’s visualise our data again now that it’s cleaner:
 ```
-#plot results again, this time with some events and scaling. 
+#plot results again, this time with some events and scaling.
 eeg_data_interp.plot(events=events, duration=10.0, scalings=dict(eeg=0.00005), color='k', event_color='r')
 ```
 
 ![EEGtut8](/EEG_Tutorial/EEGtut8.png 'EEGtut8')
 
-That’s looking good! We can even see hints of the frequency tagging. It’s about time to epoch our data. 
+That’s looking good! We can even see hints of the frequency tagging. It’s about time to epoch our data.
 ```
 # Epoch to events of interest
-event_id = {'attend 6Hz K': 23, 'attend 7.5Hz K':  27}  
+event_id = {'attend 6Hz K': 23, 'attend 7.5Hz K':  27}
 
-# Extract 15 s epochs relative to events, baseline correct, linear detrend, and reject 
+# Extract 15 s epochs relative to events, baseline correct, linear detrend, and reject
 # epochs where eeg amplitude is > 400
 epochs = mne.Epochs(eeg_data_interp, events, event_id=event_id, tmin=0,
-                    tmax=15, baseline=(0, 0), reject=dict(eeg=0.000400), detrend=1)  
+                    tmax=15, baseline=(0, 0), reject=dict(eeg=0.000400), detrend=1)
 
 # Drop bad trials
 epochs.drop_bad()
@@ -190,7 +190,7 @@ mne.viz.plot_compare_evokeds(evokeds, combine='mean')
 
 ![EEGtut9](/EEG_Tutorial/EEGtut9.png 'EEGtut9')
 
-In this plot, we can see that the data are frequency tagged. While these data were collected, the participant was performing an attention task in which two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true. 
+In this plot, we can see that the data are frequency tagged. While these data were collected, the participant was performing an attention task in which two visual stimuli were flickering at 6 Hz and 7.5 Hz respectively. On each trial the participant was cued to monitor one of these two stimuli for brief bursts of motion. From previous research, we expect that the steady-state visual evoked potential (SSVEP) should be larger at the attended frequency than the unattended frequency. Lets check if this is true.
 
 We'll begin by exporting our epoched EEG data to a numpy array
 
@@ -224,8 +224,8 @@ import matplotlib.pyplot as plt
 
 fig,ax = plt.subplots(1, 1)
 
-ax.plot(freq, fftdat[:,0], '-', label='attend 6Hz', color=[78 / 255, 185 / 255, 159 / 255])  
-ax.plot(freq, fftdat[:,1], '-', label='attend 7.5Hz', color=[236 / 255, 85 / 255, 58 / 255])  
+ax.plot(freq, fftdat[:,0], '-', label='attend 6Hz', color=[78 / 255, 185 / 255, 159 / 255])
+ax.plot(freq, fftdat[:,1], '-', label='attend 7.5Hz', color=[236 / 255, 85 / 255, 58 / 255])
 ax.set_xlim(4, 17)
 ax.set_ylim(0, 1e-6)
 ax.set_title('Frequency Spectrum')

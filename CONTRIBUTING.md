@@ -31,7 +31,7 @@ nvm install node
 
 ```
 git clone --recurse-submodules
-``` 
+```
 
 If you have only cloned the repo and did not get all the submodules (`docsy` and `docsy`'s own subdmodules),
 simply run

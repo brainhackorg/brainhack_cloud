@@ -19,7 +19,7 @@ Install the following VS Code extensions:
   - [ ] [Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) (For remote servers)
   - [ ] [Remote - WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl) (For windows hosts)
 
-## For Remote servers 
+## For Remote servers
 
 Open VS Code
 
@@ -37,13 +37,13 @@ Follow the steps in the next section using the new VS Code instance
 Open VS Code and open a Folder (File > Open Folder)
 > This can be any folder (e.g. home or project folder). VS Code runs into errors if no folder is opened.
 
-Open the Command Palette (Ctrl+Shift+P). 
+Open the Command Palette (Ctrl+Shift+P).
 
 Select `Remote-Containers: Attach to Running Container` from the dropdown panel
 
 Start typing in 'neurodesktop. Select `/neurodesktop` from the list
 
-This should open a VS Code Window connected to the neurodesktop as a Dev Container. 
+This should open a VS Code Window connected to the neurodesktop as a Dev Container.
 
 > First time connection will take about a minute, as VS code has to install the VS Code server onto the container. Repeat connections should be faster
 
@@ -53,7 +53,7 @@ To check which user is being use, open the terminal in the neurodesktop VS Code 
 
 Follow the following steps to configure your VS Code to connect to neurodesktop as normal user by default
 
-Open the Command Palette (Ctrl+Shift+P). 
+Open the Command Palette (Ctrl+Shift+P).
 
 Select `Remote-Containers: Open Container Configuration File` from the dropdown panel
 

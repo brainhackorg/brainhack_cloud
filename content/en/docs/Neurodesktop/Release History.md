@@ -35,9 +35,9 @@ description: >-
 
 ## 20211207
 - Physio toolbox compiled and added to SPM + update of SPM
-- added brainstorm 
-- new neurodesktop container management scripts for Linux, Mac and Windows: https://github.com/NeuroDesk/neurodesktop 
-- added fieldtrip 
+- added brainstorm
+- new neurodesktop container management scripts for Linux, Mac and Windows: https://github.com/NeuroDesk/neurodesktop
+- added fieldtrip
 - Datalad is now in the main image, so datalad run should work
 - added Oshy-X segmentation tool
 - updated freesurfer 7.2.0
@@ -76,4 +76,3 @@ description: >-
 ## 20210916
 - This is the first version of the newly renamed and rebuild neurodesktop (previously vnm and neuromachine)
 - containers are mounted by default from CVMFS, but this can be deactivated by adding `-e CVMFS_DISABLE=true` to the docker call
-

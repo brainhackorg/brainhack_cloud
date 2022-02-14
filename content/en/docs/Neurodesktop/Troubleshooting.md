@@ -6,9 +6,9 @@ description: >-
      Are you experiencing issues with neurodesktop?
 ---
 
-Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a [new issue](https://github.com/NeuroDesk/neurodesk.github.io/issues), so that we can aim to solve it and update our help documentation. 
+Neurodesk is an open-source project that is always evolving. If you are experiencing an issue not listed here, please open a [new issue](https://github.com/NeuroDesk/neurodesk.github.io/issues), so that we can aim to solve it and update our help documentation.
 
-To ask questions or suggest new features, [join the discussion](https://github.com/NeuroDesk/neurodesk.github.io/discussions) on github. 
+To ask questions or suggest new features, [join the discussion](https://github.com/NeuroDesk/neurodesk.github.io/discussions) on github.
 
 ## docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
 This is usually a docker-related error, not related to neurodesktop itself. To troubleshoot docker, we can try a simpler container first:
@@ -24,7 +24,7 @@ Try the following solutions (in this order, until the above command works)
 
 ## Windows users: WSL not installed properly
 
-The Docker engine relies on the Windows subsystem for Linux ([WSL]( https://docs.microsoft.com/en-us/windows/wsl/install-win10)) to run on a windows machine. 
+The Docker engine relies on the Windows subsystem for Linux ([WSL]( https://docs.microsoft.com/en-us/windows/wsl/install-win10)) to run on a windows machine.
 
 {{< alert title="Note" >}}We recommend the _manual_ install instructions, as the simplified install requires an upgrade to a preview build of Windows that may be unstable.{{< /alert >}}
 
@@ -36,20 +36,20 @@ However, if WSL is missing or incorrectly configured, the _Resources_ tab of the
 
 ![Docker_WSL_incorrect](/Troubleshooting/Docker_WSL_incorrect.png 'Docker_WSL_incorrect')
 
-If this is the case, follow the manual install instructions to install [WSL 2]( https://docs.microsoft.com/en-us/windows/wsl/install-win10) (including installation of Ubuntu through Microsoft Store). 
+If this is the case, follow the manual install instructions to install [WSL 2]( https://docs.microsoft.com/en-us/windows/wsl/install-win10) (including installation of Ubuntu through Microsoft Store).
 
 ##  Windows users: Not enough free space on the partition in Windows and WSL2
 This could help: https://yjmantilla.github.io/tutorials/wsl2-move-vhdx.html
 
 ##  Windows users: Failure to connect to Neurodesktop in Firefox
-We recommend using Microsoft Edge or Google Chrome to access Neurodesktop. 
+We recommend using Microsoft Edge or Google Chrome to access Neurodesktop.
 
 ## Trouble installing neurodesk images
 This may be a memory issue. First, ensure that there is enough free space on the disk. If there is, try resetting docker settings and data. To do this:
 
 1. Open the docker engine
-2. Navigate to "Troubleshooting" (the bug icon in the top right). 
-3. Click "Reset to factory defaults" 
+2. Navigate to "Troubleshooting" (the bug icon in the top right).
+3. Click "Reset to factory defaults"
 
 ![Docker_troubleshooting](/Troubleshooting/Docker_troubleshooting.png 'Docker_troubleshooting')
 

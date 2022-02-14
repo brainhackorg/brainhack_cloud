@@ -8,7 +8,7 @@ description: >
 
 
 ## Setup a Stratum 0 server:
-### Setup Storage 
+### Setup Storage
 (would object storage be better? -> see comment below under next iteration ideas)
 <pre class="language-shell command-line" data-prompt="$">
 <code>lsblk -l
@@ -35,7 +35,7 @@ sudo yum install -y cvmfs cvmfs-server
 sudo systemctl enable httpd
 sudo systemctl restart httpd
 
-# sudo systemctl stop firewalld 
+# sudo systemctl stop firewalld
 
 # restore keys:
 sudo mkdir /etc/cvmfs/keys/incoming
@@ -44,7 +44,7 @@ cd connections/cvmfs_keys/
 scp neuro* ec2-user@203.101.226.164:/etc/cvmfs/keys/incoming
 sudo mv /etc/cvmfs/keys/incoming/* /etc/cvmfs/keys/
 
-#backup keys: 
+#backup keys:
 #mkdir cvmfs_keys
 #scp opc@158.101.127.61:/etc/cvmfs/keys/neuro* .
 
@@ -98,7 +98,7 @@ dQIDAQAB
 
 from the CVMFS documentation:
 Repositories containing Linux container image contents (that is: container root file systems) should use overlayfs as a union file system and have the following configuration:
-	
+
 	CVMFS_INCLUDE_XATTRS=true
 	CVMFS_VIRTUAL_DIR=true
 
@@ -111,7 +111,7 @@ This is the old DUCC setup
 <pre class="language-shell command-line" data-prompt="$">
 <code>sudo yum install cvmfs-ducc.x86_64
 sudo -i
-dnf install -y yum-utils 
+dnf install -y yum-utils
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 dnf install docker-ce docker-ce-cli containerd.io
 systemctl enable docker

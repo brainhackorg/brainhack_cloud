@@ -32,5 +32,3 @@ Open the ROMEO tool from the application menu and run:
 romeo -p /neurodesktop-storage/romeo-demo/phase.nii -m /neurodesktop-storage/romeo-demo/mag.nii -k nomask -o /neurodesktop-storage/romeo-demo/
 ```
 ![Romeo](/MRIPhase_Tutorial/romeo.PNG 'Romeo')
-
-

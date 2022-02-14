@@ -39,7 +39,7 @@ http://localhost:8080/#/?username=user&password=password
 ```
 
 {{< alert title="Note" >}}
-We do not recommend the use of the Firefox browser for accessing Neurodesktop, as this may lead to performance issues. 
+We do not recommend the use of the Firefox browser for accessing Neurodesktop, as this may lead to performance issues.
 {{< /alert >}}
 
 3. neurodesktop is ready to use!
@@ -76,12 +76,12 @@ Startup Neurodesktop using the following command:
 If you want to connect via RDP using a different port, replace 3390 in the previous and next step with your port
 {{< /alert >}}
 
-Open Windows Remote Desktop Connection and connect to Computer `localhost:3390` as shown below. 
+Open Windows Remote Desktop Connection and connect to Computer `localhost:3390` as shown below.
 
 
 ![win-rdp-1](/neurodesktop/getting-started/win-rdp-1.png 'win-rdp-1')
 
-Resolution and multi-monitor settings can be set from the Display tab. 
+Resolution and multi-monitor settings can be set from the Display tab.
 
 Once ready, click Connect. This will take you to the following prompt
 
@@ -105,7 +105,7 @@ To enable VNC and disable RDP, startup Neurodesktop using the following command:
 {{< alert >}}
 VNC allows for multiple desktop connections to same instance
 
-Note: Neurodesktop VNC on the browser currently does not support auto-resolution 
+Note: Neurodesktop VNC on the browser currently does not support auto-resolution
 {{< /alert >}}
 
 ### Using a VNC Client

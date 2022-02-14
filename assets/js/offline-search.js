@@ -5,7 +5,7 @@
 
     $(document).ready(function () {
         const $searchInput = $('.td-search-input');
-      
+
         //
         // Options for popover
         //
@@ -204,23 +204,23 @@
 
     // const COUNT_ID = 'count';
     const LIST_ID = 'list';
-  
+
     let list = null;
     let filteredList = null;
-  
-  
+
+
     const logPerformance = (work, startTime, endTime) => {
       const duration = (endTime - startTime).toFixed(2);
       console.log(`${work} took ${duration} ms`);
     };
-  
+
     const getSearchEl = () => document.getElementById(SEARCH_ID);
-   
+
     // const getCountEl = () => document.getElementById(COUNT_ID);
     const getListEl = () => document.getElementById(LIST_ID);
-  
-  
-  
+
+
+
     const fetchJsonIndex = () => {
         const startTime = performance.now();
         const url = `${window.location.origin}/index.json`;
@@ -237,32 +237,32 @@
             console.error(`Failed to fetch JSON index: ${error.message}`)
           );
       };
-  
- 
+
+
     const filterList = () => {
       const regexQuery = new RegExp(getSearchEl().value, 'ig');
         console.log(regexQuery);
       filteredList = list.filter(item => {
-         
+
         const title = item.application;
         const categories = item.categories.join();
         console.log(categories);
-   
+
           return (
               title.match(regexQuery) || categories.match(regexQuery)
           );
-        
+
       });
       console.log(filteredList);
     };
-  
-  
+
+
     const renderList = () => {
       const newList = document.createElement('ul');
       newList.id = LIST_ID;
-  
+
       filteredList.forEach(item => {
-  
+
         const app = document.createElement('li');
         app.textContent = item.application;
 
@@ -273,26 +273,26 @@
             tag.appendChild(cat);
             app.appendChild(tag);
         })
-        
+
         newList.appendChild(app);
       });
-  
+
       const oldList = getListEl();
       oldList.replaceWith(newList);
     };
-  
+
     const handleSearchEvent = () => {
       const startTime = performance.now();
       filterList();
       renderList();
       logPerformance('handleSearchEvent', startTime, performance.now());
     };
-  
-  
+
+
     const addEventListeners = () => {
       getSearchEl().addEventListener('input', handleSearchEvent);
     };
-  
+
     const main = () => {
       if (getSearchEl()) {
         fetchJsonIndex();

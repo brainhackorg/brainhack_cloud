@@ -8,7 +8,7 @@ description: >
 
 Transparent singularity is here https://github.com/NeuroDesk/transparent-singularity/
 
-This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype). 
+This project allows to use singularity containers transparently on HPCs, so that an application inside the container can be used without adjusting any scripts or pipelines (e.g. nipype).
 
 ## Important: add bind points to .bashrc before executing this script
 This script expects that you have adjusted the Singularity Bindpoints in your .bashrc, e.g.:
@@ -36,7 +36,7 @@ cd convert3d_1.0.0_20210104
 
 ## Options for Transparent singularity:
 - `--storage` - this option can be used to force a download from docker, e.g.: `--storage docker`
-- `--container` - this option can be used to explicitly define the container name to be downloaded 
+- `--container` - this option can be used to explicitly define the container name to be downloaded
 - `--unpack` - this will unpack the singularity container so it can be used on systems that do not allow to open simg / sif files for security reasons, e.g.: `--unpack true`
 - `--singularity-opts` - this will be passed on to the singularity call, e.g.: `--singularity-opts '--bind /cvmfs'`
 

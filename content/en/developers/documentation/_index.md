@@ -5,5 +5,3 @@ weight: 2
 description: >
   How to edit the documentation
 ---
-
-

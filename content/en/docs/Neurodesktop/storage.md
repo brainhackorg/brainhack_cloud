@@ -7,15 +7,15 @@ description: >
 ---
 
 # Cloud-storage
-The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data. 
+The easiest way to get your data into Neurodesktop is to use a cloud storage provider like CloudStor, Dropbox, OneDrive and their sync tools like OwnCloud, Nextcloud or very flexible tools like rclone or davfs2. Another good option could be to utilize Globus for large amounts of data.
 
 ## Nextcloud and Owncloud desktop clients
 Under the menu item "Accessories" you can find "Nextcloud" and "ownCloud" desktop sync clients that you can configure with your cloud service accounts.
 
-To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address: 
+To connect for example to your AARNET cloudstor account you can start the ownCloud client and enter the Server Address:
 ```
 https://cloudstor.aarnet.edu.au/plus/
-``` 
+```
 
 Then generate an app-password here: https://cloudstor.aarnet.edu.au/plus/settings/personal?sectionid=security
 
@@ -73,5 +73,3 @@ A better option is to use `scp` and copy data from an SSH endpoint:
 ```shell
 scp /neurodesk/myfile user@remoteserver:/data/
 ```
-
-
