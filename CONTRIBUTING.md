@@ -31,7 +31,7 @@ nvm install node
 
 - [See the install page](https://gohugo.io/getting-started/installing/)
 
-one example for Linux/WSL:
+one example for Linux or for the [Windows Sub-system for Linux](https://docs.microsoft.com/en-us/windows/wsl/install):
 ```bash
 wget https://github.com/gohugoio/hugo/releases/download/v0.92.2/hugo_extended_0.92.2_Linux-64bit.tar.gz
 tar xfz hugo_extended_0.92.2_Linux-64bit.tar.gz
