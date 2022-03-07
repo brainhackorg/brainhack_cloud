@@ -12,6 +12,36 @@
 
 ## Repo map
 
+```bash
+├── .github              # for continuous integration and issue / PR templates
+│   └── workflows
+├── assets               # for javascript and CSS
+│   ├── js
+│   └── scss
+├── content              # where you put the actual content
+│   └── en
+│       ├── admins       # folders will use layout defined in the "layouts" folder
+│       ├── docs         # or in the "themes/docsy/layouts" folders
+│       └── tutorials
+├── data
+├── layouts              # where we put the HTML code of how things are formatted
+│   ├── admins
+│   ├── blog
+│   ├── shortcodes       # can overrule layouts from "themes/docsy/layouts"
+│   │   ├── blocks
+│   │   └── params
+│   └── tutorials
+└── themes
+    └── docsy            # docsy theme submodule: DO NOT TOUCH
+        ├── assets
+        ├── .git
+        ├── i18n
+        ├── images
+        ├── layouts
+        ├── static
+        └── userguide
+```
+
 ## Build locally
 
 ### Prerequisites

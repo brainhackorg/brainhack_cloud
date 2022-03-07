@@ -4,7 +4,7 @@ linkTitle: "Documentation"
 weight: 1
 menu:
   main:
-    weight: 1
+    weight: 2
 description: >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
