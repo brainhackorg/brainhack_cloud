@@ -11,11 +11,13 @@ description: >
 
 ## Overview
 
-For an overview go to: [Overview](/docs/overview/)
-
-## Quick Start
-
-Go to: [Getting Started](/docs/brainhack_cloud/getting-started/)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
+nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
+malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
+faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
+eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
+ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
+facilisis.
 
 ## Feedback & Inquiries
 

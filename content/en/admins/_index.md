@@ -19,10 +19,23 @@ eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
 ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
 facilisis.
 
-Mauris ultrices nibh malesuada hendrerit vehicula. Fusce ultricies tincidunt
-diam id mollis. Aenean imperdiet erat neque, sed mattis eros feugiat id.
-Suspendisse pretium sapien mauris, interdum pretium eros dignissim a. Praesent
-eget turpis hendrerit, dignissim nulla in, aliquam ante. Phasellus iaculis
-ullamcorper bibendum. Cras vitae viverra neque, et gravida massa. Nunc laoreet
-odio arcu, in egestas est mattis feugiat. Donec quis efficitur magna, id
-eleifend turpis.
+
+## Feedback & Inquiries
+
+To ask questions or suggest new features,
+[join the discussion](https://github.com/brainhackorg/brainhack_cloud/discussions)
+on github. For issues with the _brainhack cloud_, please open a
+[new issue](https://github.com/brainhackorg/brainhack_cloud/issues).
+
+## Acknowledgments
+
+## Funding
+
+Thank you to Oracle for Research for providing Oracle Cloud credits and related
+resources to support this project.
+
+<img src="https://user-images.githubusercontent.com/4021595/119061922-db877080-ba18-11eb-9882-d53a25ec88ee.png" width="250">
+
+## License
+
+Apache License 2.0
