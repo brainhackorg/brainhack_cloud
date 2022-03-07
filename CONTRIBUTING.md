@@ -1,6 +1,7 @@
 # CONTRIBUTING
 
 - [CONTRIBUTING](#contributing)
+    - [Repo map](#repo-map)
     - [Build locally](#build-locally)
         - [Prerequisites](#prerequisites)
             - [node.js](#nodejs)
@@ -8,6 +9,8 @@
         - [Clone repo and its submodules](#clone-repo-and-its-submodules)
         - [Install javascripts dependencies](#install-javascripts-dependencies)
         - [Serve the website locally](#serve-the-website-locally)
+
+## Repo map
 
 ## Build locally
 
