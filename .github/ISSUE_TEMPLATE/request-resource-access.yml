@@ -35,8 +35,8 @@ body:
       multiple: false
       label: Is this a new project?
       options:
-        - yes
-        - no
+        - "yes"
+        - "no"
 
   - type: textarea
     attributes:
