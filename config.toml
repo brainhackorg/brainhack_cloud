@@ -1,4 +1,4 @@
-baseURL = "https://github.com/brainhackorg/brainhack_cloud"
+baseURL = "http://brainhack.org/brainhack_cloud/"
 title = "Brainhack cloud"
 
 enableRobotsTXT = true
