@@ -1,6 +1,6 @@
 ---
-title: "Demo"
-linkTitle: "Demo"
+title: "demo"
+linkTitle: "demo"
 description: >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---

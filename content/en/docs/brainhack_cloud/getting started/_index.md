@@ -1,15 +1,10 @@
 ---
-title: "Admins"
-linkTitle: "Admins"
-weight: 10
-menu:
-  main:
-    weight: 10
+title: "getting_started"
+linkTitle: "getting_started"
+weight: 1
 description: >
-  Information for admins.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
-
-## Overview
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
 nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean

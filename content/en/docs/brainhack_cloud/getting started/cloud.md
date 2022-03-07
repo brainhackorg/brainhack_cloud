@@ -1,6 +1,6 @@
 ---
-title: "Cloud"
-linkTitle: "Cloud"
+title: "cloud"
+linkTitle: "cloud"
 weight: 5
 description: >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.

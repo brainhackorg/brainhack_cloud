@@ -11,11 +11,11 @@ description: >
 
 ## Overview
 
-For an overview go to: [Overview](/docs/Overview/)
+For an overview go to: [Overview](/docs/overview/)
 
 ## Quick Start
 
-Go to: [Getting Started](/docs/Brainhack_cloud/getting-started/)
+Go to: [Getting Started](/docs/brainhack_cloud/getting-started/)
 
 ## Feedback & Inquiries
 

@@ -1,6 +1,6 @@
 ---
-title: "Brainhack cloud overview"
-linkTitle: "Overview"
+title: "overview"
+linkTitle: "overview"
 weight: 1
 description: >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
