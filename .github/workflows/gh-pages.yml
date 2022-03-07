@@ -3,7 +3,7 @@ name: github pages
 on:
   push:
     branches:
-      - hugo-docsy  # Set a branch to deploy
+      - main  # Set a branch to deploy
   pull_request:
 
 jobs:
@@ -16,11 +16,8 @@ jobs:
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
 
       - name: Change baseURL (if fork)
-        if: github.repository != 'NeuroDesk/neurodesk.github.io'
-        run: sed -i "s|https://neurodesk.github.io|https://${GITHUB_REPOSITORY}|g" config.toml
-
-      - name: Download applist.json
-        run: wget -O data/applist.json https://raw.githubusercontent.com/NeuroDesk/neurocommand/main/cvmfs/applist.json
+        if: github.repository != 'brainhackorg/brainhack_cloud'
+        run: sed -i "s|https://brainhackorg/brainhack_cloud|https://${GITHUB_REPOSITORY}|g" config.toml
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
