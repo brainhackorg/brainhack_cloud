@@ -1,7 +1,7 @@
 ---
-title: "Neurodesktop"
-linkTitle: "Neurodesktop"
+title: "Brainhack cloud"
+linkTitle: "Brainhack_cloud"
 weight: 2
 description: >
-  The plug-and-play, browser-accessible, containerised data analysis environment.
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---

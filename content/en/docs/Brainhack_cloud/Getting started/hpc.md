@@ -3,7 +3,7 @@ title: "HPC"
 linkTitle: "HPC"
 weight: 4
 description: >
-  Run neurodesktop in a high performance computing environment
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
 
-One way of running this project on HPCs is via https://neurodesk.github.io/docs/neurocommand/getting-started/linux/
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
