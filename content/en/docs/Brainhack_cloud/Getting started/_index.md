@@ -1,14 +1,12 @@
-
 ---
-title: "Admins"
-linkTitle: "Admins"
-weight: 10
-menu:
-  main:
-    weight: 10
+title: "Getting Started"
+linkTitle: "Getting Started"
+weight: 1
 description: >
-  Information for admins.
+  Select your operating system to get started with neurodesktop.
 ---
+
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula, ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt facilisis.
 
