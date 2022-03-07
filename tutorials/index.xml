@@ -1,1 +1,33 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Tutorials</title><link>http://brainhack.org/brainhack_cloud/tutorials/</link><description>Recent content in Tutorials on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/tutorials/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Tutorials</title><link>http://brainhack.org/brainhack_cloud/tutorials/</link><description>Recent content in Tutorials on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
+nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
+malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
+faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
+eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
+ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
+facilisis.&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
+nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
+malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
+faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
+eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
+ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
+facilisis.&lt;/p></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
+nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
+malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
+faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
+eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
+ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
+facilisis.&lt;/p></description></item><item><title>Tutorials: Virtual machines</title><link>http://brainhack.org/brainhack_cloud/tutorials/vm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/vm/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
+nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
+malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
+faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
+eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
+ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
+facilisis.&lt;/p></description></item></channel></rss>
