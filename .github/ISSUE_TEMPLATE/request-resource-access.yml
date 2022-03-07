@@ -18,10 +18,6 @@ body:
 
         Fill in this template to ask for specific resources for a new project or extend those of already existing project.
 
-  # ----------------------------------------------------------------------------
-  # PROJECT INFO
-  # ----------------------------------------------------------------------------
-
   - type: markdown
     attributes:
       value: |
@@ -39,8 +35,8 @@ body:
       multiple: false
       label: Is this a new project?
       options:
-        - label: "yes"
-        - label: "no"
+        - yes
+        - no
 
   - type: textarea
     attributes:
@@ -64,7 +60,7 @@ body:
       description:
         "If your project already exists, please provide a link to project
         repository/sources (e.g., Github link)"
-      placeholder: https://github.com/user_name/my_awesome_project
+      value: https://github.com/user_name/my_awesome_project
     validations:
       required: false
 
