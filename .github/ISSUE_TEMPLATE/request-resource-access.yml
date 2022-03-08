@@ -41,7 +41,7 @@ body:
   - type: textarea
     attributes:
       label: People involved
-      description: Add the full name of the people involved in the project.
+      description: Add the full name of the people involved in the project with Github IDs and email address.
     validations:
       required: true
 
@@ -69,7 +69,10 @@ body:
       label: What resources do you require?
       multiple: true
       options:
-        - GPU
+        - Virtual Machines
+        - Object Storage
+        - GPU resources
+        - HPC
         - other
     validations:
       required: true
