@@ -1,7 +1,7 @@
 ---
 title: "Creating new users"
 linkTitle: "Creating new users"
-weight: 1
+weight: 2
 description: >
   Creating new users
 ---
