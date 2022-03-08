@@ -1,6 +1,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Once a new project is requested via the Issue Template (&lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml&lt;/a>) one of the admins has to provision the project on the cloud. Here is an example:&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
+&lt;p>Once a new project is requested via the Issue Template (&lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml&lt;/a>) one of the admins has to provision the project on the cloud. Here is an example for such a request:&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png" alt="image">&lt;/p>
+&lt;h2 id="creating-new-user">Creating new user&lt;/h2>
+&lt;p>Login to Oracle Cloud: &lt;a href="https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack">https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack&lt;/a>&lt;/p>
+&lt;p>Open the menu and search for users, then open Users in Idendity:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157339416-1c6f3dcd-3d78-4613-81f1-a955badc3d28.png" alt="image">&lt;/p>
+&lt;p>then hit &amp;ldquo;Create User&amp;rdquo;&lt;/p>
+&lt;p>Change the selection to IAM User, add the user name as firstname_lastname and the same for description + add Email:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157339931-96380614-7e14-434d-a9d6-9821c7aa2463.png" alt="image">&lt;/p>
+&lt;p>hit create&lt;/p>
+&lt;p>Now, generate a password for the user by Clicking &amp;ldquo;Create/Reset Password&amp;rdquo;:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png" alt="image">&lt;/p>
+&lt;p>Copy this password and send it to the user you just created.&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
 &lt;p>We applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024.&lt;/p>
 &lt;p>Please reach out to us if you would like to join the team: &lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
 &lt;ul>
