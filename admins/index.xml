@@ -1,12 +1,6 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
-nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
-malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
-faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
-eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
-ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
-facilisis.&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
+&lt;p>Once a new project is requested via the Issue Template (&lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml&lt;/a>) one of the admins has to provision the project on the cloud. Here is an example:&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
 &lt;p>We applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024.&lt;/p>
 &lt;p>Please reach out to us if you would like to join the team: &lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
 &lt;ul>
@@ -14,7 +8,7 @@ facilisis.&lt;/p></description></item><item><title>Admins: Team</title><link>htt
 &lt;li>Remi Gau &lt;a href="https://github.com/Remi-Gau">https://github.com/Remi-Gau&lt;/a>&lt;/li>
 &lt;li>Steffen Bollmann &lt;a href="https://github.com/stebo85">https://github.com/stebo85&lt;/a>&lt;/li>
 &lt;li>Isil Bilgin &lt;a href="https://github.com/complexbrains">https://github.com/complexbrains&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
+&lt;/ul></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
 nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
