@@ -1,17 +1,13 @@
 ---
-title: "Setting up policies"
-linkTitle: "Setting up policies"
-weight: 2
+title: "Creating new users"
+linkTitle: "Creating new users"
+weight: 1
 description: >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Creating new users
 ---
 
 ## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
-nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
-malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
-faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
-eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
-ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
-facilisis.
+Once a new project is requested via the Issue Template (https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&labels=resource_request&template=request-resource-access.yml) one of the admins has to provision the project on the cloud. Here is an example:
+
+

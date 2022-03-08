@@ -1,7 +1,7 @@
 ---
-title: "Creating new users"
-linkTitle: "Creating new users"
-weight: 1
+title: "Setting up policies"
+linkTitle: "Setting up policies"
+weight: 2
 description: >
   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 ---
