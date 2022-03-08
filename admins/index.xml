@@ -1,4 +1,12 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
+&lt;p>We applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024.&lt;/p>
+&lt;p>Please reach out to us if you would like to join the team: &lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
+&lt;ul>
+&lt;li>Johanna Bayer &lt;a href="https://github.com/likeajumprope">https://github.com/likeajumprope&lt;/a>&lt;/li>
+&lt;li>Remi Gau &lt;a href="https://github.com/Remi-Gau">https://github.com/Remi-Gau&lt;/a>&lt;/li>
+&lt;li>Steffen Bollmann &lt;a href="https://github.com/stebo85">https://github.com/stebo85&lt;/a>&lt;/li>
+&lt;li>Isil Bilgin &lt;a href="https://github.com/complexbrains">https://github.com/complexbrains&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Once a new project is requested via the Issue Template (&lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml&lt;/a>) one of the admins has to provision the project on the cloud. Here is an example for such a request:&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png" alt="image">&lt;/p>
@@ -29,20 +37,8 @@
 &lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
 &lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
 &lt;p>Go back to Identity and click on Policies. Click &amp;ldquo;Create Policy&amp;rdquo;. Name the policy like the group and compartment just created. Description is the github issue link. You can either use the policy builder or switch to manual. The resulting policy needs to be &amp;ldquo;Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&amp;rdquo;
-&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
-&lt;p>We applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024.&lt;/p>
-&lt;p>Please reach out to us if you would like to join the team: &lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
-&lt;ul>
-&lt;li>Johanna Bayer &lt;a href="https://github.com/likeajumprope">https://github.com/likeajumprope&lt;/a>&lt;/li>
-&lt;li>Remi Gau &lt;a href="https://github.com/Remi-Gau">https://github.com/Remi-Gau&lt;/a>&lt;/li>
-&lt;li>Steffen Bollmann &lt;a href="https://github.com/stebo85">https://github.com/stebo85&lt;/a>&lt;/li>
-&lt;li>Isil Bilgin &lt;a href="https://github.com/complexbrains">https://github.com/complexbrains&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
+&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
-nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
-malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
-faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
-eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
-ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
-facilisis.&lt;/p></description></item></channel></rss>
+&lt;p>Access permissions are controlled via Policies. If something is not working, it&amp;rsquo;s usually a missing policy. One important thing to note is that Policies can ONLY be applied to Groups, NOT Users!&lt;/p>
+&lt;h2 id="policies-for-cloud-shell-access">Policies for Cloud Shell access&lt;/h2>
+&lt;p>A new user can by default not open a Cloud Shell. To provide every user with this permission, we created a Group called &amp;ldquo;cloudshell-access&amp;rdquo; and we add every user to this group. The group then as a Policy that allows opening a cloud shell: &lt;code>allow group cloudshell-access to use cloud-shell in tenancy&lt;/code>&lt;/p></description></item></channel></rss>
