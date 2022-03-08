@@ -29,3 +29,34 @@ Now, generate a password for the user by Clicking "Create/Reset Password":
 ![image](https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png)
 
 Copy this password and send it to the user you just created.
+
+The new user has to follow this procedure: [User request](/docs/request)
+
+Add the User to the group "cloudshell-access"
+![image](https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png)
+
+
+Repeat this procedure for every user in the project.
+
+## Create Project Group
+Go back to Identity and click "Create Group"
+![image](https://user-images.githubusercontent.com/4021595/157341864-5582074f-fa90-48f2-a2a5-deebb1a241dc.png)
+
+Give the group a name that represents the project (no spaces!) - as Description put the link to the github issue.
+
+![image](https://user-images.githubusercontent.com/4021595/157342047-92280e16-9518-4d04-a3be-796073d16c01.png)
+
+Then add the User(s) to the group:
+![image](https://user-images.githubusercontent.com/4021595/157342170-192e1e82-c1f7-46ed-a0f9-ec59bbe8de8e.png)
+
+
+## Create Project Compartment
+Go back to Identity and head to Compartments and click "Create Compartment". Name it like the group just created and add the github issue link as description. Parent compartment is brainhack (root).
+![image](https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png)
+
+
+## Create Policy for group and compartment
+Go back to Identity and click on Policies. Click "Create Policy". Name the policy like the group and compartment just created. Description is the github issue link. You can either use the policy builder or switch to manual. The resulting policy needs to be "Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME"
+![image](https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png)
+
+
