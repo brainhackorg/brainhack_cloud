@@ -19,7 +19,7 @@
 &lt;p>The notebook service is like Google Colab, but without the time or resource limitations&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Using Object Storage.&lt;/p>
+&lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;h2 id="preauthenticated-urls">Preauthenticated URLs&lt;/h2>
 &lt;h2 id="tiering">Tiering&lt;/h2>

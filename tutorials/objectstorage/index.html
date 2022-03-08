@@ -14,22 +14,22 @@
 <link rel=icon type=image/png href=/brainhack_cloud/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/brainhack_cloud/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/brainhack_cloud/favicons/android-192x192.png sizes=192x192>
-<title>Object Storage | Brainhack cloud</title><meta name=description content="Virtual Machine
+<title>Object Storage | Brainhack cloud</title><meta name=description content="Object Storage
 ">
 <meta property="og:title" content="Object Storage">
-<meta property="og:description" content="Virtual Machine
+<meta property="og:description" content="Object Storage
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://brainhack.org/brainhack_cloud/tutorials/objectstorage/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-03-08T23:49:38+00:00"><meta property="og:site_name" content="Brainhack cloud">
+<meta property="article:modified_time" content="2022-03-09T09:54:00+10:00"><meta property="og:site_name" content="Brainhack cloud">
 <meta itemprop=name content="Object Storage">
-<meta itemprop=description content="Virtual Machine
+<meta itemprop=description content="Object Storage
 ">
-<meta itemprop=dateModified content="2022-03-08T23:49:38+00:00">
-<meta itemprop=wordCount content="9">
+<meta itemprop=dateModified content="2022-03-09T09:54:00+10:00">
+<meta itemprop=wordCount content="79">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Object Storage">
-<meta name=twitter:description content="Virtual Machine
+<meta name=twitter:description content="Object Storage
 ">
 <link rel=preload href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css as=style>
 <link href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css rel=stylesheet integrity>
@@ -56,14 +56,14 @@
 <a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.c5b0532a67639ae0f0912dec1d46a7de.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.fc4e182540d321e536e18d6a1223c165.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.c5b0532a67639ae0f0912dec1d46a7de.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.fc4e182540d321e536e18d6a1223c165.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -93,9 +93,9 @@
 <ul>
 <li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#preauthenticated-urls>Preauthenticated URLs</a></li><li><a href=#tiering>Tiering</a></li><li><a href=#mirroring>Mirroring</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>Object Storage</h1><div class=lead>Virtual Machine</div><header class=article-meta>
-</header><h2 id=overview>Overview</h2><p>Using Object Storage.</p><h2 id=setup>Setup</h2><h2 id=preauthenticated-urls>Preauthenticated URLs</h2><h2 id=tiering>Tiering</h2><h2 id=mirroring>Mirroring</h2><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 8, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/dffb5b2c0d8621c040188640cba7ac0b4936b3ae>added more sections to talk about (dffb5b2)</a>
+<h1>Object Storage</h1><div class=lead>Object Storage</div><header class=article-meta>
+</header><h2 id=overview>Overview</h2><p>Object Storage is like Dropbox, but bigger &mldr; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).</p><h2 id=setup>Setup</h2><h2 id=preauthenticated-urls>Preauthenticated URLs</h2><h2 id=tiering>Tiering</h2><h2 id=mirroring>Mirroring</h2><div class="text-muted mt-5 pt-3 border-top">
+Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/0a10b57d9b247498b37ce96f529a9539f0b6df37>explained what Object storage is (0a10b57)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
