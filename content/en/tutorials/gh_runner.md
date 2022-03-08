@@ -3,15 +3,21 @@ title: "Github action runner"
 linkTitle: "Github action runner"
 weight: 4
 description: >
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  Github action runner
 ---
 
 ## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
-nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
-malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
-faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
-eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
-ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
-facilisis.
+This section describes how to setup a github action runner on the cloud that you can then use to run huge github workflows that wouldn't run in the hosted runners :)
+
+## Configure VM
+-> Link to VM Tutorial
+
+## Configure github
+-> setup custom runner
+
+## Configure VM-Github connection
+-> start Runner service
+
+## Use custom runner in Action
+-> Example QSMxT
