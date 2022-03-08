@@ -12,7 +12,24 @@
 &lt;p>hit create&lt;/p>
 &lt;p>Now, generate a password for the user by Clicking &amp;ldquo;Create/Reset Password&amp;rdquo;:
 &lt;img src="https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png" alt="image">&lt;/p>
-&lt;p>Copy this password and send it to the user you just created.&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
+&lt;p>Copy this password and send it to the user you just created.&lt;/p>
+&lt;p>The new user has to follow this procedure: &lt;a href="http://brainhack.org/brainhack_cloud/docs/request">User request&lt;/a>&lt;/p>
+&lt;p>Add the User to the group &amp;ldquo;cloudshell-access&amp;rdquo;
+&lt;img src="https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png" alt="image">&lt;/p>
+&lt;p>Repeat this procedure for every user in the project.&lt;/p>
+&lt;h2 id="create-project-group">Create Project Group&lt;/h2>
+&lt;p>Go back to Identity and click &amp;ldquo;Create Group&amp;rdquo;
+&lt;img src="https://user-images.githubusercontent.com/4021595/157341864-5582074f-fa90-48f2-a2a5-deebb1a241dc.png" alt="image">&lt;/p>
+&lt;p>Give the group a name that represents the project (no spaces!) - as Description put the link to the github issue.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342047-92280e16-9518-4d04-a3be-796073d16c01.png" alt="image">&lt;/p>
+&lt;p>Then add the User(s) to the group:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157342170-192e1e82-c1f7-46ed-a0f9-ec59bbe8de8e.png" alt="image">&lt;/p>
+&lt;h2 id="create-project-compartment">Create Project Compartment&lt;/h2>
+&lt;p>Go back to Identity and head to Compartments and click &amp;ldquo;Create Compartment&amp;rdquo;. Name it like the group just created and add the github issue link as description. Parent compartment is brainhack (root).
+&lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
+&lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
+&lt;p>Go back to Identity and click on Policies. Click &amp;ldquo;Create Policy&amp;rdquo;. Name the policy like the group and compartment just created. Description is the github issue link. You can either use the policy builder or switch to manual. The resulting policy needs to be &amp;ldquo;Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&amp;rdquo;
+&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
 &lt;p>We applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024.&lt;/p>
 &lt;p>Please reach out to us if you would like to join the team: &lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
 &lt;ul>
