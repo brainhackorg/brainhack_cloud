@@ -37,4 +37,4 @@ resources to support this project.
 
 ## License
 
-Apache License 2.0
+CC BY License 4.0

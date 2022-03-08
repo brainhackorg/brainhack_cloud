@@ -11,14 +11,7 @@ description: >
 
 ## Overview
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum quis varius
-nunc. Suspendisse eu ex molestie, finibus lacus at, pulvinar mauris. Aenean
-malesuada imperdiet justo eget dignissim. Donec tristique ornare diam, eget
-faucibus ante fringilla vitae. In dignissim justo odio, vel mattis nisl pulvinar
-eget. Nam facilisis, felis et vulputate dictum, quam lorem porta ligula,
-ultrices ornare velit ipsum eget augue. Ut interdum felis vulputate tincidunt
-facilisis.
-
+This section describe how the Admin team manages users and projects on the Oracle Cloud.
 
 ## Feedback & Inquiries
 
@@ -26,8 +19,6 @@ To ask questions or suggest new features,
 [join the discussion](https://github.com/brainhackorg/brainhack_cloud/discussions)
 on github. For issues with the _brainhack cloud_, please open a
 [new issue](https://github.com/brainhackorg/brainhack_cloud/issues).
-
-## Acknowledgments
 
 ## Funding
 
@@ -38,4 +29,4 @@ resources to support this project.
 
 ## License
 
-Apache License 2.0
+CC BY License 4.0
