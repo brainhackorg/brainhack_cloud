@@ -23,7 +23,7 @@ Cloud) and select a Shape.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png" alt="image">&lt;/p>
 &lt;p>Paste a public key to access this VM.&lt;/p>
 &lt;h3 id="create-a-public-key">Create a public key&lt;/h3>
-&lt;p>If you don&amp;rsquo;t have a public key yet - this is how you can create one (example in
+&lt;p>If you don&amp;rsquo;t have a public key yet - this is how you can create one (for example in
 the cloudshell)&lt;/p>
 &lt;p>Open the Cloud Shell (this will take a few seconds the first time)&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349825-f77d4e77-aba9-4578-beb8-fde536332d5b.png" alt="image">&lt;/p>
@@ -44,7 +44,7 @@ Never share the private key with anyone, which is in &lt;code>id_rsa&lt;/code>!
 later.&lt;/p>
 &lt;p>&lt;strong>Note:&lt;/strong> it&amp;rsquo;s not possible to shrink a volume! Only increasing the size is
 possible, so start small and increase when needed).&lt;/p>
-&lt;p>The rest of the defaults is
+&lt;p>The rest of the defaults are
 sensible.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png" alt="image">&lt;/p>
 &lt;h3 id="create-the-vm">Create the VM&lt;/h3>
@@ -63,7 +63,7 @@ the cloudshell.&lt;/p>
 &lt;p>By default, the instance will not utilize the whole disk size!&lt;/p>
 &lt;p>You can check with &lt;code>df -h&lt;/code>.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png" alt="image">&lt;/p>
-&lt;p>But it&amp;rsquo;s can expland the expand the disk with the following commands.&lt;/p>
+&lt;p>But it can expand the disk with the following commands.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#000">iflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>direct &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/oracleoci/oraclevda &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#000">count&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /sys/class/block/&lt;span style="color:#4e9a06">`&lt;/span>readlink /dev/oracleoci/oraclevda &lt;span style="color:#000;font-weight:bold">|&lt;/span> cut -d&lt;span style="color:#4e9a06">&amp;#39;/&amp;#39;&lt;/span> -f 2&lt;span style="color:#4e9a06">`&lt;/span>/device/rescan
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
@@ -88,7 +88,7 @@ tiering data (making it cheaper to store if files are not accessed very often).&
 &lt;h2 id="mirroring">Mirroring&lt;/h2></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The notebook service is like Google Colab, but without the time or resource
-limitations&lt;/p>
+limitations.&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2></description></item><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This section describes how to setup a Github action runner on the cloud that you
@@ -108,5 +108,5 @@ your own HPC cluster in the cloud&lt;/p>
 &lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
 &lt;p>-&amp;gt;&lt;/p>
 &lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
-&lt;p>Your first need to request access those resources with this
+&lt;p>Your first need to request access to those resources with this
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p></description></item></channel></rss>

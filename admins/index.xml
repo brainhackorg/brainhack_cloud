@@ -5,10 +5,10 @@
 one of the admins has to provision the project on the cloud.&lt;/p>
 &lt;p>Here is an example for such a request:&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png" alt="image">&lt;/p>
-&lt;h2 id="creating-new-user">Creating new user&lt;/h2>
+&lt;h2 id="creating-a-new-user">Creating a new user&lt;/h2>
 &lt;p>Login to Oracle Cloud:
 &lt;a href="https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack">https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack&lt;/a>&lt;/p>
-&lt;p>Open the menu and search for users, then open Users in Idendity&lt;/p>
+&lt;p>Open the menu and search for users, then open Users in Identity&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339416-1c6f3dcd-3d78-4613-81f1-a955badc3d28.png" alt="image">&lt;/p>
 &lt;p>Then hit &lt;code>Create User&lt;/code>.&lt;/p>
 &lt;p>Change the selection to &lt;code>IAM User&lt;/code>, add the user name as &lt;code>firstname_lastname&lt;/code>
@@ -33,17 +33,17 @@ put the link to the github issue.&lt;/p>
 &lt;h2 id="create-project-compartment">Create Project Compartment&lt;/h2>
 &lt;p>Go back to &lt;code>Identity&lt;/code> and head to &lt;code>Compartments&lt;/code> and click &lt;code>Create Compartment&lt;/code>.
 Name it like the group just created and add the Github issue link as
-description. Parent compartment is brainhack (root).&lt;/p>
+the description. Parent compartment is brainhack (root).&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
 &lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
 &lt;p>Go back to &lt;code>Identity&lt;/code> and click on &lt;code>Policies&lt;/code>. Click &lt;code>Create Policy&lt;/code>. Name the
-policy like the group and compartment just created. Description is the Github
+policy like the group and compartment just created. The description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
 &lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&lt;/code>.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p>
 &lt;h2 id="create-budget-for-compartment">Create Budget for compartment&lt;/h2>
-&lt;p>Budgets help us to control and monitor costs. For every compartment we need a
+&lt;p>Budgets help us to control and monitor costs. For every compartment, we need a
 budget with someone being alerted when things go crazy:&lt;/p>
 &lt;p>Go to &lt;code>Budgets&lt;/code> under &lt;code>Cost Management&lt;/code> and click &lt;code>Create Budget&lt;/code>. Add the
 project details and add your email to the alert list.&lt;/p>
@@ -51,7 +51,7 @@ project details and add your email to the alert list.&lt;/p>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Access permissions are controlled via Policies. If something is not working,
 it&amp;rsquo;s usually a missing policy. One important thing to note is that Policies can
-ONLY be applied to Groups, NOT Users!&lt;/p>
+ONLY be applied to Groups, NOT to the Users!&lt;/p>
 &lt;h2 id="policy-for-cloud-shell-access">Policy for Cloud Shell access&lt;/h2>
 &lt;p>By default, a new user cannot open a Cloud Shell. To provide every user with
 this permission, we created a group called &amp;ldquo;cloudshell-access&amp;rdquo; and we add every
