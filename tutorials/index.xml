@@ -29,8 +29,21 @@
 &lt;p>This will now create the machine:
 &lt;img src="https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png" alt="image">&lt;/p>
 &lt;h2 id="connect-to-instance">Connect to Instance&lt;/h2>
+&lt;p>you can now use an SSH client on your computer to connect to the Instance, or the cloudshell. You find the connection details in
+&lt;img src="https://user-images.githubusercontent.com/4021595/157351454-d888fd88-130b-40fe-986f-46e451d569ae.png" alt="image">&lt;/p>
+&lt;p>&lt;code>ssh opc@130.61.212.59&lt;/code>&lt;/p>
+&lt;p>Accept the fingerprint and you should be connected:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png" alt="image">&lt;/p>
 &lt;h2 id="expand-disk">Expand disk&lt;/h2>
-&lt;h2 id="login-via-cloud-shell">Login via Cloud shell&lt;/h2></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
+&lt;p>By default, the instance will not utilize the whole disk size! You can check with &lt;code>df -h&lt;/code>:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png" alt="image">&lt;/p>
+&lt;p>But it&amp;rsquo;s very easy to expand the disk:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;1&amp;#34; | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d&amp;#39;/&amp;#39; -f 2`/device/rescan
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
+&lt;p>Now it&amp;rsquo;s using the full volume:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>

@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://brainhack.org/brainhack_cloud/tutorials/vm/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-03-09T00:49:17+00:00"><meta property="og:site_name" content="Brainhack cloud">
+<meta property="article:modified_time" content="2022-03-09T11:06:15+10:00"><meta property="og:site_name" content="Brainhack cloud">
 <meta itemprop=name content="Virtual machines">
 <meta itemprop=description content="Virtual Machines
 ">
-<meta itemprop=dateModified content="2022-03-09T00:49:17+00:00">
-<meta itemprop=wordCount content="271">
+<meta itemprop=dateModified content="2022-03-09T11:06:15+10:00">
+<meta itemprop=wordCount content="353">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Virtual machines">
 <meta name=twitter:description content="Virtual Machines
@@ -56,14 +56,14 @@
 <a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.60110449f568b93ee72af5b5fc4227c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.ac4c488d36fc9dc1cc2abbc6b6495c9c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.60110449f568b93ee72af5b5fc4227c2.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.ac4c488d36fc9dc1cc2abbc6b6495c9c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -91,7 +91,7 @@
 <a id=print href=http://brainhack.org/brainhack_cloud/tutorials/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div><div class=td-toc><nav id=TableOfContents>
 <ul>
-<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li><li><a href=#login-via-cloud-shell>Login via Cloud shell</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
 <h1>Virtual machines</h1><div class=lead>Virtual Machines</div><header class=article-meta>
 </header><h2 id=overview>Overview</h2><p>Running a Virtual machine on the Oracle cloud is the basis for many other things.</p><h2 id=setup>Setup</h2><p>Make sure you selected the geographic region where you would like to create the resource. Here I create it in the Home Region:
@@ -106,8 +106,15 @@
 <img src=https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png alt=image></p><p>Important: Never share the private key with anyone, which is in id_rsa!</p><p>paste it in the Add SSH keys section:
 <img src=https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png alt=image></p><p>You can specify a custom boot volume size, but you can also increase this easily later (note: it&rsquo;s not possible to shrink a volume! Only increasing the size is possible, so start small and increase when needed). The rest of the defaults is sensible:
 <img src=https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png alt=image></p><p>This will now create the machine:
-<img src=https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png alt=image></p><h2 id=connect-to-instance>Connect to Instance</h2><h2 id=expand-disk>Expand disk</h2><h2 id=login-via-cloud-shell>Login via Cloud shell</h2><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/6bbf1af516977f5e5c7b2be3cc575716a658e5cc>change order (6bbf1af)</a>
+<img src=https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png alt=image></p><h2 id=connect-to-instance>Connect to Instance</h2><p>you can now use an SSH client on your computer to connect to the Instance, or the cloudshell. You find the connection details in
+<img src=https://user-images.githubusercontent.com/4021595/157351454-d888fd88-130b-40fe-986f-46e451d569ae.png alt=image></p><p><code>ssh opc@130.61.212.59</code></p><p>Accept the fingerprint and you should be connected:
+<img src=https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png alt=image></p><h2 id=expand-disk>Expand disk</h2><p>By default, the instance will not utilize the whole disk size! You can check with <code>df -h</code>:
+<img src=https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png alt=image></p><p>But it&rsquo;s very easy to expand the disk:</p><div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback><span style=display:flex><span>sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+</span></span><span style=display:flex><span>echo &#34;1&#34; | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d&#39;/&#39; -f 2`/device/rescan
+</span></span><span style=display:flex><span>sudo /usr/libexec/oci-growfs -y
+</span></span></code></pre></div><p><img src=https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png alt=image></p><p>Now it&rsquo;s using the full volume:
+<img src=https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
+Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/e26f64a7746bb2c5646dadb318cb676b694b131f>added disk expansion (e26f64a)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
