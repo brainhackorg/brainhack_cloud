@@ -25,7 +25,34 @@
 &lt;h2 id="tiering">Tiering&lt;/h2>
 &lt;h2 id="mirroring">Mirroring&lt;/h2></description></item><item><title>Tutorials: Virtual machines</title><link>http://brainhack.org/brainhack_cloud/tutorials/vm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/vm/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Running a Virtual machine on the Oracle cloud.&lt;/p>
+&lt;p>Running a Virtual machine on the Oracle cloud is the basis for many other things.&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
+&lt;p>Make sure you selected the geographic region where you would like to create the resource. Here I create it in the Home Region:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
+&lt;p>Head to Compute -&amp;gt; Instances
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349177-12c719c9-0285-489f-9e42-9d6b82b520c0.png" alt="image">&lt;/p>
+&lt;p>Check that you selected YOUR project compartment (testproject, is the example here - but you need to change this!) and click &amp;ldquo;Create Instance&amp;rdquo;
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349261-28eb8f1e-44ff-4939-9ec5-af8e1b37b90c.png" alt="image">&lt;/p>
+&lt;p>You can name the instance and then select an Image (Oracle Linux is a good starting point as it has many tools installed that make it work very well on the Cloud) and select a Shape:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png" alt="image">&lt;/p>
+&lt;p>VM.Standard.E4.Flex is a good starting point:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png" alt="image">&lt;/p>
+&lt;p>The network setup has sensible defaults to start with:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png" alt="image">&lt;/p>
+&lt;p>Paste a public key to access this VM. If you don&amp;rsquo;t have a public key yet - this is how you can create one (example in the cloudshell):&lt;/p>
+&lt;p>Open the Cloud Shell (this will take a few seconds the first time):
+&lt;img src="https://user-images.githubusercontent.com/4021595/157349825-f77d4e77-aba9-4578-beb8-fde536332d5b.png" alt="image">&lt;/p>
+&lt;p>run &lt;code>ssh-keygen&lt;/code> to create private/public key pairs (the defaults are sensible, so just hit Enter a few times):
+&lt;img src="https://user-images.githubusercontent.com/4021595/157350101-0b01d89a-f839-473d-8d6e-6c312e1cfb16.png" alt="image">&lt;/p>
+&lt;p>Now print the public key with &lt;code>cat ~/.ssh/id_rsa.pub&lt;/code> and copy it to the clipboard:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png" alt="image">&lt;/p>
+&lt;p>Important: Never share the private key with anyone, which is in id_rsa!&lt;/p>
+&lt;p>paste it in the Add SSH keys section:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png" alt="image">&lt;/p>
+&lt;p>You can specify a custom boot volume size, but you can also increase this easily later (note: it&amp;rsquo;s not possible to shrink a volume! Only increasing the size is possible, so start small and increase when needed). The rest of the defaults is sensible:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png" alt="image">&lt;/p>
+&lt;p>This will now create the machine:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png" alt="image">&lt;/p>
+&lt;h2 id="connect-to-instance">Connect to Instance&lt;/h2>
 &lt;h2 id="expand-disk">Expand disk&lt;/h2>
 &lt;h2 id="login-via-cloud-shell">Login via Cloud shell&lt;/h2></description></item></channel></rss>

@@ -14,22 +14,22 @@
 <link rel=icon type=image/png href=/brainhack_cloud/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/brainhack_cloud/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/brainhack_cloud/favicons/android-192x192.png sizes=192x192>
-<title>Virtual machines | Brainhack cloud</title><meta name=description content="Virtual Machine
+<title>Virtual machines | Brainhack cloud</title><meta name=description content="Virtual Machines
 ">
 <meta property="og:title" content="Virtual machines">
-<meta property="og:description" content="Virtual Machine
+<meta property="og:description" content="Virtual Machines
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://brainhack.org/brainhack_cloud/tutorials/vm/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-03-08T23:49:38+00:00"><meta property="og:site_name" content="Brainhack cloud">
+<meta property="article:modified_time" content="2022-03-09T10:44:52+10:00"><meta property="og:site_name" content="Brainhack cloud">
 <meta itemprop=name content="Virtual machines">
-<meta itemprop=description content="Virtual Machine
+<meta itemprop=description content="Virtual Machines
 ">
-<meta itemprop=dateModified content="2022-03-08T23:49:38+00:00">
-<meta itemprop=wordCount content="16">
+<meta itemprop=dateModified content="2022-03-09T10:44:52+10:00">
+<meta itemprop=wordCount content="271">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Virtual machines">
-<meta name=twitter:description content="Virtual Machine
+<meta name=twitter:description content="Virtual Machines
 ">
 <link rel=preload href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css as=style>
 <link href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css rel=stylesheet integrity>
@@ -56,14 +56,14 @@
 <a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.fc22f9887fba862bde8a5d50ae87b671.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.e64ee38c9eb28f9f7038770146743808.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.fc22f9887fba862bde8a5d50ae87b671.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.e64ee38c9eb28f9f7038770146743808.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -91,11 +91,23 @@
 <a id=print href=http://brainhack.org/brainhack_cloud/tutorials/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div><div class=td-toc><nav id=TableOfContents>
 <ul>
-<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#expand-disk>Expand disk</a></li><li><a href=#login-via-cloud-shell>Login via Cloud shell</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li><li><a href=#login-via-cloud-shell>Login via Cloud shell</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>Virtual machines</h1><div class=lead>Virtual Machine</div><header class=article-meta>
-</header><h2 id=overview>Overview</h2><p>Running a Virtual machine on the Oracle cloud.</p><h2 id=setup>Setup</h2><h2 id=expand-disk>Expand disk</h2><h2 id=login-via-cloud-shell>Login via Cloud shell</h2><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 8, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/dffb5b2c0d8621c040188640cba7ac0b4936b3ae>added more sections to talk about (dffb5b2)</a>
+<h1>Virtual machines</h1><div class=lead>Virtual Machines</div><header class=article-meta>
+</header><h2 id=overview>Overview</h2><p>Running a Virtual machine on the Oracle cloud is the basis for many other things.</p><h2 id=setup>Setup</h2><p>Make sure you selected the geographic region where you would like to create the resource. Here I create it in the Home Region:
+<img src=https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png alt=image></p><p>Head to Compute -> Instances
+<img src=https://user-images.githubusercontent.com/4021595/157349177-12c719c9-0285-489f-9e42-9d6b82b520c0.png alt=image></p><p>Check that you selected YOUR project compartment (testproject, is the example here - but you need to change this!) and click &ldquo;Create Instance&rdquo;
+<img src=https://user-images.githubusercontent.com/4021595/157349261-28eb8f1e-44ff-4939-9ec5-af8e1b37b90c.png alt=image></p><p>You can name the instance and then select an Image (Oracle Linux is a good starting point as it has many tools installed that make it work very well on the Cloud) and select a Shape:
+<img src=https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png alt=image></p><p>VM.Standard.E4.Flex is a good starting point:
+<img src=https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png alt=image></p><p>The network setup has sensible defaults to start with:
+<img src=https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png alt=image></p><p>Paste a public key to access this VM. If you don&rsquo;t have a public key yet - this is how you can create one (example in the cloudshell):</p><p>Open the Cloud Shell (this will take a few seconds the first time):
+<img src=https://user-images.githubusercontent.com/4021595/157349825-f77d4e77-aba9-4578-beb8-fde536332d5b.png alt=image></p><p>run <code>ssh-keygen</code> to create private/public key pairs (the defaults are sensible, so just hit Enter a few times):
+<img src=https://user-images.githubusercontent.com/4021595/157350101-0b01d89a-f839-473d-8d6e-6c312e1cfb16.png alt=image></p><p>Now print the public key with <code>cat ~/.ssh/id_rsa.pub</code> and copy it to the clipboard:
+<img src=https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png alt=image></p><p>Important: Never share the private key with anyone, which is in id_rsa!</p><p>paste it in the Add SSH keys section:
+<img src=https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png alt=image></p><p>You can specify a custom boot volume size, but you can also increase this easily later (note: it&rsquo;s not possible to shrink a volume! Only increasing the size is possible, so start small and increase when needed). The rest of the defaults is sensible:
+<img src=https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png alt=image></p><p>This will now create the machine:
+<img src=https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png alt=image></p><h2 id=connect-to-instance>Connect to Instance</h2><h2 id=expand-disk>Expand disk</h2><h2 id=login-via-cloud-shell>Login via Cloud shell</h2><div class="text-muted mt-5 pt-3 border-top">
+Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/7e615f807d38377c0e3b3d0d7f534671b3fd34a0>added section on starting machine (7e615f8)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
