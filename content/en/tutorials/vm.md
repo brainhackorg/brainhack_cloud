@@ -53,11 +53,28 @@ You can specify a custom boot volume size, but you can also increase this easily
 This will now create the machine:
 ![image](https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png)
 
-## Connect to Instance
 
+## Connect to Instance
+you can now use an SSH client on your computer to connect to the Instance, or the cloudshell. You find the connection details in 
+![image](https://user-images.githubusercontent.com/4021595/157351454-d888fd88-130b-40fe-986f-46e451d569ae.png)
+
+`ssh opc@130.61.212.59`
+
+Accept the fingerprint and you should be connected:
+![image](https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png)
 
 
 ## Expand disk
+By default, the instance will not utilize the whole disk size! You can check with `df -h`:
+![image](https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png)
 
-## Login via Cloud shell
+But it's very easy to expand the disk:
+```
+sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+echo "1" | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d'/' -f 2`/device/rescan
+sudo /usr/libexec/oci-growfs -y
+```
+![image](https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png)
 
+Now it's using the full volume:
+![image](https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png)
