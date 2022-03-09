@@ -37,7 +37,11 @@
 &lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
 &lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
 &lt;p>Go back to Identity and click on Policies. Click &amp;ldquo;Create Policy&amp;rdquo;. Name the policy like the group and compartment just created. Description is the github issue link. You can either use the policy builder or switch to manual. The resulting policy needs to be &amp;ldquo;Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&amp;rdquo;
-&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
+&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p>
+&lt;h2 id="create-budget-for-compartment">Create Budget for compartment&lt;/h2>
+&lt;p>Budgets help us to control and monitor costs. For every compartment we need a budget with someone being alerted when things go crazy:&lt;/p>
+&lt;p>Go to Budgets under Cost Management and click &amp;ldquo;Create Budget&amp;rdquo;. Add the project details and add your email to the alert list.
+&lt;img src="https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Access permissions are controlled via Policies. If something is not working, it&amp;rsquo;s usually a missing policy. One important thing to note is that Policies can ONLY be applied to Groups, NOT Users!&lt;/p>
 &lt;h2 id="policies-for-cloud-shell-access">Policies for Cloud Shell access&lt;/h2>
