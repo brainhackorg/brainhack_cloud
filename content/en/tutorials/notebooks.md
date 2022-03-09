@@ -1,7 +1,7 @@
 ---
 title: "Notebooks"
 linkTitle: "Notebooks"
-weight: 4
+weight: 3
 description: >
   Notebook service
 ---

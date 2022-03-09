@@ -1,7 +1,7 @@
 ---
 title: "Object Storage"
 linkTitle: "Object Storage"
-weight: 4
+weight: 2
 description: >
   Object Storage
 ---
