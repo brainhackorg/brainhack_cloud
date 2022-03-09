@@ -59,4 +59,9 @@ Go back to Identity and head to Compartments and click "Create Compartment". Nam
 Go back to Identity and click on Policies. Click "Create Policy". Name the policy like the group and compartment just created. Description is the github issue link. You can either use the policy builder or switch to manual. The resulting policy needs to be "Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME"
 ![image](https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png)
 
+## Create Budget for compartment
+Budgets help us to control and monitor costs. For every compartment we need a budget with someone being alerted when things go crazy:
+
+Go to Budgets under Cost Management and click "Create Budget". Add the project details and add your email to the alert list.
+![image](https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png)
 
