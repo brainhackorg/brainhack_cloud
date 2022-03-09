@@ -1,7 +1,7 @@
 ---
 title: "Creating new users"
 linkTitle: "Creating new users"
-weight: 2
+weight: 1
 description: >
   Creating new users
 ---
@@ -40,7 +40,7 @@ Now, generate a password for the user by Clicking `Create/Reset Password`
 
 Copy this password and send it to the user you just created.
 
-The new user has to follow this procedure: [User request](./../../docs/request)
+The new user has to follow this procedure: [User request](./../../docs/request).
 
 Add the User to the group `cloudshell-access`
 
@@ -66,7 +66,7 @@ Then add the User(s) to the group.
 ## Create Project Compartment
 
 Go back to `Identity` and head to `Compartments` and click `Create Compartment`.
-Name it like the group just created and add the github issue link as
+Name it like the group just created and add the Github issue link as
 description. Parent compartment is brainhack (root).
 
 ![image](https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png)
@@ -74,7 +74,7 @@ description. Parent compartment is brainhack (root).
 ## Create Policy for group and compartment
 
 Go back to `Identity` and click on `Policies`. Click `Create Policy`. Name the
-policy like the group and compartment just created. Description is the github
+policy like the group and compartment just created. Description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
 `Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`.

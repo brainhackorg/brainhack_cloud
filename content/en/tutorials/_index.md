@@ -11,7 +11,8 @@ description: >
 
 ## Overview
 
-This section contains tutorials on how to setup various cool solutions on the cloud.
+This section contains tutorials on how to setup various cool solutions on the
+cloud.
 
 ## Feedback & Inquiries
 

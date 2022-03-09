@@ -1,7 +1,7 @@
 ---
 title: "Tenancy Explorer"
 linkTitle: "Tenancy Explorer"
-weight: 1
+weight: 2
 description: >
   Tenancy Explorer
 ---

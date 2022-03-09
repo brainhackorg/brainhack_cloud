@@ -1,7 +1,7 @@
 ---
 title: "Team"
 linkTitle: "Team"
-weight: 1
+weight: 3
 description: >
   This is the team behind the scenes
 ---

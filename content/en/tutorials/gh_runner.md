@@ -8,16 +8,22 @@ description: >
 
 ## Overview
 
-This section describes how to setup a github action runner on the cloud that you can then use to run huge github workflows that wouldn't run in the hosted runners :)
+This section describes how to setup a Github action runner on the cloud that you
+can then use to run huge Github workflows that wouldn't run in the hosted
+runners :)
 
 ## Configure VM
--> Link to VM Tutorial
 
-## Configure github
+See our [VM Tutorial](./../vm)
+
+## Configure Github
+
 -> setup custom runner
 
 ## Configure VM-Github connection
+
 -> start Runner service
 
 ## Use custom runner in Action
+
 -> Example QSMxT
