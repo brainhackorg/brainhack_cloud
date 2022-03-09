@@ -78,3 +78,13 @@ sudo /usr/libexec/oci-growfs -y
 
 Now it's using the full volume:
 ![image](https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png)
+
+
+## Terminate the instance
+If you don't need the machine anymore, you can Stop it or Terminate it:
+![image](https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png)
+
+To cleanup the storage as well, you can select "Permanently delete the attached boot volume" and click "Terminate Instance":
+![image](https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png)
+
+
