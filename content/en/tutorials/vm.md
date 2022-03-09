@@ -66,12 +66,9 @@ clipboard.
 
 ![image](https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png)
 
----
-**Important**
-
+{{% alert title="Warning" color="warning" %}}
 Never share the private key with anyone, which is in `id_rsa`!
-
----
+{{% /alert %}}
 
 Paste it in the Add SSH keys section
 
