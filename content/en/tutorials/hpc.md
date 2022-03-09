@@ -17,5 +17,5 @@ your own HPC cluster in the cloud
 
 ## Advanced: Use MPI networking
 
-Your first need to request access those resources with this
+Your first need to request access to those resources with this
 [form](./../../docs/request).

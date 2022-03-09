@@ -11,7 +11,7 @@ description: >
 
 ## Overview
 
-This section describe how the Admin team manages users and projects on the Oracle Cloud.
+This section describes how the Admin team manages users and projects on the Oracle Cloud.
 
 ## Feedback & Inquiries
 

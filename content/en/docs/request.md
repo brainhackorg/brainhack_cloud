@@ -24,7 +24,7 @@ activation email from Oracle
 Click on the activation link.
 
 Now, it's very important that you expand the LOWER section of this login field
-and fill your Username from the email and the password you were send!
+and fill in your Username from the email and the password you were sent!
 
 ![image](https://user-images.githubusercontent.com/4021595/157340962-3021d25f-31b1-44c0-a30a-130c70ac3327.png)
 
