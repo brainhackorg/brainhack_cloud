@@ -10,7 +10,7 @@ description: >
 
 Access permissions are controlled via Policies. If something is not working,
 it's usually a missing policy. One important thing to note is that Policies can
-ONLY be applied to Groups, NOT Users!
+ONLY be applied to Groups, NOT to the Users!
 
 ## Policy for Cloud Shell access
 

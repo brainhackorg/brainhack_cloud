@@ -49,7 +49,7 @@ Paste a public key to access this VM.
 
 ### Create a public key
 
-If you don't have a public key yet - this is how you can create one (example in
+If you don't have a public key yet - this is how you can create one (for example in
 the cloudshell)
 
 Open the Cloud Shell (this will take a few seconds the first time)
@@ -82,7 +82,7 @@ later.
 **Note:** it's not possible to shrink a volume! Only increasing the size is
 possible, so start small and increase when needed).
 
-The rest of the defaults is
+The rest of the defaults are
 sensible.
 
 ![image](https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png)
@@ -120,7 +120,7 @@ You can check with `df -h`.
 
 ![image](https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png)
 
-But it's can expland the expand the disk with the following commands.
+But it can expand the disk with the following commands.
 
 ```bash
 sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
