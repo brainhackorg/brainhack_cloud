@@ -43,7 +43,12 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
 &lt;p>Now it&amp;rsquo;s using the full volume:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
+&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
+&lt;h2 id="terminate-the-instance">Terminate the instance&lt;/h2>
+&lt;p>If you don&amp;rsquo;t need the machine anymore, you can Stop it or Terminate it:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
+&lt;p>To cleanup the storage as well, you can select &amp;ldquo;Permanently delete the attached boot volume&amp;rdquo; and click &amp;ldquo;Terminate Instance&amp;rdquo;:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>

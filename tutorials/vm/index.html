@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://brainhack.org/brainhack_cloud/tutorials/vm/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-03-09T11:06:15+10:00"><meta property="og:site_name" content="Brainhack cloud">
+<meta property="article:modified_time" content="2022-03-09T11:09:38+10:00"><meta property="og:site_name" content="Brainhack cloud">
 <meta itemprop=name content="Virtual machines">
 <meta itemprop=description content="Virtual Machines
 ">
-<meta itemprop=dateModified content="2022-03-09T11:06:15+10:00">
-<meta itemprop=wordCount content="353">
+<meta itemprop=dateModified content="2022-03-09T11:09:38+10:00">
+<meta itemprop=wordCount content="389">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Virtual machines">
 <meta name=twitter:description content="Virtual Machines
@@ -56,14 +56,14 @@
 <a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.ac4c488d36fc9dc1cc2abbc6b6495c9c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.82e141880a2124719fa00034f788c310.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.ac4c488d36fc9dc1cc2abbc6b6495c9c.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.82e141880a2124719fa00034f788c310.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -91,7 +91,7 @@
 <a id=print href=http://brainhack.org/brainhack_cloud/tutorials/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
 </div><div class=td-toc><nav id=TableOfContents>
 <ul>
-<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
+<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li><li><a href=#terminate-the-instance>Terminate the instance</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
 <h1>Virtual machines</h1><div class=lead>Virtual Machines</div><header class=article-meta>
 </header><h2 id=overview>Overview</h2><p>Running a Virtual machine on the Oracle cloud is the basis for many other things.</p><h2 id=setup>Setup</h2><p>Make sure you selected the geographic region where you would like to create the resource. Here I create it in the Home Region:
@@ -113,8 +113,10 @@
 </span></span><span style=display:flex><span>echo &#34;1&#34; | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d&#39;/&#39; -f 2`/device/rescan
 </span></span><span style=display:flex><span>sudo /usr/libexec/oci-growfs -y
 </span></span></code></pre></div><p><img src=https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png alt=image></p><p>Now it&rsquo;s using the full volume:
-<img src=https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/e26f64a7746bb2c5646dadb318cb676b694b131f>added disk expansion (e26f64a)</a>
+<img src=https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png alt=image></p><h2 id=terminate-the-instance>Terminate the instance</h2><p>If you don&rsquo;t need the machine anymore, you can Stop it or Terminate it:
+<img src=https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png alt=image></p><p>To cleanup the storage as well, you can select &ldquo;Permanently delete the attached boot volume&rdquo; and click &ldquo;Terminate Instance&rdquo;:
+<img src=https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
+Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/30e39a4264d7d05b10cd654b3f7e6ac55fd3363b>added termination (30e39a4)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
