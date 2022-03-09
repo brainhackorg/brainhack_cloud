@@ -8,6 +8,7 @@ description: >
 
 ## Overview
 
-The notebook service is like Google Colab, but without the time or resource limitations
+The notebook service is like Google Colab, but without the time or resource
+limitations
 
 ## Setup

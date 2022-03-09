@@ -1,0 +1,11 @@
+name = "brainhack cloud"
+license = "CC-BY 4.0"
+licenselink = "https://github.com/brainhackorg/brainhack_cloud/blob/main/LICENSE"
+description = "A docsy website for Oracle cloud documentation"
+homepage = "https://brainhack.org/brainhack_cloud/"
+tags = ["documentation", "cloud", "oracle", "neuroscience", "docs"]
+features = []
+
+[author]
+  name = "The Brainhack cloud authors"
+  homepage = "https://brainhack.org/brainhack_cloud/admins/team/"

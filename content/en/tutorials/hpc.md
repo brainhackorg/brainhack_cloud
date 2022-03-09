@@ -8,11 +8,14 @@ description: >
 
 ## Overview
 
-Oracle cloud supports High Performance Computing and makes it very easy to setup your own HPC cluster in the cloud
+Oracle cloud supports High Performance Computing and makes it very easy to setup
+your own HPC cluster in the cloud
 
 ## Configure HPC cluster
--> 
+
+->
 
 ## Advanced: Use MPI networking
--> Request HPC resource
 
+Your first need to request access those resources with this
+[form](./../../docs/request).
