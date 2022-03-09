@@ -20,4 +20,8 @@
 &lt;p>Always make sure to select your compartment - otherwise you cannot see or create resources.&lt;/p>
 &lt;p>Happy computing :)&lt;/p></description></item><item><title>Docs: Tenancy Explorer</title><link>http://brainhack.org/brainhack_cloud/docs/tenancyexplorer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/docs/tenancyexplorer/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>The Tenancy Explorer is very useful to see what resources are currently being used in your project. It&amp;rsquo;s in Governance -&amp;gt; Tenancy Explorer&lt;/p></description></item></channel></rss>
+&lt;p>The Tenancy Explorer is very useful to see what resources are currently being used in your project. It&amp;rsquo;s in Governance -&amp;gt; Tenancy Explorer&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352815-7ca0f88c-d2e1-4ca3-8d1b-f7917423a173.png" alt="image">&lt;/p>
+&lt;p>You can use this to clean up resources that are no longer required.&lt;/p>
+&lt;p>Hint: The network setup creates a lot of things and to cleanup it&amp;rsquo;s easiest to go to &amp;ldquo;Virtual Cloud Networks&amp;rdquo;, select the VCN you don&amp;rsquo;t need anymore and click &amp;ldquo;Terminate&amp;rdquo; - this will go out and remove everything correctly:
+&lt;img src="https://user-images.githubusercontent.com/4021595/157353107-5a3a8063-189a-49c3-9c85-24b6bba52c13.png" alt="image">&lt;/p></description></item></channel></rss>
