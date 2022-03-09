@@ -1,29 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Tutorials</title><link>http://brainhack.org/brainhack_cloud/tutorials/</link><description>Recent content in Tutorials on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This section describes how to setup a github action runner on the cloud that you can then use to run huge github workflows that wouldn&amp;rsquo;t run in the hosted runners :)&lt;/p>
-&lt;h2 id="configure-vm">Configure VM&lt;/h2>
-&lt;p>-&amp;gt; Link to VM Tutorial&lt;/p>
-&lt;h2 id="configure-github">Configure github&lt;/h2>
-&lt;p>-&amp;gt; setup custom runner&lt;/p>
-&lt;h2 id="configure-vm-github-connection">Configure VM-Github connection&lt;/h2>
-&lt;p>-&amp;gt; start Runner service&lt;/p>
-&lt;h2 id="use-custom-runner-in-action">Use custom runner in Action&lt;/h2>
-&lt;p>-&amp;gt; Example QSMxT&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup your own HPC cluster in the cloud&lt;/p>
-&lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
-&lt;p>-&amp;gt;&lt;/p>
-&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
-&lt;p>-&amp;gt; Request HPC resource&lt;/p></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>The notebook service is like Google Colab, but without the time or resource limitations&lt;/p>
-&lt;h2 id="setup">Setup&lt;/h2></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
-&lt;h2 id="setup">Setup&lt;/h2>
-&lt;h2 id="preauthenticated-urls">Preauthenticated URLs&lt;/h2>
-&lt;h2 id="tiering">Tiering&lt;/h2>
-&lt;h2 id="mirroring">Mirroring&lt;/h2></description></item><item><title>Tutorials: Virtual machines</title><link>http://brainhack.org/brainhack_cloud/tutorials/vm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/vm/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Tutorials</title><link>http://brainhack.org/brainhack_cloud/tutorials/</link><description>Recent content in Tutorials on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Virtual machines</title><link>http://brainhack.org/brainhack_cloud/tutorials/vm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/vm/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Running a Virtual machine on the Oracle cloud is the basis for many other things.&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
@@ -55,4 +30,29 @@
 &lt;img src="https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png" alt="image">&lt;/p>
 &lt;h2 id="connect-to-instance">Connect to Instance&lt;/h2>
 &lt;h2 id="expand-disk">Expand disk&lt;/h2>
-&lt;h2 id="login-via-cloud-shell">Login via Cloud shell&lt;/h2></description></item></channel></rss>
+&lt;h2 id="login-via-cloud-shell">Login via Cloud shell&lt;/h2></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2>
+&lt;h2 id="preauthenticated-urls">Preauthenticated URLs&lt;/h2>
+&lt;h2 id="tiering">Tiering&lt;/h2>
+&lt;h2 id="mirroring">Mirroring&lt;/h2></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The notebook service is like Google Colab, but without the time or resource limitations&lt;/p>
+&lt;h2 id="setup">Setup&lt;/h2></description></item><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>This section describes how to setup a github action runner on the cloud that you can then use to run huge github workflows that wouldn&amp;rsquo;t run in the hosted runners :)&lt;/p>
+&lt;h2 id="configure-vm">Configure VM&lt;/h2>
+&lt;p>-&amp;gt; Link to VM Tutorial&lt;/p>
+&lt;h2 id="configure-github">Configure github&lt;/h2>
+&lt;p>-&amp;gt; setup custom runner&lt;/p>
+&lt;h2 id="configure-vm-github-connection">Configure VM-Github connection&lt;/h2>
+&lt;p>-&amp;gt; start Runner service&lt;/p>
+&lt;h2 id="use-custom-runner-in-action">Use custom runner in Action&lt;/h2>
+&lt;p>-&amp;gt; Example QSMxT&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup your own HPC cluster in the cloud&lt;/p>
+&lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
+&lt;p>-&amp;gt;&lt;/p>
+&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
+&lt;p>-&amp;gt; Request HPC resource&lt;/p></description></item></channel></rss>
