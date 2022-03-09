@@ -18,4 +18,6 @@
 &lt;p>You should now be able to select your Compartment (should be named like your project) and start using resources:
 &lt;img src="https://user-images.githubusercontent.com/4021595/157345820-81a62c95-5603-4bf7-a266-0991fbd9dcb9.png" alt="image">&lt;/p>
 &lt;p>Always make sure to select your compartment - otherwise you cannot see or create resources.&lt;/p>
-&lt;p>Happy computing :)&lt;/p></description></item></channel></rss>
+&lt;p>Happy computing :)&lt;/p></description></item><item><title>Docs: Tenancy Explorer</title><link>http://brainhack.org/brainhack_cloud/docs/tenancyexplorer/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/docs/tenancyexplorer/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The Tenancy Explorer is very useful to see what resources are currently being used in your project. It&amp;rsquo;s in Governance -&amp;gt; Tenancy Explorer&lt;/p></description></item></channel></rss>
