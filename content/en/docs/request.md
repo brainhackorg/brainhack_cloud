@@ -10,7 +10,7 @@ description: >
 
 https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&labels=resource_request&template=request-resource-access.yml
 
-once an admin acts on this, you can continue:
+once an [admin](admins/team/) acts on this, you can continue:
 
 ## Activate your account:
 An admin will create your account and send you a password and you will get an activation email from Oracle:
