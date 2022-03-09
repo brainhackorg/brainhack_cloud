@@ -1,76 +1,112 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Tutorials</title><link>http://brainhack.org/brainhack_cloud/tutorials/</link><description>Recent content in Tutorials on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/tutorials/index.xml" rel="self" type="application/rss+xml"/><item><title>Tutorials: Virtual machines</title><link>http://brainhack.org/brainhack_cloud/tutorials/vm/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/vm/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Running a Virtual machine on the Oracle cloud is the basis for many other things.&lt;/p>
+&lt;p>Running a Virtual machine on the Oracle cloud is the basis for many other
+things.&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
-&lt;p>Make sure you selected the geographic region where you would like to create the resource. Here I create it in the Home Region:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
-&lt;p>Head to Compute -&amp;gt; Instances
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349177-12c719c9-0285-489f-9e42-9d6b82b520c0.png" alt="image">&lt;/p>
-&lt;p>Check that you selected YOUR project compartment (testproject, is the example here - but you need to change this!) and click &amp;ldquo;Create Instance&amp;rdquo;
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349261-28eb8f1e-44ff-4939-9ec5-af8e1b37b90c.png" alt="image">&lt;/p>
-&lt;p>You can name the instance and then select an Image (Oracle Linux is a good starting point as it has many tools installed that make it work very well on the Cloud) and select a Shape:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png" alt="image">&lt;/p>
-&lt;p>VM.Standard.E4.Flex is a good starting point:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png" alt="image">&lt;/p>
-&lt;p>The network setup has sensible defaults to start with:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png" alt="image">&lt;/p>
-&lt;p>Paste a public key to access this VM. If you don&amp;rsquo;t have a public key yet - this is how you can create one (example in the cloudshell):&lt;/p>
-&lt;p>Open the Cloud Shell (this will take a few seconds the first time):
-&lt;img src="https://user-images.githubusercontent.com/4021595/157349825-f77d4e77-aba9-4578-beb8-fde536332d5b.png" alt="image">&lt;/p>
-&lt;p>run &lt;code>ssh-keygen&lt;/code> to create private/public key pairs (the defaults are sensible, so just hit Enter a few times):
-&lt;img src="https://user-images.githubusercontent.com/4021595/157350101-0b01d89a-f839-473d-8d6e-6c312e1cfb16.png" alt="image">&lt;/p>
-&lt;p>Now print the public key with &lt;code>cat ~/.ssh/id_rsa.pub&lt;/code> and copy it to the clipboard:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png" alt="image">&lt;/p>
-&lt;p>Important: Never share the private key with anyone, which is in id_rsa!&lt;/p>
-&lt;p>paste it in the Add SSH keys section:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png" alt="image">&lt;/p>
-&lt;p>You can specify a custom boot volume size, but you can also increase this easily later (note: it&amp;rsquo;s not possible to shrink a volume! Only increasing the size is possible, so start small and increase when needed). The rest of the defaults is sensible:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png" alt="image">&lt;/p>
-&lt;p>This will now create the machine:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png" alt="image">&lt;/p>
+&lt;p>Make sure you selected the geographic region where you would like to create the
+resource.&lt;/p>
+&lt;p>Here I create it in the Home Region.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
+&lt;p>Head to &lt;code>Compute -&amp;gt; Instances&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349177-12c719c9-0285-489f-9e42-9d6b82b520c0.png" alt="image">&lt;/p>
+&lt;p>Check that you selected YOUR project compartment (testproject, is the example
+here - but you need to change this!) and click &lt;code>Create Instance&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349261-28eb8f1e-44ff-4939-9ec5-af8e1b37b90c.png" alt="image">&lt;/p>
+&lt;h3 id="selecting-an-image-and-a-shape">Selecting an image and a shape&lt;/h3>
+&lt;p>You can name the instance and then select an Image (Oracle Linux is a good
+starting point as it has many tools installed that make it work very well on the
+Cloud) and select a Shape.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png" alt="image">&lt;/p>
+&lt;p>VM.Standard.E4.Flex is a good starting point&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png" alt="image">&lt;/p>
+&lt;p>The network setup has sensible defaults to start with&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png" alt="image">&lt;/p>
+&lt;p>Paste a public key to access this VM.&lt;/p>
+&lt;h3 id="create-a-public-key">Create a public key&lt;/h3>
+&lt;p>If you don&amp;rsquo;t have a public key yet - this is how you can create one (example in
+the cloudshell)&lt;/p>
+&lt;p>Open the Cloud Shell (this will take a few seconds the first time)&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349825-f77d4e77-aba9-4578-beb8-fde536332d5b.png" alt="image">&lt;/p>
+&lt;p>Run &lt;code>ssh-keygen&lt;/code> to create private/public key pairs (the defaults are sensible,
+so just hit &lt;code>Enter&lt;/code> a few times)&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350101-0b01d89a-f839-473d-8d6e-6c312e1cfb16.png" alt="image">&lt;/p>
+&lt;p>Now print the public key with &lt;code>cat ~/.ssh/id_rsa.pub&lt;/code> and copy it to the
+clipboard.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png" alt="image">&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+Never share the private key with anyone, which is in &lt;code>id_rsa&lt;/code>!
+&lt;/div>
+&lt;p>Paste it in the Add SSH keys section&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png" alt="image">&lt;/p>
+&lt;h3 id="disk-size">Disk size&lt;/h3>
+&lt;p>You can specify a custom boot volume size, but you can also increase this easily
+later.&lt;/p>
+&lt;p>&lt;strong>Note:&lt;/strong> it&amp;rsquo;s not possible to shrink a volume! Only increasing the size is
+possible, so start small and increase when needed).&lt;/p>
+&lt;p>The rest of the defaults is
+sensible.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png" alt="image">&lt;/p>
+&lt;h3 id="create-the-vm">Create the VM&lt;/h3>
+&lt;p>This will now create the machine.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png" alt="image">&lt;/p>
 &lt;h2 id="connect-to-instance">Connect to Instance&lt;/h2>
-&lt;p>you can now use an SSH client on your computer to connect to the Instance, or the cloudshell. You find the connection details in
-&lt;img src="https://user-images.githubusercontent.com/4021595/157351454-d888fd88-130b-40fe-986f-46e451d569ae.png" alt="image">&lt;/p>
-&lt;p>&lt;code>ssh opc@130.61.212.59&lt;/code>&lt;/p>
-&lt;p>Accept the fingerprint and you should be connected:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png" alt="image">&lt;/p>
+&lt;p>You can now use an SSH client on your computer to connect to the Instance, or
+the cloudshell.&lt;/p>
+&lt;p>You find the connection details in.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351454-d888fd88-130b-40fe-986f-46e451d569ae.png" alt="image">&lt;/p>
+&lt;p>So in this case you would connect to your instance by typing.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh opc@130.61.212.59
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Accept the fingerprint and you should be connected.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png" alt="image">&lt;/p>
 &lt;h2 id="expand-disk">Expand disk&lt;/h2>
-&lt;p>By default, the instance will not utilize the whole disk size! You can check with &lt;code>df -h&lt;/code>:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png" alt="image">&lt;/p>
-&lt;p>But it&amp;rsquo;s very easy to expand the disk:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;1&amp;#34; | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d&amp;#39;/&amp;#39; -f 2`/device/rescan
+&lt;p>By default, the instance will not utilize the whole disk size!&lt;/p>
+&lt;p>You can check with &lt;code>df -h&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png" alt="image">&lt;/p>
+&lt;p>But it&amp;rsquo;s can expland the expand the disk with the following commands.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#000">iflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>direct &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/oracleoci/oraclevda &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#000">count&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /sys/class/block/&lt;span style="color:#4e9a06">`&lt;/span>readlink /dev/oracleoci/oraclevda &lt;span style="color:#000;font-weight:bold">|&lt;/span> cut -d&lt;span style="color:#4e9a06">&amp;#39;/&amp;#39;&lt;/span> -f 2&lt;span style="color:#4e9a06">`&lt;/span>/device/rescan
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
-&lt;p>Now it&amp;rsquo;s using the full volume:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
+&lt;p>Now it&amp;rsquo;s using the full volume.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
 &lt;h2 id="terminate-the-instance">Terminate the instance&lt;/h2>
-&lt;p>If you don&amp;rsquo;t need the machine anymore, you can Stop it or Terminate it:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
-&lt;p>To cleanup the storage as well, you can select &amp;ldquo;Permanently delete the attached boot volume&amp;rdquo; and click &amp;ldquo;Terminate Instance&amp;rdquo;:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/objectstorage/</guid><description>
+&lt;p>If you don&amp;rsquo;t need the machine anymore, you can &lt;code>Stop&lt;/code> it or &lt;code>Terminate&lt;/code> it&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
+&lt;p>To cleanup the storage as well, you can select
+&lt;code>Permanently delete the attached boot volume&lt;/code> and click &lt;code>Terminate Instance&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/object_storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/object_storage/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply store files and they can be accessible via links on the web (or APIs) and you don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it comes with very nice features for mirroring your data to other regions or tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
+&lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply
+store files and they can be accessible via links on the web (or APIs) and you
+don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it
+comes with very nice features for mirroring your data to other regions or
+tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;h2 id="preauthenticated-urls">Preauthenticated URLs&lt;/h2>
 &lt;h2 id="tiering">Tiering&lt;/h2>
 &lt;h2 id="mirroring">Mirroring&lt;/h2></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>The notebook service is like Google Colab, but without the time or resource limitations&lt;/p>
+&lt;p>The notebook service is like Google Colab, but without the time or resource
+limitations&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2></description></item><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This section describes how to setup a github action runner on the cloud that you can then use to run huge github workflows that wouldn&amp;rsquo;t run in the hosted runners :)&lt;/p>
+&lt;p>This section describes how to setup a Github action runner on the cloud that you
+can then use to run huge Github workflows that wouldn&amp;rsquo;t run in the hosted
+runners :)&lt;/p>
 &lt;h2 id="configure-vm">Configure VM&lt;/h2>
-&lt;p>-&amp;gt; Link to VM Tutorial&lt;/p>
-&lt;h2 id="configure-github">Configure github&lt;/h2>
+&lt;p>See our &lt;a href="./../vm">VM Tutorial&lt;/a>&lt;/p>
+&lt;h2 id="configure-github">Configure Github&lt;/h2>
 &lt;p>-&amp;gt; setup custom runner&lt;/p>
 &lt;h2 id="configure-vm-github-connection">Configure VM-Github connection&lt;/h2>
 &lt;p>-&amp;gt; start Runner service&lt;/p>
 &lt;h2 id="use-custom-runner-in-action">Use custom runner in Action&lt;/h2>
 &lt;p>-&amp;gt; Example QSMxT&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup your own HPC cluster in the cloud&lt;/p>
+&lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup
+your own HPC cluster in the cloud&lt;/p>
 &lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
 &lt;p>-&amp;gt;&lt;/p>
 &lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
-&lt;p>-&amp;gt; Request HPC resource&lt;/p></description></item></channel></rss>
+&lt;p>Your first need to request access those resources with this
+&lt;a href="./../../docs/request">form&lt;/a>.&lt;/p></description></item></channel></rss>

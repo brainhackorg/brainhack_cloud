@@ -1,48 +1,70 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
-&lt;p>We applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024.&lt;/p>
-&lt;p>Please reach out to us if you would like to join the team: &lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Once a new project is requested via the
+&lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">Issue Template&lt;/a>
+one of the admins has to provision the project on the cloud.&lt;/p>
+&lt;p>Here is an example for such a request:&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png" alt="image">&lt;/p>
+&lt;h2 id="creating-new-user">Creating new user&lt;/h2>
+&lt;p>Login to Oracle Cloud:
+&lt;a href="https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack">https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack&lt;/a>&lt;/p>
+&lt;p>Open the menu and search for users, then open Users in Idendity&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339416-1c6f3dcd-3d78-4613-81f1-a955badc3d28.png" alt="image">&lt;/p>
+&lt;p>Then hit &lt;code>Create User&lt;/code>.&lt;/p>
+&lt;p>Change the selection to &lt;code>IAM User&lt;/code>, add the user name as &lt;code>firstname_lastname&lt;/code>
+and the same for description, and add an email.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339931-96380614-7e14-434d-a9d6-9821c7aa2463.png" alt="image">&lt;/p>
+&lt;p>Hit &lt;code>create&lt;/code>.&lt;/p>
+&lt;p>Now, generate a password for the user by Clicking &lt;code>Create/Reset Password&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png" alt="image">&lt;/p>
+&lt;p>Copy this password and send it to the user you just created.&lt;/p>
+&lt;p>The new user has to follow this procedure: &lt;a href="./../../docs/request">User request&lt;/a>.&lt;/p>
+&lt;p>Add the User to the group &lt;code>cloudshell-access&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png" alt="image">&lt;/p>
+&lt;p>Repeat this procedure for every user in the project.&lt;/p>
+&lt;h2 id="create-project-group">Create Project Group&lt;/h2>
+&lt;p>Go back to Identity and click &lt;code>Create Group&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157341864-5582074f-fa90-48f2-a2a5-deebb1a241dc.png" alt="image">&lt;/p>
+&lt;p>Give the group a name that represents the project (no spaces!) - as Description
+put the link to the github issue.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342047-92280e16-9518-4d04-a3be-796073d16c01.png" alt="image">&lt;/p>
+&lt;p>Then add the User(s) to the group.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342170-192e1e82-c1f7-46ed-a0f9-ec59bbe8de8e.png" alt="image">&lt;/p>
+&lt;h2 id="create-project-compartment">Create Project Compartment&lt;/h2>
+&lt;p>Go back to &lt;code>Identity&lt;/code> and head to &lt;code>Compartments&lt;/code> and click &lt;code>Create Compartment&lt;/code>.
+Name it like the group just created and add the Github issue link as
+description. Parent compartment is brainhack (root).&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
+&lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
+&lt;p>Go back to &lt;code>Identity&lt;/code> and click on &lt;code>Policies&lt;/code>. Click &lt;code>Create Policy&lt;/code>. Name the
+policy like the group and compartment just created. Description is the Github
+issue link. You can either use the policy builder or switch to manual. The
+resulting policy needs to be
+&lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p>
+&lt;h2 id="create-budget-for-compartment">Create Budget for compartment&lt;/h2>
+&lt;p>Budgets help us to control and monitor costs. For every compartment we need a
+budget with someone being alerted when things go crazy:&lt;/p>
+&lt;p>Go to &lt;code>Budgets&lt;/code> under &lt;code>Cost Management&lt;/code> and click &lt;code>Create Budget&lt;/code>. Add the
+project details and add your email to the alert list.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Access permissions are controlled via Policies. If something is not working,
+it&amp;rsquo;s usually a missing policy. One important thing to note is that Policies can
+ONLY be applied to Groups, NOT Users!&lt;/p>
+&lt;h2 id="policy-for-cloud-shell-access">Policy for Cloud Shell access&lt;/h2>
+&lt;p>By default, a new user cannot open a Cloud Shell. To provide every user with
+this permission, we created a group called &amp;ldquo;cloudshell-access&amp;rdquo; and we add every
+user to this group. The group then has a Policy that allows opening a cloud
+shell: &lt;code>allow group cloudshell-access to use cloud-shell in tenancy&lt;/code>&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
+&lt;p>We applied for funding this project with Oracle Cloud for Research and the
+project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of
+January, 2024.&lt;/p>
+&lt;p>Please reach out to us if you would like to join the team:&lt;/p>
+&lt;p>&lt;a href="https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle">https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle&lt;/a>&lt;/p>
 &lt;ul>
 &lt;li>Johanna Bayer &lt;a href="https://github.com/likeajumprope">https://github.com/likeajumprope&lt;/a>&lt;/li>
 &lt;li>Remi Gau &lt;a href="https://github.com/Remi-Gau">https://github.com/Remi-Gau&lt;/a>&lt;/li>
 &lt;li>Steffen Bollmann &lt;a href="https://github.com/stebo85">https://github.com/stebo85&lt;/a>&lt;/li>
 &lt;li>Isil Bilgin &lt;a href="https://github.com/complexbrains">https://github.com/complexbrains&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Once a new project is requested via the Issue Template (&lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml&lt;/a>) one of the admins has to provision the project on the cloud. Here is an example for such a request:&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png" alt="image">&lt;/p>
-&lt;h2 id="creating-new-user">Creating new user&lt;/h2>
-&lt;p>Login to Oracle Cloud: &lt;a href="https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack">https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack&lt;/a>&lt;/p>
-&lt;p>Open the menu and search for users, then open Users in Idendity:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157339416-1c6f3dcd-3d78-4613-81f1-a955badc3d28.png" alt="image">&lt;/p>
-&lt;p>then hit &amp;ldquo;Create User&amp;rdquo;&lt;/p>
-&lt;p>Change the selection to IAM User, add the user name as firstname_lastname and the same for description + add Email:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157339931-96380614-7e14-434d-a9d6-9821c7aa2463.png" alt="image">&lt;/p>
-&lt;p>hit create&lt;/p>
-&lt;p>Now, generate a password for the user by Clicking &amp;ldquo;Create/Reset Password&amp;rdquo;:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png" alt="image">&lt;/p>
-&lt;p>Copy this password and send it to the user you just created.&lt;/p>
-&lt;p>The new user has to follow this procedure: &lt;a href="http://brainhack.org/brainhack_cloud/docs/request">User request&lt;/a>&lt;/p>
-&lt;p>Add the User to the group &amp;ldquo;cloudshell-access&amp;rdquo;
-&lt;img src="https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png" alt="image">&lt;/p>
-&lt;p>Repeat this procedure for every user in the project.&lt;/p>
-&lt;h2 id="create-project-group">Create Project Group&lt;/h2>
-&lt;p>Go back to Identity and click &amp;ldquo;Create Group&amp;rdquo;
-&lt;img src="https://user-images.githubusercontent.com/4021595/157341864-5582074f-fa90-48f2-a2a5-deebb1a241dc.png" alt="image">&lt;/p>
-&lt;p>Give the group a name that represents the project (no spaces!) - as Description put the link to the github issue.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342047-92280e16-9518-4d04-a3be-796073d16c01.png" alt="image">&lt;/p>
-&lt;p>Then add the User(s) to the group:
-&lt;img src="https://user-images.githubusercontent.com/4021595/157342170-192e1e82-c1f7-46ed-a0f9-ec59bbe8de8e.png" alt="image">&lt;/p>
-&lt;h2 id="create-project-compartment">Create Project Compartment&lt;/h2>
-&lt;p>Go back to Identity and head to Compartments and click &amp;ldquo;Create Compartment&amp;rdquo;. Name it like the group just created and add the github issue link as description. Parent compartment is brainhack (root).
-&lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
-&lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
-&lt;p>Go back to Identity and click on Policies. Click &amp;ldquo;Create Policy&amp;rdquo;. Name the policy like the group and compartment just created. Description is the github issue link. You can either use the policy builder or switch to manual. The resulting policy needs to be &amp;ldquo;Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&amp;rdquo;
-&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p>
-&lt;h2 id="create-budget-for-compartment">Create Budget for compartment&lt;/h2>
-&lt;p>Budgets help us to control and monitor costs. For every compartment we need a budget with someone being alerted when things go crazy:&lt;/p>
-&lt;p>Go to Budgets under Cost Management and click &amp;ldquo;Create Budget&amp;rdquo;. Add the project details and add your email to the alert list.
-&lt;img src="https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Access permissions are controlled via Policies. If something is not working, it&amp;rsquo;s usually a missing policy. One important thing to note is that Policies can ONLY be applied to Groups, NOT Users!&lt;/p>
-&lt;h2 id="policy-for-cloud-shell-access">Policy for Cloud Shell access&lt;/h2>
-&lt;p>A new user can by default not open a Cloud Shell. To provide every user with this permission, we created a group called &amp;ldquo;cloudshell-access&amp;rdquo; and we add every user to this group. The group then has a Policy that allows opening a cloud shell: &lt;code>allow group cloudshell-access to use cloud-shell in tenancy&lt;/code>&lt;/p></description></item></channel></rss>
+&lt;/ul></description></item></channel></rss>
