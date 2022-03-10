@@ -11,8 +11,8 @@ All you have to do is to read through [our documentation](https://brainhack.org/
 
 Then the admins will review your request and arrange the credientials regarding your request. Et voilà! You will be the part of the Brainhack Cloud 🖧 :globe_with_meridians:
 
-![BrainhackLogo](https://github.com/brainhackorg/brainhack_cloud/tree/main/assets/images/brainhack_logo_200x200.png)  
-![OracleLogo](https://github.com/brainhackorg/brainhack_cloud/tree/main/assets/images/oracle_logo.png)
+![BrainhackLogo](https://raw.githubusercontent.com/brainhackorg/brainhack_cloud/main/assets/images/brainhack_logo_200x200.png)  
+![OracleLogo](https://raw.githubusercontent.com/brainhackorg/brainhack_cloud/main/assets/images/oracle_logo.png)
 
 
 
