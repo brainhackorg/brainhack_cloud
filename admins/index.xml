@@ -33,8 +33,8 @@ put the link to the github issue.&lt;/p>
 &lt;h2 id="create-project-compartment">Create Project Compartment&lt;/h2>
 &lt;p>Go back to &lt;code>Identity&lt;/code> and head to &lt;code>Compartments&lt;/code> and click &lt;code>Create Compartment&lt;/code>.
 Name it like the group just created and add the Github issue link as
-the description. Parent compartment is brainhack (root).&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png" alt="image">&lt;/p>
+the description. Parent compartment is &lt;code>projects&lt;/code> under &lt;code>brainhack (root)&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157600826-7056e58c-f4a6-4d12-b66f-13b6007b7095.png" alt="image">&lt;/p>
 &lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
 &lt;p>Go back to &lt;code>Identity&lt;/code> and click on &lt;code>Policies&lt;/code>. Click &lt;code>Create Policy&lt;/code>. Name the
 policy like the group and compartment just created. The description is the Github

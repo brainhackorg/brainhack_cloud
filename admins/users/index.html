@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://brainhack.org/brainhack_cloud/admins/users/"><meta property="article:section" content="admins">
-<meta property="article:modified_time" content="2022-03-09T16:39:21+00:00"><meta property="og:site_name" content="Brainhack cloud">
+<meta property="article:modified_time" content="2022-03-10T16:15:56+10:00"><meta property="og:site_name" content="Brainhack cloud">
 <meta itemprop=name content="Creating new users">
 <meta itemprop=description content="Creating new users
 ">
-<meta itemprop=dateModified content="2022-03-09T16:39:21+00:00">
-<meta itemprop=wordCount content="312">
+<meta itemprop=dateModified content="2022-03-10T16:15:56+10:00">
+<meta itemprop=wordCount content="314">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Creating new users">
 <meta name=twitter:description content="Creating new users
@@ -56,14 +56,14 @@
 <a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.d206414a850a0851d9f28a1daa45d268.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.5abac82cc997ee8aa14caf1fa3539c04.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.d206414a850a0851d9f28a1daa45d268.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.5abac82cc997ee8aa14caf1fa3539c04.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -99,14 +99,14 @@ one of the admins has to provision the project on the cloud.</p><p>Here is an ex
 and the same for description, and add an email.</p><p><img src=https://user-images.githubusercontent.com/4021595/157339931-96380614-7e14-434d-a9d6-9821c7aa2463.png alt=image></p><p>Hit <code>create</code>.</p><p>Now, generate a password for the user by Clicking <code>Create/Reset Password</code></p><p><img src=https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png alt=image></p><p>Copy this password and send it to the user you just created.</p><p>The new user has to follow this procedure: <a href=./../../docs/request>User request</a>.</p><p>Add the User to the group <code>cloudshell-access</code></p><p><img src=https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png alt=image></p><p>Repeat this procedure for every user in the project.</p><h2 id=create-project-group>Create Project Group</h2><p>Go back to Identity and click <code>Create Group</code></p><p><img src=https://user-images.githubusercontent.com/4021595/157341864-5582074f-fa90-48f2-a2a5-deebb1a241dc.png alt=image></p><p>Give the group a name that represents the project (no spaces!) - as Description
 put the link to the github issue.</p><p><img src=https://user-images.githubusercontent.com/4021595/157342047-92280e16-9518-4d04-a3be-796073d16c01.png alt=image></p><p>Then add the User(s) to the group.</p><p><img src=https://user-images.githubusercontent.com/4021595/157342170-192e1e82-c1f7-46ed-a0f9-ec59bbe8de8e.png alt=image></p><h2 id=create-project-compartment>Create Project Compartment</h2><p>Go back to <code>Identity</code> and head to <code>Compartments</code> and click <code>Create Compartment</code>.
 Name it like the group just created and add the Github issue link as
-the description. Parent compartment is brainhack (root).</p><p><img src=https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png alt=image></p><h2 id=create-policy-for-group-and-compartment>Create Policy for group and compartment</h2><p>Go back to <code>Identity</code> and click on <code>Policies</code>. Click <code>Create Policy</code>. Name the
+the description. Parent compartment is <code>projects</code> under <code>brainhack (root)</code>.</p><p><img src=https://user-images.githubusercontent.com/4021595/157600826-7056e58c-f4a6-4d12-b66f-13b6007b7095.png alt=image></p><h2 id=create-policy-for-group-and-compartment>Create Policy for group and compartment</h2><p>Go back to <code>Identity</code> and click on <code>Policies</code>. Click <code>Create Policy</code>. Name the
 policy like the group and compartment just created. The description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
 <code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME</code>.</p><p><img src=https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png alt=image></p><h2 id=create-budget-for-compartment>Create Budget for compartment</h2><p>Budgets help us to control and monitor costs. For every compartment, we need a
 budget with someone being alerted when things go crazy:</p><p>Go to <code>Budgets</code> under <code>Cost Management</code> and click <code>Create Budget</code>. Add the
 project details and add your email to the alert list.</p><p><img src=https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/8d6dd7964423842a7791da29c4655e69fb5624e6>Fix the typos (8d6dd79)</a>
+Last modified March 10, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/80bce5738c6381bd70e33ae219ab74f43ff16721>add projects under projects compartment (80bce57)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
