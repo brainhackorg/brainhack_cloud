@@ -1,102 +1,16 @@
-<!doctype html><html lang=en class=no-js>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<meta name=generator content="Hugo 0.93.3">
-<meta name=robots content="index, follow">
-<link rel="shortcut icon" href=/brainhack_cloud/favicons/favicon.ico>
-<link rel=apple-touch-icon href=/brainhack_cloud/favicons/apple-touch-icon-180x180.png sizes=180x180>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/favicon-16x16.png sizes=16x16>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/favicon-32x32.png sizes=32x32>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/android-36x36.png sizes=36x36>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/android-48x48.png sizes=48x48>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/android-72x72.png sizes=72x72>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/android-96x96.png sizes=96x96>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/android-144x144.png sizes=144x144>
-<link rel=icon type=image/png href=/brainhack_cloud/favicons/android-192x192.png sizes=192x192>
-<title>Virtual machines | Brainhack cloud</title><meta name=description content="Virtual Machines
-">
-<meta property="og:title" content="Virtual machines">
-<meta property="og:description" content="Virtual Machines
-">
-<meta property="og:type" content="article">
-<meta property="og:url" content="http://brainhack.org/brainhack_cloud/tutorials/vm/"><meta property="article:section" content="tutorials">
-<meta property="article:modified_time" content="2022-03-09T16:39:21+00:00"><meta property="og:site_name" content="Brainhack cloud">
-<meta itemprop=name content="Virtual machines">
-<meta itemprop=description content="Virtual Machines
-">
-<meta itemprop=dateModified content="2022-03-09T16:39:21+00:00">
-<meta itemprop=wordCount content="419">
-<meta itemprop=keywords content><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Virtual machines">
-<meta name=twitter:description content="Virtual Machines
-">
-<link rel=preload href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css as=style>
-<link href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css rel=stylesheet integrity>
-<script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
+<!doctype html><html lang=en class=no-js><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=generator content="Hugo 0.94.0"><meta name=robots content="index, follow"><link rel="shortcut icon" href=/brainhack_cloud/favicons/favicon.ico><link rel=apple-touch-icon href=/brainhack_cloud/favicons/apple-touch-icon-180x180.png sizes=180x180><link rel=icon type=image/png href=/brainhack_cloud/favicons/favicon-16x16.png sizes=16x16><link rel=icon type=image/png href=/brainhack_cloud/favicons/favicon-32x32.png sizes=32x32><link rel=icon type=image/png href=/brainhack_cloud/favicons/android-36x36.png sizes=36x36><link rel=icon type=image/png href=/brainhack_cloud/favicons/android-48x48.png sizes=48x48><link rel=icon type=image/png href=/brainhack_cloud/favicons/android-72x72.png sizes=72x72><link rel=icon type=image/png href=/brainhack_cloud/favicons/android-96x96.png sizes=96x96><link rel=icon type=image/png href=/brainhack_cloud/favicons/android-144x144.png sizes=144x144><link rel=icon type=image/png href=/brainhack_cloud/favicons/android-192x192.png sizes=192x192><title>Virtual machines | Brainhack cloud</title><meta name=description content="Virtual Machines
+"><meta property="og:title" content="Virtual machines"><meta property="og:description" content="Virtual Machines
+"><meta property="og:type" content="article"><meta property="og:url" content="http://brainhack.org/brainhack_cloud/tutorials/vm/"><meta property="article:section" content="tutorials"><meta property="article:modified_time" content="2022-03-09T16:39:21+00:00"><meta property="og:site_name" content="Brainhack cloud"><meta itemprop=name content="Virtual machines"><meta itemprop=description content="Virtual Machines
+"><meta itemprop=dateModified content="2022-03-09T16:39:21+00:00"><meta itemprop=wordCount content="419"><meta itemprop=keywords content><meta name=twitter:card content="summary"><meta name=twitter:title content="Virtual machines"><meta name=twitter:description content="Virtual Machines
+"><link rel=preload href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css as=style><link href=/brainhack_cloud/scss/main.min.52773296b3a3ec3e7509529d321bbafb5c33e36749ede1eb0e5731859305cdf2.css rel=stylesheet integrity><script src=https://code.jquery.com/jquery-3.6.0.min.js integrity=sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK crossorigin=anonymous></script>
 <script src=https://unpkg.com/lunr@2.3.9/lunr.min.js integrity=sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli crossorigin=anonymous></script>
-<link rel=stylesheet href=/brainhack_cloud/css/prism.css>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-00000000-0","auto"),ga("send","pageview"))</script>
-<script async src=https://www.google-analytics.com/analytics.js></script>
-</head><body class=td-page>
-<header>
-<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
-<a class=navbar-brand href=/brainhack_cloud/>
-<span class=navbar-logo></span><span class=font-weight-bold>Brainhack cloud</span>
-</a>
-<div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar>
-<ul class="navbar-nav mt-2 mt-lg-0">
-<li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class="nav-link active" href=/brainhack_cloud/tutorials/><span class=active>Tutorials</span></a>
-</li><li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/brainhack_cloud/docs/><span>Documentation</span></a>
-</li><li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/brainhack_cloud/admins/><span>Admins</span></a>
-</li><li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
-</li><li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.d1596a1052b55b5d025c8a5488187df3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
-</div></nav></header><div class="container-fluid td-outer">
-<div class=td-main>
-<div class="row flex-xl-nowrap">
-<aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-<div id=td-sidebar-menu class=td-sidebar__inner>
-<form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.d1596a1052b55b5d025c8a5488187df3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
-<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
-</button>
-</form><nav class="collapse td-sidebar-nav" id=td-section-nav>
-<ul class="td-sidebar-nav__section pr-md-3 ul-0">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-brainhack_cloudtutorials-li>
-<a href=/brainhack_cloud/tutorials/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-brainhack_cloudtutorials><span>Tutorials</span></a>
-<ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-brainhack_cloudtutorialsvm-li>
-<a href=/brainhack_cloud/tutorials/vm/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsvm><span class=td-sidebar-nav-active-item>Virtual machines</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialsobject_storage-li>
-<a href=/brainhack_cloud/tutorials/object_storage/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsobject_storage><span>Object Storage</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialsnotebooks-li>
-<a href=/brainhack_cloud/tutorials/notebooks/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsnotebooks><span>Notebooks</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialsgh_runner-li>
-<a href=/brainhack_cloud/tutorials/gh_runner/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsgh_runner><span>Github action runner</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialshpc-li>
-<a href=/brainhack_cloud/tutorials/hpc/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialshpc><span>HPC</span></a>
-</li></ul></li></ul></nav></div></aside><aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
-<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href=https://github.com/brainhackorg/brainhack_cloud/tree/main/content/en/tutorials/vm.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+<link rel=stylesheet href=/brainhack_cloud/css/prism.css><script type=application/javascript>var doNotTrack=!1;doNotTrack||(window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-00000000-0","auto"),ga("send","pageview"))</script><script async src=https://www.google-analytics.com/analytics.js></script></head><body class=td-page><header><nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar"><a class=navbar-brand href=/brainhack_cloud/><span class=navbar-logo></span><span class=font-weight-bold>Brainhack cloud</span></a><div class="td-navbar-nav-scroll ml-md-auto" id=main_navbar><ul class="navbar-nav mt-2 mt-lg-0"><li class="nav-item mr-4 mb-2 mb-lg-0"><a class="nav-link active" href=/brainhack_cloud/tutorials/><span class=active>Tutorials</span></a></li><li class="nav-item mr-4 mb-2 mb-lg-0"><a class=nav-link href=/brainhack_cloud/docs/><span>Documentation</span></a></li><li class="nav-item mr-4 mb-2 mb-lg-0"><a class=nav-link href=/brainhack_cloud/admins/><span>Admins</span></a></li><li class="nav-item mr-4 mb-2 mb-lg-0"><a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a></li><li class="nav-item mr-4 mb-2 mb-lg-0"><a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a></li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.8189bc72955738ef43760e008db3e217.json data-offline-search-base-href=/ data-offline-search-max-results=10></div></nav></header><div class="container-fluid td-outer"><div class=td-main><div class="row flex-xl-nowrap"><aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none"><div id=td-sidebar-menu class=td-sidebar__inner><form class="td-sidebar__search d-flex align-items-center"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.8189bc72955738ef43760e008db3e217.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation"></button></form><nav class="collapse td-sidebar-nav" id=td-section-nav><ul class="td-sidebar-nav__section pr-md-3 ul-0"><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-brainhack_cloudtutorials-li><a href=/brainhack_cloud/tutorials/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-brainhack_cloudtutorials><span>Tutorials</span></a><ul class=ul-1><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-brainhack_cloudtutorialsvm-li><a href=/brainhack_cloud/tutorials/vm/ class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsvm><span class=td-sidebar-nav-active-item>Virtual machines</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialsobject_storage-li><a href=/brainhack_cloud/tutorials/object_storage/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsobject_storage><span>Object Storage</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialsnotebooks-li><a href=/brainhack_cloud/tutorials/notebooks/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsnotebooks><span>Notebooks</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialsgh_runner-li><a href=/brainhack_cloud/tutorials/gh_runner/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialsgh_runner><span>Github action runner</span></a></li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-brainhack_cloudtutorialshpc-li><a href=/brainhack_cloud/tutorials/hpc/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-brainhack_cloudtutorialshpc><span>HPC</span></a></li></ul></li></ul></nav></div></aside><aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none"><div class="td-page-meta ml-2 pb-1 pt-2 mb-0"><a href=https://github.com/brainhackorg/brainhack_cloud/tree/main/content/en/tutorials/vm.md class=td-page-meta--view target=_blank rel=noopener><i class="fa fa-file-alt fa-fw"></i> View page source</a>
 <a href=https://github.com/brainhackorg/brainhack_cloud/edit/main/content/en/tutorials/vm.md class=td-page-meta--edit target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Edit this page</a>
 <a href="https://github.com/brainhackorg/brainhack_cloud/new/main/content/en/tutorials/vm.md?filename=change-me.md&value=---%0Atitle%3A+%22Long+Page+Title%22%0AlinkTitle%3A+%22Short+Nav+Title%22%0Aweight%3A+100%0Adescription%3A+%3E-%0A+++++Page+description+for+heading+and+indexes.%0A---%0A%0A%23%23+Heading%0A%0AEdit+this+template+to+create+your+new+page.%0A%0A%2A+Give+it+a+good+name%2C+ending+in+%60.md%60+-+e.g.+%60getting-started.md%60%0A%2A+Edit+the+%22front+matter%22+section+at+the+top+of+the+page+%28weight+controls+how+its+ordered+amongst+other+pages+in+the+same+directory%3B+lowest+number+first%29.%0A%2A+Add+a+good+commit+message+at+the+bottom+of+the+page+%28%3C80+characters%3B+use+the+extended+description+field+for+more+detail%29.%0A%2A+Create+a+new+branch+so+you+can+preview+your+new+file+and+request+a+review+via+Pull+Request.%0A" class=td-page-meta--child target=_blank rel=noopener><i class="fa fa-edit fa-fw"></i> Create child page</a>
 <a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?title=Virtual%20machines" class=td-page-meta--issue target=_blank rel=noopener><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
 <a href=https://github.com/brainhackorg/brainhack_cloud/issues/new class=td-page-meta--project-issue target=_blank rel=noopener><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
-<a id=print href=http://brainhack.org/brainhack_cloud/tutorials/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a>
-</div><div class=td-toc><nav id=TableOfContents>
-<ul>
-<li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a>
-<ul>
-<li><a href=#selecting-an-image-and-a-shape>Selecting an image and a shape</a></li><li><a href=#create-a-public-key>Create a public key</a></li><li><a href=#disk-size>Disk size</a></li><li><a href=#create-the-vm>Create the VM</a></li></ul></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li><li><a href=#terminate-the-instance>Terminate the instance</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
-<div class=td-content>
-<h1>Virtual machines</h1><div class=lead>Virtual Machines</div><header class=article-meta>
-</header><h2 id=overview>Overview</h2><p>Running a Virtual machine on the Oracle cloud is the basis for many other
+<a id=print href=http://brainhack.org/brainhack_cloud/tutorials/_print/><i class="fa fa-print fa-fw"></i> Print entire section</a></div><div class=td-toc><nav id=TableOfContents><ul><li><a href=#overview>Overview</a></li><li><a href=#setup>Setup</a><ul><li><a href=#selecting-an-image-and-a-shape>Selecting an image and a shape</a></li><li><a href=#create-a-public-key>Create a public key</a></li><li><a href=#disk-size>Disk size</a></li><li><a href=#create-the-vm>Create the VM</a></li></ul></li><li><a href=#connect-to-instance>Connect to Instance</a></li><li><a href=#expand-disk>Expand disk</a></li><li><a href=#terminate-the-instance>Terminate the instance</a></li></ul></nav></div></aside><main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main><div class=td-content><h1>Virtual machines</h1><div class=lead>Virtual Machines</div><header class=article-meta></header><h2 id=overview>Overview</h2><p>Running a Virtual machine on the Oracle cloud is the basis for many other
 things.</p><h2 id=setup>Setup</h2><p>Make sure you selected the geographic region where you would like to create the
 resource.</p><p>Here I create it in the Home Region.</p><p><img src=https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png alt=image></p><p>Head to <code>Compute -> Instances</code></p><p><img src=https://user-images.githubusercontent.com/4021595/157349177-12c719c9-0285-489f-9e42-9d6b82b520c0.png alt=image></p><p>Check that you selected YOUR project compartment (testproject, is the example
 here - but you need to change this!) and click <code>Create Instance</code></p><p><img src=https://user-images.githubusercontent.com/4021595/157349261-28eb8f1e-44ff-4939-9ec5-af8e1b37b90c.png alt=image></p><h3 id=selecting-an-image-and-a-shape>Selecting an image and a shape</h3><p>You can name the instance and then select an Image (Oracle Linux is a good
@@ -104,9 +18,7 @@ starting point as it has many tools installed that make it work very well on the
 Cloud) and select a Shape.</p><p><img src=https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png alt=image></p><p>VM.Standard.E4.Flex is a good starting point</p><p><img src=https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png alt=image></p><p>The network setup has sensible defaults to start with</p><p><img src=https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png alt=image></p><p>Paste a public key to access this VM.</p><h3 id=create-a-public-key>Create a public key</h3><p>If you don&rsquo;t have a public key yet - this is how you can create one (for example in
 the cloudshell)</p><p>Open the Cloud Shell (this will take a few seconds the first time)</p><p><img src=https://user-images.githubusercontent.com/4021595/157349825-f77d4e77-aba9-4578-beb8-fde536332d5b.png alt=image></p><p>Run <code>ssh-keygen</code> to create private/public key pairs (the defaults are sensible,
 so just hit <code>Enter</code> a few times)</p><p><img src=https://user-images.githubusercontent.com/4021595/157350101-0b01d89a-f839-473d-8d6e-6c312e1cfb16.png alt=image></p><p>Now print the public key with <code>cat ~/.ssh/id_rsa.pub</code> and copy it to the
-clipboard.</p><p><img src=https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png alt=image></p><div class="alert alert-warning" role=alert>
-<h4 class=alert-heading>Warning</h4>Never share the private key with anyone, which is in <code>id_rsa</code>!
-</div><p>Paste it in the Add SSH keys section</p><p><img src=https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png alt=image></p><h3 id=disk-size>Disk size</h3><p>You can specify a custom boot volume size, but you can also increase this easily
+clipboard.</p><p><img src=https://user-images.githubusercontent.com/4021595/157350191-67f4bc21-5c62-4b28-b2e0-3076cec65c60.png alt=image></p><div class="alert alert-warning" role=alert><h4 class=alert-heading>Warning</h4>Never share the private key with anyone, which is in <code>id_rsa</code>!</div><p>Paste it in the Add SSH keys section</p><p><img src=https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png alt=image></p><h3 id=disk-size>Disk size</h3><p>You can specify a custom boot volume size, but you can also increase this easily
 later.</p><p><strong>Note:</strong> it&rsquo;s not possible to shrink a volume! Only increasing the size is
 possible, so start small and increase when needed).</p><p>The rest of the defaults are
 sensible.</p><p><img src=https://user-images.githubusercontent.com/4021595/157350468-7eac6e01-bbc7-48e3-9fbd-fc0ac01b2476.png alt=image></p><h3 id=create-the-vm>Create the VM</h3><p>This will now create the machine.</p><p><img src=https://user-images.githubusercontent.com/4021595/157350580-aaf564d0-8619-4122-82be-12bce8b3c47d.png alt=image></p><h2 id=connect-to-instance>Connect to Instance</h2><p>You can now use an SSH client on your computer to connect to the Instance, or
@@ -115,43 +27,8 @@ the cloudshell.</p><p>You find the connection details in.</p><p><img src=https:/
 </span></span><span style=display:flex><span><span style=color:#204a87>echo</span> <span style=color:#4e9a06>&#34;1&#34;</span> <span style=color:#000;font-weight:700>|</span> sudo tee /sys/class/block/<span style=color:#4e9a06>`</span>readlink /dev/oracleoci/oraclevda <span style=color:#000;font-weight:700>|</span> cut -d<span style=color:#4e9a06>&#39;/&#39;</span> -f 2<span style=color:#4e9a06>`</span>/device/rescan
 </span></span><span style=display:flex><span>sudo /usr/libexec/oci-growfs -y
 </span></span></code></pre></div><p><img src=https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png alt=image></p><p>Now it&rsquo;s using the full volume.</p><p><img src=https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png alt=image></p><h2 id=terminate-the-instance>Terminate the instance</h2><p>If you don&rsquo;t need the machine anymore, you can <code>Stop</code> it or <code>Terminate</code> it</p><p><img src=https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png alt=image></p><p>To cleanup the storage as well, you can select
-<code>Permanently delete the attached boot volume</code> and click <code>Terminate Instance</code>.</p><p><img src=https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/8d6dd7964423842a7791da29c4655e69fb5624e6>Fix the typos (8d6dd79)</a>
-</div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
-<div class="container-fluid mx-sm-5">
-<div class=row>
-<div class="col-6 col-sm-4 text-xs-center order-sm-2">
-<ul class="list-inline mb-0">
-<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title aria-label>
-<a class=text-white target=_blank rel=noopener href aria-label>
-<i></i>
-</a>
-</li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter>
-<a class=text-white target=_blank rel=noopener href=https://twitter.com/brainhackorg aria-label=Twitter>
-<i class="fab fa-twitter"></i>
-</a>
-</li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title aria-label>
-<a class=text-white target=_blank rel=noopener href aria-label>
-<i></i>
-</a>
-</li></ul></div><div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
-<ul class="list-inline mb-0">
-<li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub>
-<a class=text-white target=_blank rel=noopener href=https://github.com/brainhackorg/brainhack_cloud aria-label=GitHub>
-<i class="fab fa-github"></i>
-</a>
-</li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title aria-label>
-<a class=text-white target=_blank rel=noopener href aria-label>
-<i></i>
-</a>
-</li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Dicussion Forum (requires github login)" aria-label="Dicussion Forum (requires github login)">
-<a class=text-white target=_blank rel=noopener href=https://github.com/brainhackorg/brainhack_cloud/discussions aria-label="Dicussion Forum (requires github login)">
-<i class="fa fa-envelope"></i>
-</a>
-</li></ul></div><div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-</div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
+<code>Permanently delete the attached boot volume</code> and click <code>Terminate Instance</code>.</p><p><img src=https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">Last modified March 9, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/8d6dd7964423842a7791da29c4655e69fb5624e6>Fix the typos (8d6dd79)</a></div></div></main></div></div><footer class="bg-dark py-5 row d-print-none"><div class="container-fluid mx-sm-5"><div class=row><div class="col-6 col-sm-4 text-xs-center order-sm-2"><ul class="list-inline mb-0"><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title aria-label><a class=text-white target=_blank rel=noopener href aria-label><i></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=Twitter aria-label=Twitter><a class=text-white target=_blank rel=noopener href=https://twitter.com/brainhackorg aria-label=Twitter><i class="fab fa-twitter"></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title aria-label><a class=text-white target=_blank rel=noopener href aria-label><i></i></a></li></ul></div><div class="col-6 col-sm-4 text-right text-xs-center order-sm-3"><ul class="list-inline mb-0"><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title=GitHub aria-label=GitHub><a class=text-white target=_blank rel=noopener href=https://github.com/brainhackorg/brainhack_cloud aria-label=GitHub><i class="fab fa-github"></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title aria-label><a class=text-white target=_blank rel=noopener href aria-label><i></i></a></li><li class="list-inline-item mx-2 h3" data-toggle=tooltip data-placement=top title="Dicussion Forum (requires github login)" aria-label="Dicussion Forum (requires github login)"><a class=text-white target=_blank rel=noopener href=https://github.com/brainhackorg/brainhack_cloud/discussions aria-label="Dicussion Forum (requires github login)"><i class="fa fa-envelope"></i></a></li></ul></div><div class="col-12 col-sm-4 text-center py-2 order-sm-2"></div></div></div></footer></div><script src=https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js integrity=sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN crossorigin=anonymous></script>
 <script src=https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin=anonymous></script>
 <script src=/brainhack_cloud/js/tabpane-persist.js></script>
 <script src=/brainhack_cloud/js/main.min.629995429455cc331313ac82f6d5d306b673a13894792ff3fef399a5cac5b87e.js integrity="sha256-YpmVQpRVzDMTE6yC9tXTBrZzoTiUeS/z/vOZpcrFuH4=" crossorigin=anonymous></script>
-<script src=/brainhack_cloud/js/prism.js></script>
-</body></html>
+<script src=/brainhack_cloud/js/prism.js></script></body></html>
