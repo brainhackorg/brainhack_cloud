@@ -18,3 +18,4 @@ https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle
 - Remi Gau https://github.com/Remi-Gau
 - Steffen Bollmann https://github.com/stebo85
 - Isil Bilgin https://github.com/complexbrains
+- Samuel Guay https://github.com/SamGuay
