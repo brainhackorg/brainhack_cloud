@@ -44,10 +44,10 @@ resulting policy needs to be
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p>
 &lt;h2 id="create-budget-for-compartment">Create Budget for compartment&lt;/h2>
 &lt;p>Budgets help us to control and monitor costs. For every compartment, we need a
-budget with someone being alerted when things go crazy:&lt;/p>
+budget with someone being alerted when things go wrong:&lt;/p>
 &lt;p>Go to &lt;code>Budgets&lt;/code> under &lt;code>Cost Management&lt;/code> and click &lt;code>Create Budget&lt;/code>. Add the
-project details and add your email to the alert list.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
+project details, set the Budget to &lt;code>1000&lt;/code> AUD, switch to &lt;code>Forecast Spend&lt;/code> and sset a threshold of &lt;code>100&lt;/code>% and add your email to the alert list + a second admin as backup.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Access permissions are controlled via Policies. If something is not working,
 it&amp;rsquo;s usually a missing policy. One important thing to note is that Policies can

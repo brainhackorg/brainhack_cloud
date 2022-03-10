@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="http://brainhack.org/brainhack_cloud/admins/users/"><meta property="article:section" content="admins">
-<meta property="article:modified_time" content="2022-03-10T16:15:56+10:00"><meta property="og:site_name" content="Brainhack cloud">
+<meta property="article:modified_time" content="2022-03-10T16:23:11+10:00"><meta property="og:site_name" content="Brainhack cloud">
 <meta itemprop=name content="Creating new users">
 <meta itemprop=description content="Creating new users
 ">
-<meta itemprop=dateModified content="2022-03-10T16:15:56+10:00">
-<meta itemprop=wordCount content="314">
+<meta itemprop=dateModified content="2022-03-10T16:23:11+10:00">
+<meta itemprop=wordCount content="336">
 <meta itemprop=keywords content><meta name=twitter:card content="summary">
 <meta name=twitter:title content="Creating new users">
 <meta name=twitter:description content="Creating new users
@@ -56,14 +56,14 @@
 <a class=nav-link href=https://github.com/brainhackorg/brainhack_cloud target=_blank><i class="fab fa-github"></i><span>GitHub</span></a>
 </li><li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://twitter.com/brainhackorg target=_blank><i class="fab fa-twitter"></i><span>News/Twitter</span></a>
-</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.5abac82cc997ee8aa14caf1fa3539c04.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+</li></ul></div><div class="navbar-nav d-none d-lg-block"><input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.d1596a1052b55b5d025c8a5488187df3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 </div></nav></header><div class="container-fluid td-outer">
 <div class=td-main>
 <div class="row flex-xl-nowrap">
 <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
 <div id=td-sidebar-menu class=td-sidebar__inner>
 <form class="td-sidebar__search d-flex align-items-center">
-<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.5abac82cc997ee8aa14caf1fa3539c04.json data-offline-search-base-href=/ data-offline-search-max-results=10>
+<input type=search class="form-control td-search-input" placeholder="&#xf002; Search this site…" aria-label="Search this site…" autocomplete=off data-offline-search-index-json-src=/brainhack_cloud/offline-search-index.d1596a1052b55b5d025c8a5488187df3.json data-offline-search-base-href=/ data-offline-search-max-results=10>
 <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type=button data-toggle=collapse data-target=#td-section-nav aria-controls=td-docs-nav aria-expanded=false aria-label="Toggle section navigation">
 </button>
 </form><nav class="collapse td-sidebar-nav" id=td-section-nav>
@@ -104,9 +104,9 @@ policy like the group and compartment just created. The description is the Githu
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
 <code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME</code>.</p><p><img src=https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png alt=image></p><h2 id=create-budget-for-compartment>Create Budget for compartment</h2><p>Budgets help us to control and monitor costs. For every compartment, we need a
-budget with someone being alerted when things go crazy:</p><p>Go to <code>Budgets</code> under <code>Cost Management</code> and click <code>Create Budget</code>. Add the
-project details and add your email to the alert list.</p><p><img src=https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
-Last modified March 10, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/80bce5738c6381bd70e33ae219ab74f43ff16721>add projects under projects compartment (80bce57)</a>
+budget with someone being alerted when things go wrong:</p><p>Go to <code>Budgets</code> under <code>Cost Management</code> and click <code>Create Budget</code>. Add the
+project details, set the Budget to <code>1000</code> AUD, switch to <code>Forecast Spend</code> and sset a threshold of <code>100</code>% and add your email to the alert list + a second admin as backup.</p><p><img src=https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png alt=image></p><div class="text-muted mt-5 pt-3 border-top">
+Last modified March 10, 2022: <a href=https://github.com/brainhackorg/brainhack_cloud/commit/f233c08b627fb8b7c0c728310c0aadd6982e2fb0>adjusted budget section to new compartment structure (f233c08)</a>
 </div></div></main></div></div><footer class="bg-dark py-5 row d-print-none">
 <div class="container-fluid mx-sm-5">
 <div class=row>
