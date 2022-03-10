@@ -56,7 +56,9 @@ ONLY be applied to Groups, NOT to the Users!&lt;/p>
 &lt;p>By default, a new user cannot open a Cloud Shell. To provide every user with
 this permission, we created a group called &amp;ldquo;cloudshell-access&amp;rdquo; and we add every
 user to this group. The group then has a Policy that allows opening a cloud
-shell: &lt;code>allow group cloudshell-access to use cloud-shell in tenancy&lt;/code>&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
+shell: &lt;code>allow group cloudshell-access to use cloud-shell in tenancy&lt;/code>&lt;/p></description></item><item><title>Admins: Resources</title><link>http://brainhack.org/brainhack_cloud/admins/resources/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/resources/</guid><description>
+&lt;p>By default, every tenancy has strict resource limits. These make sure that the right resources are available in the datacenters where they are requested. An overview of which resources are available where can be found here:
+&lt;a href="https://www.oracle.com/cloud/data-regions/#northamerica">https://www.oracle.com/cloud/data-regions/#northamerica&lt;/a>&lt;/p></description></item><item><title>Admins: Team</title><link>http://brainhack.org/brainhack_cloud/admins/team/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/team/</guid><description>
 &lt;p>We applied for funding this project with Oracle Cloud for Research and the
 project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of
 January, 2024.&lt;/p>
