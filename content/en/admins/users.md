@@ -85,9 +85,10 @@ resulting policy needs to be
 ## Create Budget for compartment
 
 Budgets help us to control and monitor costs. For every compartment, we need a
-budget with someone being alerted when things go crazy:
+budget with someone being alerted when things go wrong:
 
 Go to `Budgets` under `Cost Management` and click `Create Budget`. Add the
-project details and add your email to the alert list.
+project details, set the Budget to `1000` AUD, switch to `Forecast Spend` and sset a threshold of `100`% and add your email to the alert list + a second admin as backup.
 
-![image](https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png)
+![image](https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png)
+
