@@ -40,8 +40,8 @@ the description. Parent compartment is &lt;code>projects&lt;/code> under &lt;cod
 policy like the group and compartment just created. The description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
-&lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment projects:REPALCEWITHCOMPARTMENTNAME&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157774242-ec9e80a0-b39e-40a7-a230-e7189f8c265a.png" alt="image">&lt;/p>
+&lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&lt;/code>. Make sure that the compartment &amp;ldquo;projects&amp;rdquo; is selected because we want this policy on the projects level (not in root!).&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157776607-e88b38db-cae2-4593-8785-50c34e39e479.png" alt="image">&lt;/p>
 &lt;h2 id="create-budget-for-compartment">Create Budget for compartment&lt;/h2>
 &lt;p>Budgets help us to control and monitor costs. For every compartment, we need a
 budget with someone being alerted when things go wrong:&lt;/p>
