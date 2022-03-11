@@ -78,9 +78,9 @@ Go back to `Identity` and click on `Policies`. Click `Create Policy`. Name the
 policy like the group and compartment just created. The description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
-`Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment projects:REPALCEWITHCOMPARTMENTNAME`.
+`Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`. Make sure that the compartment "projects" is selected because we want this policy on the projects level (not in root!).
 
-![image](https://user-images.githubusercontent.com/4021595/157774242-ec9e80a0-b39e-40a7-a230-e7189f8c265a.png)
+![image](https://user-images.githubusercontent.com/4021595/157776607-e88b38db-cae2-4593-8785-50c34e39e479.png)
 
 ## Create Budget for compartment
 
