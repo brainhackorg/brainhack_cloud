@@ -80,7 +80,7 @@ You can specify a custom boot volume size, but you can also increase this easily
 later.
 
 **Note:** it's not possible to shrink a volume! Only increasing the size is
-possible, so start small and increase when needed).
+possible, so start small and increase when needed. Increasing the size is even possible while the instance is running and will not interrupt your work :)
 
 The rest of the defaults are
 sensible.
