@@ -5,7 +5,7 @@ name: Request resource access
 
 description: Fill in this template to ask for specific resources
 
-labels: ["resource_request"]
+labels: ["resource_request :heavy_dollar_sign:"]
 
 # assignees:
 #   - octocat
