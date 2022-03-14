@@ -5,6 +5,7 @@
 one of the admins has to provision the project on the cloud.&lt;/p>
 &lt;p>Here is an example for such a request:&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png" alt="image">&lt;/p>
+&lt;p>Once such a request comes in, assign it to yourself so that other people know that you are working on it! Then continue &amp;hellip;&lt;/p>
 &lt;h2 id="creating-a-new-user">Creating a new user&lt;/h2>
 &lt;p>Login to Oracle Cloud:
 &lt;a href="https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack">https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack&lt;/a>&lt;/p>
