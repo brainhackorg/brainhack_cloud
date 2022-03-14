@@ -16,6 +16,8 @@ Here is an example for such a request:
 
 ![image](https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png)
 
+Once such a request comes in, assign it to yourself so that other people know that you are working on it! Then continue ...
+
 ## Creating a new user
 
 Login to Oracle Cloud:
