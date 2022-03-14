@@ -39,7 +39,7 @@ the description. Parent compartment is &lt;code>projects&lt;/code> under &lt;cod
 &lt;h2 id="create-policy-for-group-and-compartment">Create Policy for group and compartment&lt;/h2>
 &lt;p>Go back to &lt;code>Identity&lt;/code> and click on &lt;code>Policies&lt;/code>. Click &lt;code>Create Policy&lt;/code>. Name the
 policy like the group and compartment just created. The description is the Github
-issue link. You can either use the policy builder or switch to manual. The
+issue link. You can either use the policy builder (Compartment Management -&amp;gt; Let compartment admins manage the compartment) or switch to manual. The
 resulting policy needs to be
 &lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&lt;/code>. Make sure that the compartment &amp;ldquo;projects&amp;rdquo; is selected because we want this policy on the projects level (not in root!).&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157776607-e88b38db-cae2-4593-8785-50c34e39e479.png" alt="image">&lt;/p>
