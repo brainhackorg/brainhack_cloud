@@ -78,7 +78,7 @@ the description. Parent compartment is `projects` under `brainhack (root)`.
 
 Go back to `Identity` and click on `Policies`. Click `Create Policy`. Name the
 policy like the group and compartment just created. The description is the Github
-issue link. You can either use the policy builder or switch to manual. The
+issue link. You can either use the policy builder (Compartment Management -> Let compartment admins manage the compartment) or switch to manual. The
 resulting policy needs to be
 `Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`. Make sure that the compartment "projects" is selected because we want this policy on the projects level (not in root!).
 
