@@ -41,7 +41,7 @@ body:
   - type: textarea
     attributes:
       label: People involved
-      description: Add the full name of the people involved in the project with Github IDs and email address.
+      description: Add the full name of the people involved in the project with Github IDs and a contact email (we need to send a registration email). If an email cannot be provided, please add a link to the department website where we could find an email address.
     validations:
       required: true
 
