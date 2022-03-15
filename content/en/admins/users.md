@@ -44,6 +44,24 @@ Copy this password and send it to the user you just created.
 
 The new user has to follow this procedure: [User request](./../../docs/request).
 
+
+Here is an email template:
+```
+Subject: Temporary Password for Oracle Cloud
+Text: 
+Dear REPLACEWITHUSER,
+
+This is your temporary password to activate your Oracle Cloud account. You should have an email in your inbox/spam folder with an activation link.
+
+PASTEPASSWORDHERE
+
+Please follow the rest of the instructions here to activate your account: https://brainhack.org/brainhack_cloud/docs/request/#activate-your-account
+
+All the best
+REPLACEWITHYOURNAME
+```
+
+
 Add the User to the group `cloudshell-access`
 
 ![image](https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png)
