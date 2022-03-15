@@ -90,7 +90,7 @@ Budgets help us to control and monitor costs. For every compartment, we need a
 budget with someone being alerted when things go wrong:
 
 Go to `Budgets` under `Cost Management` and click `Create Budget`. Add the
-project details, set the Budget to `1000` AUD, switch to `Forecast Spend` and sset a threshold of `100`% and add your email to the alert list + a second admin as backup.
+project details (name and issue link as description), set the Budget to `1000` AUD, switch to `Forecast Spend` and set a threshold of `100`% and add your email to the alert list + a second admin as backup.
 
 ![image](https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png)
 
