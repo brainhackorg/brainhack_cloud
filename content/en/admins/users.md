@@ -94,3 +94,7 @@ project details (name and issue link as description), set the Budget to `1000` A
 
 ![image](https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png)
 
+
+## Cleanup
+
+Go back to the Github issue and let the project know that everything is setup and close the issue.
