@@ -47,7 +47,7 @@ resulting policy needs to be
 &lt;p>Budgets help us to control and monitor costs. For every compartment, we need a
 budget with someone being alerted when things go wrong:&lt;/p>
 &lt;p>Go to &lt;code>Budgets&lt;/code> under &lt;code>Cost Management&lt;/code> and click &lt;code>Create Budget&lt;/code>. Add the
-project details, set the Budget to &lt;code>1000&lt;/code> AUD, switch to &lt;code>Forecast Spend&lt;/code> and sset a threshold of &lt;code>100&lt;/code>% and add your email to the alert list + a second admin as backup.&lt;/p>
+project details (name and issue link as description), set the Budget to &lt;code>1000&lt;/code> AUD, switch to &lt;code>Forecast Spend&lt;/code> and set a threshold of &lt;code>100&lt;/code>% and add your email to the alert list + a second admin as backup.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png" alt="image">&lt;/p></description></item><item><title>Admins: Setting up policies</title><link>http://brainhack.org/brainhack_cloud/admins/policies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/policies/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Access permissions are controlled via Policies. If something is not working,
