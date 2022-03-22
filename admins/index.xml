@@ -1,9 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new admins</title><link>http://brainhack.org/brainhack_cloud/admins/admins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/admins/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>To increase security of our cloud tenancy an admin cannot create or remove admins from their roles.&lt;/p>
-&lt;p>If you have this role, than this is the instruction for the admin-administrator to create new admin accounts:&lt;/p>
-&lt;h2 id="create-new-admin">Create new admin&lt;/h2>
-&lt;p>Admins need to use a &amp;ldquo;federated account&amp;rdquo; to login to the cloud instead of &amp;ldquo;local accounts&amp;rdquo;.&lt;/p></description></item><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Brainhack cloud – Admins</title><link>http://brainhack.org/brainhack_cloud/admins/</link><description>Recent content in Admins on Brainhack cloud</description><generator>Hugo -- gohugo.io</generator><atom:link href="http://brainhack.org/brainhack_cloud/admins/index.xml" rel="self" type="application/rss+xml"/><item><title>Admins: Creating new users</title><link>http://brainhack.org/brainhack_cloud/admins/users/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/users/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Once a new project is requested via the
 &lt;a href="https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&amp;amp;labels=resource_request&amp;amp;template=request-resource-access.yml">Issue Template&lt;/a>
@@ -91,4 +86,19 @@ January, 2024.&lt;/p>
 &lt;li>Steffen Bollmann &lt;a href="https://github.com/stebo85">https://github.com/stebo85&lt;/a>&lt;/li>
 &lt;li>Isil Bilgin &lt;a href="https://github.com/complexbrains">https://github.com/complexbrains&lt;/a>&lt;/li>
 &lt;li>Samuel Guay &lt;a href="https://github.com/SamGuay">https://github.com/SamGuay&lt;/a>&lt;/li>
-&lt;/ul></description></item></channel></rss>
+&lt;/ul></description></item><item><title>Admins: Creating new admins</title><link>http://brainhack.org/brainhack_cloud/admins/admins/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/admins/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>To increase security of our cloud tenancy an admin cannot create or remove other admins. This is the instruction for the admin-administrator to create new admin accounts:&lt;/p>
+&lt;h2 id="create-new-admin">Create new admin&lt;/h2>
+&lt;p>Admins need to use a &amp;ldquo;federated account&amp;rdquo; to login to the cloud instead of &amp;ldquo;local accounts&amp;rdquo;.&lt;/p>
+&lt;p>Go to &lt;code>Federation&lt;/code> in &lt;code>Identity&lt;/code>
+&lt;img src="https://user-images.githubusercontent.com/4021595/159428315-c2335864-23d9-467b-bc93-b618f1e3d840.png" alt="image">&lt;/p>
+&lt;p>Click on &lt;code>OracleIdentityCloudService&lt;/code> and then &lt;code>Create User&lt;/code>&lt;/p>
+&lt;p>append &lt;code>_admin&lt;/code> to the Username (firstname_lastname) of the new user and add the user to the Group &lt;code>OCI_Administrators&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/159451717-af0c4b33-f10a-40dc-a5e3-d9453ae8f931.png" alt="image">&lt;/p>
+&lt;p>Warning: DO NOT ADD THE USER TO THE GROUP IDCS_Administrators - otherwise this admin will be able to manage other admin accounts.&lt;/p>
+&lt;p>You don&amp;rsquo;t have to assign any Roles to the user, so on the next screen click on &lt;code>Close&lt;/code>.&lt;/p>
+&lt;p>The new admin will receive an email like this:
+&lt;img src="https://user-images.githubusercontent.com/4021595/159452490-1e93e40b-a5f4-4ba9-89e7-6d6bb3f0ce2f.png" alt="image">&lt;/p>
+&lt;p>and after activating the account everything is ready to go and the new admin needs to sign on via federated accounts Single Sign On:
+&lt;img src="https://user-images.githubusercontent.com/4021595/159452817-bce541c0-8996-431e-b670-b8db3818959e.png" alt="image">&lt;/p></description></item></channel></rss>
