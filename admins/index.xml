@@ -115,10 +115,12 @@ ALL { resource.type = &amp;lsquo;datasciencenotebooksession&amp;rsquo; }
 &lt;p>Create a policy in the root compartment with the following statements:&lt;/p>
 &lt;h3 id="31-service-policies">3.1 Service Policies&lt;/h3>
 &lt;p>allow service datascience to use virtual-network-family in tenancy&lt;/p>
+&lt;p>-&amp;gt; created in root comparment as &amp;ldquo;datascience&amp;rdquo;&lt;/p>
 &lt;h3 id="32-non-administrator-user-policies">3.2 Non-Administrator User Policies&lt;/h3>
-&lt;p>allow group &lt;data-scientists> to use virtual-network-family in tenancy
-allow group &lt;data-scientists> to manage data-science-family in tenancy
-where &lt;data-scientists> represents the name of your user group -&amp;gt; setup as &amp;ldquo;projects&amp;rdquo; group&lt;/p>
+&lt;p>allow group &lt;code>data-scientists&lt;/code> to use virtual-network-family in tenancy
+allow group &lt;code>data-scientists&lt;/code> to manage data-science-family in tenancy
+where &lt;code>data-scientists&lt;/code> represents the name of your user group -&amp;gt; setup as &amp;ldquo;projects&amp;rdquo; group&lt;/p>
 &lt;h3 id="33-dynamic-group-policies">3.3 Dynamic Group Policies&lt;/h3>
-&lt;p>allow dynamic-group &lt;dynamic-group> to manage data-science-family in tenancy
-where &lt;dynamic-group> represents the name of your dynamic group&lt;/p></description></item></channel></rss>
+&lt;p>allow dynamic-group &lt;code>dynamic-group&lt;/code> to manage data-science-family in tenancy
+where &lt;code>dynamic-group&lt;/code> represents the name of your dynamic group&lt;/p>
+&lt;p>-&amp;gt; created as datascience-dynamic-group-policy in root compartment&lt;/p></description></item></channel></rss>
