@@ -62,9 +62,9 @@ REPLACEWITHYOURNAME
 ```
 
 
-Add the User to the group `cloudshell-access`
+Add the User to the group `projects`
 
-![image](https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png)
+![image](https://user-images.githubusercontent.com/4021595/159605185-d4a52d2b-ba76-42bd-bfe2-8a19c1bd7c0a.png)
 
 Repeat this procedure for every user in the project.
 
