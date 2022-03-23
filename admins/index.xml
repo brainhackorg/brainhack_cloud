@@ -33,8 +33,8 @@ and the same for description, and add an email.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>All the best
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>REPLACEWITHYOURNAME
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the User to the group &lt;code>cloudshell-access&lt;/code>&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png" alt="image">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Add the User to the group &lt;code>projects&lt;/code>&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/159605185-d4a52d2b-ba76-42bd-bfe2-8a19c1bd7c0a.png" alt="image">&lt;/p>
 &lt;p>Repeat this procedure for every user in the project.&lt;/p>
 &lt;h2 id="create-project-group">Create Project Group&lt;/h2>
 &lt;p>Go back to Identity and click &lt;code>Create Group&lt;/code>&lt;/p>
