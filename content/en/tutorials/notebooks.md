@@ -35,7 +35,7 @@ then click `Create notebook session`
 Name the notebook session and select which resources you need:
 ![image](https://user-images.githubusercontent.com/4021595/159638677-41a3239d-0e86-4159-8f5c-3ffcede23bdf.png)
 
-Set how much disk space you want under `Block storage size (in GB)`, leave teh Default networking and hit `Create`
+Set how much disk space you want under `Block storage size (in GB)`, leave the Default networking and hit `Create`
 
 It will not create everything for you:
 ![image](https://user-images.githubusercontent.com/4021595/159638967-1d69f18c-211e-4981-9709-b62514998de4.png)
