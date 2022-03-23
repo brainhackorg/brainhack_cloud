@@ -98,14 +98,14 @@ limitations.&lt;/p>
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638417-30355f09-c965-4848-859a-ed04e49bf94f.png" alt="image">&lt;/p>
 &lt;p>then click on create project:
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638445-11f09df9-1000-4703-8219-143a382e1d20.png" alt="image">&lt;/p>
-&lt;p>enter a Name and a Description
+&lt;p>enter a &lt;code>Name&lt;/code> and a &lt;code>Description&lt;/code>
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638513-b46da7b4-a401-4df4-b0ca-c3df613750b8.png" alt="image">&lt;/p>
 &lt;p>then click &lt;code>Create notebook session&lt;/code>
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638582-355145bb-ee9e-45d0-979e-902eb39b4565.png" alt="image">&lt;/p>
 &lt;p>Name the notebook session and select which resources you need:
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638677-41a3239d-0e86-4159-8f5c-3ffcede23bdf.png" alt="image">&lt;/p>
-&lt;p>Set how much disk space you want under &lt;code>Block storage size (in GB)&lt;/code>, leave teh Default networking and hit &lt;code>Create&lt;/code>&lt;/p>
-&lt;p>It will not create everything for you:
+&lt;p>Set how much disk space you want under &lt;code>Block storage size (in GB)&lt;/code>, leave the Default networking and hit &lt;code>Create&lt;/code>&lt;/p>
+&lt;p>It will now create everything for you:
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638967-1d69f18c-211e-4981-9709-b62514998de4.png" alt="image">&lt;/p>
 &lt;p>Once this is done (it will take 2-3minutes), you can open the notebook environment with a click on &lt;code>Open&lt;/code>:
 &lt;img src="https://user-images.githubusercontent.com/4021595/159639682-9ce78519-2e7d-4886-b075-d168876d3711.png" alt="image">&lt;/p>
