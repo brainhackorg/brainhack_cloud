@@ -26,7 +26,7 @@ then select your project compartment (in this example `testproject`)
 then click on create project:
 ![image](https://user-images.githubusercontent.com/4021595/159638445-11f09df9-1000-4703-8219-143a382e1d20.png)
 
-enter a Name and a Description
+enter a `Name` and a `Description`
 ![image](https://user-images.githubusercontent.com/4021595/159638513-b46da7b4-a401-4df4-b0ca-c3df613750b8.png)
 
 then click `Create notebook session`
