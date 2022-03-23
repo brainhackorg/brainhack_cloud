@@ -24,13 +24,16 @@ Create a policy in the root compartment with the following statements:
 ### 3.1 Service Policies
 allow service datascience to use virtual-network-family in tenancy
 
+-> created in root comparment as "datascience"
+
 ### 3.2 Non-Administrator User Policies
-allow group <data-scientists> to use virtual-network-family in tenancy
-allow group <data-scientists> to manage data-science-family in tenancy
-where <data-scientists> represents the name of your user group -> setup as "projects" group
+allow group `data-scientists` to use virtual-network-family in tenancy
+allow group `data-scientists` to manage data-science-family in tenancy
+where `data-scientists` represents the name of your user group -> setup as "projects" group
 
   
 ### 3.3 Dynamic Group Policies
-allow dynamic-group <dynamic-group> to manage data-science-family in tenancy
-where <dynamic-group> represents the name of your dynamic group
+allow dynamic-group `dynamic-group` to manage data-science-family in tenancy
+where `dynamic-group` represents the name of your dynamic group
 
+-> created as 	datascience-dynamic-group-policy in root compartment
