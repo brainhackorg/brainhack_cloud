@@ -101,4 +101,24 @@ January, 2024.&lt;/p>
 &lt;p>The new admin will receive an email like this:
 &lt;img src="https://user-images.githubusercontent.com/4021595/159452490-1e93e40b-a5f4-4ba9-89e7-6d6bb3f0ce2f.png" alt="image">&lt;/p>
 &lt;p>and after activating the account everything is ready to go and the new admin needs to sign on via federated accounts Single Sign On:
-&lt;img src="https://user-images.githubusercontent.com/4021595/159452817-bce541c0-8996-431e-b670-b8db3818959e.png" alt="image">&lt;/p></description></item></channel></rss>
+&lt;img src="https://user-images.githubusercontent.com/4021595/159452817-bce541c0-8996-431e-b670-b8db3818959e.png" alt="image">&lt;/p></description></item><item><title>Admins: Datascience setup</title><link>http://brainhack.org/brainhack_cloud/admins/datascience/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/admins/datascience/</guid><description>
+&lt;h2 id="step-1-create-vcn-and-subnets">Step 1) Create VCN and Subnets&lt;/h2>
+&lt;p>Create a VCN and subnets using Virtual Cloud Networks &amp;gt; Start VCN Wizard &amp;gt; VCN with Internet Connectivity option.
+The Networking Quickstart option automatically creates the necessary private subnet with a NAT gateway.
+&lt;img src="https://user-images.githubusercontent.com/4021595/159605361-d8f4bf9b-e7c7-445d-89ce-8daee43801f1.png" alt="image">&lt;/p>
+&lt;h2 id="step-2-create-dynamic-group">Step 2) Create Dynamic Group&lt;/h2>
+&lt;p>Create a dynamic group with the following matching rule:
+ALL { resource.type = &amp;lsquo;datasciencenotebooksession&amp;rsquo; }
+&lt;img src="https://user-images.githubusercontent.com/4021595/159605506-d0579916-2cce-461b-9d54-f703a53b7ad1.png" alt="image">&lt;/p>
+&lt;p>created as &amp;ldquo;datascience-notebooks-dynamic-group&amp;rdquo;&lt;/p>
+&lt;h2 id="step-3-create-policies">Step 3) Create Policies&lt;/h2>
+&lt;p>Create a policy in the root compartment with the following statements:&lt;/p>
+&lt;h3 id="31-service-policies">3.1 Service Policies&lt;/h3>
+&lt;p>allow service datascience to use virtual-network-family in tenancy&lt;/p>
+&lt;h3 id="32-non-administrator-user-policies">3.2 Non-Administrator User Policies&lt;/h3>
+&lt;p>allow group &lt;data-scientists> to use virtual-network-family in tenancy
+allow group &lt;data-scientists> to manage data-science-family in tenancy
+where &lt;data-scientists> represents the name of your user group -&amp;gt; setup as &amp;ldquo;projects&amp;rdquo; group&lt;/p>
+&lt;h3 id="33-dynamic-group-policies">3.3 Dynamic Group Policies&lt;/h3>
+&lt;p>allow dynamic-group &lt;dynamic-group> to manage data-science-family in tenancy
+where &lt;dynamic-group> represents the name of your dynamic group&lt;/p></description></item></channel></rss>
