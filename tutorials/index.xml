@@ -89,7 +89,25 @@ tiering data (making it cheaper to store if files are not accessed very often).&
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The notebook service is like Google Colab, but without the time or resource
 limitations.&lt;/p>
-&lt;h2 id="setup">Setup&lt;/h2></description></item><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
+&lt;h2 id="starting-a-notebook-environment">Starting a notebook environment&lt;/h2>
+&lt;p>Select the geographic region where you want to run this (e.g. close to you).
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638803-174b68ad-c545-4539-8d01-b0952a0e7de4.png" alt="image">&lt;/p>
+&lt;p>Then search for &lt;code>Data Science&lt;/code> under &lt;code>Machine Learning&lt;/code>
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638307-552138c0-01c1-43d3-823c-3a783e03ef5d.png" alt="image">&lt;/p>
+&lt;p>then select your project compartment (in this example &lt;code>testproject&lt;/code>)
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638417-30355f09-c965-4848-859a-ed04e49bf94f.png" alt="image">&lt;/p>
+&lt;p>then click on create project:
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638445-11f09df9-1000-4703-8219-143a382e1d20.png" alt="image">&lt;/p>
+&lt;p>enter a Name and a Description
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638513-b46da7b4-a401-4df4-b0ca-c3df613750b8.png" alt="image">&lt;/p>
+&lt;p>then click &lt;code>Create notebook session&lt;/code>
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638582-355145bb-ee9e-45d0-979e-902eb39b4565.png" alt="image">&lt;/p>
+&lt;p>Name the notebook session and select which resources you need:
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638677-41a3239d-0e86-4159-8f5c-3ffcede23bdf.png" alt="image">&lt;/p>
+&lt;p>Set how much disk space you want under &lt;code>Block storage size (in GB)&lt;/code>, leave teh Default networking and hit &lt;code>Create&lt;/code>&lt;/p>
+&lt;p>It will not create everything for you:
+&lt;img src="https://user-images.githubusercontent.com/4021595/159638967-1d69f18c-211e-4981-9709-b62514998de4.png" alt="image">&lt;/p>
+&lt;p>Once this is done, you can open the notebook environment with a click on &lt;code>Open&lt;/code>:&lt;/p></description></item><item><title>Tutorials: Github action runner</title><link>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/gh_runner/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This section describes how to setup a Github action runner on the cloud that you
 can then use to run huge Github workflows that wouldn&amp;rsquo;t run in the hosted
