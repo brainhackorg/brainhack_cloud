@@ -26,7 +26,7 @@ then select your project compartment (in this example `testproject`)
 then click on create project:
 ![image](https://user-images.githubusercontent.com/4021595/159638445-11f09df9-1000-4703-8219-143a382e1d20.png)
 
-enter a Name and a Description
+enter a `Name` and a `Description`
 ![image](https://user-images.githubusercontent.com/4021595/159638513-b46da7b4-a401-4df4-b0ca-c3df613750b8.png)
 
 then click `Create notebook session`
@@ -35,9 +35,9 @@ then click `Create notebook session`
 Name the notebook session and select which resources you need:
 ![image](https://user-images.githubusercontent.com/4021595/159638677-41a3239d-0e86-4159-8f5c-3ffcede23bdf.png)
 
-Set how much disk space you want under `Block storage size (in GB)`, leave teh Default networking and hit `Create`
+Set how much disk space you want under `Block storage size (in GB)`, leave the Default networking and hit `Create`
 
-It will not create everything for you:
+It will now create everything for you:
 ![image](https://user-images.githubusercontent.com/4021595/159638967-1d69f18c-211e-4981-9709-b62514998de4.png)
 
 Once this is done (it will take 2-3minutes), you can open the notebook environment with a click on `Open`:
