@@ -42,4 +42,27 @@ used in your project.&lt;/p>
 &lt;p>Hint: The network setup creates a lot of things and to cleanup it&amp;rsquo;s easiest to
 go to &lt;code>Virtual Cloud Networks&lt;/code>, select the VCN you don&amp;rsquo;t need anymore and click
 &lt;code>Terminate&lt;/code> - this will go out and remove everything correctly:&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157353107-5a3a8063-189a-49c3-9c85-24b6bba52c13.png" alt="image">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157353107-5a3a8063-189a-49c3-9c85-24b6bba52c13.png" alt="image">&lt;/p></description></item><item><title>Docs: Installing and Using Docker</title><link>http://brainhack.org/brainhack_cloud/docs/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/docs/docker/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Docker (or a software container in general) is great for reproducibility and making it easy to move your tools in and out of the cloud. If you don&amp;rsquo;t know what containers are, here is a 3 minute explanation: &lt;a href="https://www.youtube.com/watch?v=HelrQnm3v4g">https://www.youtube.com/watch?v=HelrQnm3v4g&lt;/a>&lt;/p>
+&lt;h2 id="installing-docker">Installing Docker&lt;/h2>
+&lt;p>Docker is not installed by default on Oracle Linux. You could install the original Docker, but podman is fully compatible and is the default in Oracle Linux (and some argue it&amp;rsquo;s even better). This is how to do it:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum install docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now you can run docker, but it will tell you that this is actually podman:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160227312-43836181-cd0c-4d26-bc18-9ccc9fb0f700.png" alt="image">&lt;/p>
+&lt;p>Let&amp;rsquo;s remove that msg:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo touch /etc/containers/nodocker
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Now we have docker/podman installed and we can test it:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>docker run hello-world
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160227372-0012e396-a2ca-4f80-8455-d4b2c8616b19.png" alt="image">&lt;/p>
+&lt;p>and we could now run everything we like, e.g. &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/&lt;/a>&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>mkdir /home/opc/neurodesktop-storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker run \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --shm-size=1gb -it --privileged --name neurodesktop \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v ~/neurodesktop-storage:/neurodesktop-storage \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34;\
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p 8080:8080 \
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h neurodesktop-20220302 docker.io/vnmd/neurodesktop:20220302
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and this is how easy it is to run a container on the cloud :)&lt;/p>
+&lt;p>if you connect to your cloud instance using a port-forwarding &lt;code>ssh -L 8080:127.0.0.1:8080 opc@xxx.xx.xx.xx&lt;/code> then you could now use Neurodesktop via visiting http://localhost:8080/#/?username=user&amp;amp;password=password in your local browser. When done, stop the container with CTRL-C and run &lt;code>sudo docker rm neurodesktop&lt;/code> to cleanup.&lt;/p></description></item></channel></rss>
