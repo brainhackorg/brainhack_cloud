@@ -10,11 +10,24 @@ description: >-
 ## Overview
 Docker (or a software container in general) is great for reproducibility and making it easy to move your tools in and out of the cloud. If you don't know what containers are, here is a 3 minute explanation: https://www.youtube.com/watch?v=HelrQnm3v4g
 
+You can either install the original "Docker" or a drop-in replacement called "Podman"
+
 ## Installing Docker
-Docker is not installed by default on Oracle Linux. You could install the original Docker, but podman is fully compatible and is the default in Oracle Linux (and some argue it's even better). This is how to do it:
+Docker is not installed by default on Oracle Linux.
 
 ```
-sudo yum install docker
+sudo dnf install dnf-utils zip unzip
+sudo dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+sudo dnf install docker-ce --nobest
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+```
+
+## OR: Installing Podman instead of Docker
+Podman is compatible to docker and and is the default in Oracle Linux (and some argue it's even better). This is how to do it:
+
+```
+sudo yum install podman
 ```
 
 Now you can run docker, but it will tell you that this is actually podman:
@@ -28,7 +41,7 @@ Let's remove that msg:
 sudo touch /etc/containers/nodocker
 ```
 
-Now we have docker/podman installed and we can test it:
+Now we have podman installed as "docker" drop-in replacement and we can test it:
 ```
 docker run hello-world
 ```
