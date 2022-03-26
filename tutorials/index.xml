@@ -71,7 +71,7 @@ the cloudshell.&lt;/p>
 &lt;p>Now it&amp;rsquo;s using the full volume.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
 &lt;h2 id="terminate-the-instance">Terminate the instance&lt;/h2>
-&lt;p>If you don&amp;rsquo;t need the machine anymore, you can &lt;code>Stop&lt;/code> it or &lt;code>Terminate&lt;/code> it&lt;/p>
+&lt;p>If you don&amp;rsquo;t need the machine anymore, you can &lt;code>Stop&lt;/code> it (you don&amp;rsquo;t pay for the compute anymore, but the disk stays and you can start it back up later) or &lt;code>Terminate&lt;/code> it (everthing gets removed, including the bootvolume if you want to):&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
 &lt;p>To cleanup the storage as well, you can select
 &lt;code>Permanently delete the attached boot volume&lt;/code> and click &lt;code>Terminate Instance&lt;/code>.&lt;/p>
