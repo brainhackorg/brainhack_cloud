@@ -13,7 +13,7 @@ Docker (or a software container in general) is great for reproducibility and mak
 You can either install the original "Docker" or a drop-in replacement called "Podman"
 
 ## Installing Docker
-Docker is not installed by default on Oracle Linux.
+Docker is not installed by default on Oracle Linux and these steps will install and start Docker:
 
 ```
 sudo dnf install dnf-utils zip unzip
@@ -24,13 +24,19 @@ sudo systemctl start docker.service
 ```
 
 ## OR: Installing Podman instead of Docker
-Podman is compatible to docker and and is the default in Oracle Linux (and some argue it's even better). This is how to do it:
+Podman is compatible to docker and and is the default in Oracle Linux (and some argue it's even better). This is how to install podman:
 
+```
+sudo yum install docker
+```
+Yes: This is actually installing podman in Oracle Linux!
+
+Or the direct way:
 ```
 sudo yum install podman
 ```
 
-Now you can run docker, but it will tell you that this is actually podman:
+If you installed podman using `sudo yum install docker` you can run docker commands directly, but it will tell you that this is actually podman:
 ```
 docker
 ```
@@ -56,7 +62,7 @@ sudo docker run \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
   -e HOST_UID="$(id -u)" -e HOST_GID="$(id -g)"\
   -p 8080:8080 \
-  -h neurodesktop-20220302 docker.io/vnmd/neurodesktop:20220302
+  -h neurodesktop-20220302 docker.io/vnmd/neurodesktop:20220329
  ```
  
  and this is how easy it is to run a container on the cloud :)
