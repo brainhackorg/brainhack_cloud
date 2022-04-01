@@ -8,12 +8,12 @@ description: >
 
 ## Overview
 
-To increase security of our cloud tenancy an admin cannot create or remove other admins. This is the instruction for the admin-administrator to create new admin accounts: 
+To increase the security of our cloud tenancy an admin cannot create or remove other admins. This is the instruction for the admin-administrator to create new admin accounts: 
 
 
-## Create new admin
+## Create a new admin
 
-Admins need to use a "federated account" to login to the cloud instead of "local accounts".
+Admins need to use a "federated account" to login into the cloud instead of "local accounts".
 
 
 Go to `Federation` in `Identity`

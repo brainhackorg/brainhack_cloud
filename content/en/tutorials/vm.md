@@ -136,7 +136,7 @@ Now it's using the full volume.
 
 ## Terminate the instance
 
-If you don't need the machine anymore, you can `Stop` it (you don't pay for the compute anymore, but the disk stays and you can start it back up later) or `Terminate` it (everthing gets removed, including the bootvolume if you want to):
+If you don't need the machine anymore, you can `Stop` it (you don't pay for the compute anymore, but the disk stays and you can start it back up later) or `Terminate` it (everything gets removed, including the boot volume if you want to):
 
 ![image](https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png)
 

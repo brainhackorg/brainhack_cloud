@@ -1,14 +1,14 @@
 # CONTRIBUTING
 
 - [CONTRIBUTING](#contributing)
-    - [Repo map](#repo-map)
-    - [Build locally](#build-locally)
-        - [Prerequisites](#prerequisites)
-            - [node.js](#nodejs)
-            - [Hugo](#hugo)
-        - [Clone repo and its submodules](#clone-repo-and-its-submodules)
-        - [Install javascripts dependencies](#install-javascripts-dependencies)
-        - [Serve the website locally](#serve-the-website-locally)
+  - [Repo map](#repo-map)
+  - [Build locally](#build-locally)
+    - [Prerequisites](#prerequisites)
+      - [node.js](#nodejs)
+      - [Hugo](#hugo)
+    - [Clone repo and its submodules](#clone-repo-and-its-submodules)
+    - [Install javascripts dependencies](#install-javascripts-dependencies)
+    - [Serve the website locally](#serve-the-website-locally)
 
 ## Repo map
 
@@ -48,8 +48,8 @@
 
 #### node.js
 
-A quick version (for Mac and Linux) that will also allow to manage different version of node
-is to install node via the "node version manager".
+A quick version (for Mac and Linux) that will also allow managing of different versions of the node
+is to install the node via the "node version manager".
 
 ```bash
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash

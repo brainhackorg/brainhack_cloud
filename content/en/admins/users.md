@@ -12,11 +12,9 @@ Once a new project is requested via the
 [Issue Template](https://github.com/brainhackorg/brainhack_cloud/issues/new?assignees=&labels=resource_request&template=request-resource-access.yml)
 one of the admins has to provision the project on the cloud.
 
-Here is an example for such a request:
+Here is an example of such a request:
 
 ![image](https://user-images.githubusercontent.com/4021595/157339176-d222994f-7d25-484c-99bb-67b354ab1e5a.png)
-
-Once such a request comes in, assign it to yourself so that other people know that you are working on it! Then continue ...
 
 ## Creating a new user
 
@@ -44,27 +42,9 @@ Copy this password and send it to the user you just created.
 
 The new user has to follow this procedure: [User request](./../../docs/request).
 
+Add the User to the group `cloudshell-access`
 
-Here is an email template:
-```
-Subject: Temporary Password for Oracle Cloud
-Text: 
-Dear REPLACEWITHUSER,
-
-This is your temporary password to activate your Oracle Cloud account. You should have an email in your inbox/spam folder with an activation link.
-
-PASTEPASSWORDHERE
-
-Please follow the rest of the instructions here to activate your account: https://brainhack.org/brainhack_cloud/docs/request/#activate-your-account
-
-All the best
-REPLACEWITHYOURNAME
-```
-
-
-Add the User to the group `projects`
-
-![image](https://user-images.githubusercontent.com/4021595/159605185-d4a52d2b-ba76-42bd-bfe2-8a19c1bd7c0a.png)
+![image](https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png)
 
 Repeat this procedure for every user in the project.
 
@@ -74,8 +54,8 @@ Go back to Identity and click `Create Group`
 
 ![image](https://user-images.githubusercontent.com/4021595/157341864-5582074f-fa90-48f2-a2a5-deebb1a241dc.png)
 
-Give the group a name that represents the project (no spaces!) - as Description
-put the link to the github issue.
+Give the group a name that represents the project (no spaces!) - as a Description
+put the link to the Github issue.
 
 ![image](https://user-images.githubusercontent.com/4021595/157342047-92280e16-9518-4d04-a3be-796073d16c01.png)
 
@@ -87,32 +67,26 @@ Then add the User(s) to the group.
 
 Go back to `Identity` and head to `Compartments` and click `Create Compartment`.
 Name it like the group just created and add the Github issue link as
-the description. Parent compartment is `projects` under `brainhack (root)`.
+the description. Parent compartment is brainhack (root).
 
-![image](https://user-images.githubusercontent.com/4021595/157600826-7056e58c-f4a6-4d12-b66f-13b6007b7095.png)
-
+![image](https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png)
 
 ## Create Policy for group and compartment
 
 Go back to `Identity` and click on `Policies`. Click `Create Policy`. Name the
 policy like the group and compartment just created. The description is the Github
-issue link. You can either use the policy builder (Compartment Management -> Let compartment admins manage the compartment) or switch to manual. The
+issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
-`Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`. Make sure that the compartment "projects" is selected because we want this policy on the projects level (not in root!).
+`Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`.
 
-![image](https://user-images.githubusercontent.com/4021595/157776607-e88b38db-cae2-4593-8785-50c34e39e479.png)
+![image](https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png)
 
-## Create Budget for compartment
+## Create a Budget for compartment
 
 Budgets help us to control and monitor costs. For every compartment, we need a
-budget with someone being alerted when things go wrong:
+budget with someone being alerted when things go crazy:
 
 Go to `Budgets` under `Cost Management` and click `Create Budget`. Add the
-project details (name and issue link as description), set the Budget to `1000` AUD, switch to `Forecast Spend` and set a threshold of `100`% and add your email to the alert list + a second admin as backup.
+project details and add your email to the alert list.
 
-![image](https://user-images.githubusercontent.com/4021595/157601668-ee7281f3-8f49-4db9-b20b-deca29e03c19.png)
-
-
-## Cleanup
-
-Go back to the Github issue and let the project know that everything is setup and close the issue.
+![image](https://user-images.githubusercontent.com/4021595/157346505-be192493-6937-4574-87a8-1ceb898bae81.png)
