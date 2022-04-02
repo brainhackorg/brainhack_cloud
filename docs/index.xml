@@ -27,7 +27,7 @@ works fine!).&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157341388-d1a70845-ada5-4b0a-8fd9-a307f0c698ae.png" alt="image">&lt;/p>
 &lt;p>If everything is complete you should see this.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157341435-4f604137-78f8-46e0-8fbb-a3113f4fac65.png" alt="image">&lt;/p>
-&lt;p>You should now be able to select your Compartment (should be named like your
+&lt;p>You should now be able to select your Compartment (which should be named like your
 project) and start using resources.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157345820-81a62c95-5603-4bf7-a266-0991fbd9dcb9.png" alt="image">&lt;/p>
 &lt;p>Always make sure to select your compartment - otherwise you cannot see or create
@@ -54,7 +54,7 @@ go to &lt;code>Virtual Cloud Networks&lt;/code>, select the VCN you don&amp;rsqu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl enable docker.service
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo systemctl start docker.service
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="or-installing-podman-instead-of-docker">OR: Installing Podman instead of Docker&lt;/h2>
-&lt;p>Podman is compatible to docker and and is the default in Oracle Linux (and some argue it&amp;rsquo;s even better). This is how to install podman:&lt;/p>
+&lt;p>Podman is compatible with docker and is the default in Oracle Linux (and some argue it&amp;rsquo;s even better). This is how to install podman:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum install docker
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Yes: This is actually installing podman in Oracle Linux!&lt;/p>
 &lt;p>Or the direct way:&lt;/p>
