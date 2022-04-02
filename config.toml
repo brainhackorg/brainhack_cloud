@@ -93,7 +93,7 @@ home = ["HTML", "RSS", "JSON"]
 section = ["HTML", "print", "RSS"]
 
 [params]
-# copyright = "The Docsy Authors"
+copyright = "Brainhack Cloud <br> Except where otherwise noted, content on this site is licensed under a [CC BY 4.0 license](https://creativecommons.org/licenses/by/4.0/)."
 # privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
