@@ -55,7 +55,7 @@ sudo yum update
 sudo yum install ...
 ```
 
-Hint for collaborating with multiple people: Multiple users can log-in to the same notebook system and work on separate notebooks simultaneously, but avoid editing the same notebook file - otherwise you risk overriting your changes:
+Hint for collaborating with multiple people: Multiple users can login to the same notebook system and work on separate notebooks simultaneously, but avoid editing the same notebook file - otherwise you risk overwriting your changes:
 ![image](https://user-images.githubusercontent.com/4021595/159642888-84589148-ed12-42fc-9282-dac7d3b07d5d.png)
 
 
@@ -65,7 +65,7 @@ When completed for the day, you can save costs (especially important when using 
 Close the window and hit `Deactivate`
 ![image](https://user-images.githubusercontent.com/4021595/159640588-874f2d3f-1123-41eb-98d1-c5d5b4c222c3.png)
 
-This will shutdown the compute instances but keep your data - so if you want to continue later, a click on `Activate` will bring everything back :)
+This will shut down the compute instances but keep your data - so if you want to continue later, a click on `Activate` will bring everything back :)
 ![image](https://user-images.githubusercontent.com/4021595/159640942-5c8c1599-9e25-45c2-89eb-7de75b4a8b1e.png)
 
 When reactivating you could even change the resources provided for the environment (e.g. adding a GPU or changing to a CPU only environment to save costs) :)

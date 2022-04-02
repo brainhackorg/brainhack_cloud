@@ -24,7 +24,7 @@ sudo systemctl start docker.service
 ```
 
 ## OR: Installing Podman instead of Docker
-Podman is compatible to docker and and is the default in Oracle Linux (and some argue it's even better). This is how to install podman:
+Podman is compatible with docker and is the default in Oracle Linux (and some argue it's even better). This is how to install podman:
 
 ```
 sudo yum install docker

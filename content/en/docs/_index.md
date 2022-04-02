@@ -17,7 +17,7 @@ This section contains documentation on how to use the Oracle Cloud.
 
 To ask questions or suggest new features,
 [join the discussion](https://github.com/brainhackorg/brainhack_cloud/discussions)
-on github. For issues with the _brainhack cloud_, please open a
+on Github. For issues with the _brainhack cloud_, please open a
 [new issue](https://github.com/brainhackorg/brainhack_cloud/issues).
 
 ## Acknowledgments

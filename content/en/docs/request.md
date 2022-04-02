@@ -44,7 +44,7 @@ If everything is complete you should see this.
 
 ![image](https://user-images.githubusercontent.com/4021595/157341435-4f604137-78f8-46e0-8fbb-a3113f4fac65.png)
 
-You should now be able to select your Compartment (should be named like your
+You should now be able to select your Compartment (which should be named like your
 project) and start using resources.
 
 ![image](https://user-images.githubusercontent.com/4021595/157345820-81a62c95-5603-4bf7-a266-0991fbd9dcb9.png)
