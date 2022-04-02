@@ -1,0 +1,18 @@
+//
+// Style Markdown content
+//
+
+.td-content {
+    order: 1;
+
+    img {
+        @extend .img-fluid;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        padding: 1%;
+        border-style: solid;
+        border-width: 1px;
+        border-color: black
+    }
+
+}
