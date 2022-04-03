@@ -42,7 +42,7 @@ You could also use tools like rclone or curl or the OCI CLI to upload files (mor
 
 ## Making a Bucket public
 
-By default, the files in the bucket will not be visible to everyone. Let's find the URL to the file we just uploaded: Click on the 3 dots next to teh file and click on `View Object details`:
+By default, the files in the bucket will not be visible to everyone. Let's find the URL to the file we just uploaded: Click on the 3 dots next to the file and click on `View Object details`:
 ![image](https://user-images.githubusercontent.com/4021595/161412133-d4437e2b-4886-4b16-ae05-8ec2e2215dd1.png)
 
 When opening this URL, you will get this error:
@@ -53,11 +53,11 @@ You can either make the WHOLE bucket visible to the world or use "Pre-Authentica
 Click on `Edit Visibility` and switch to public:
 ![image](https://user-images.githubusercontent.com/4021595/161412193-e3ec0171-9b0b-46f5-885e-17163b1cb8c2.png)
 
-Now the file and EVERYTHING else in the bucket is visible for EVERYONE on the internet. 
+Now the file and EVERYTHING else in the bucket are visible to EVERYONE on the internet. 
 
 ## Pre-Authenticated Requests
 
-Click on the 3 dots next to the file again and Click `Create Pre-Authenticated Request`:
+Click on the three dots next to the file again and Click `Create Pre-Authenticated Request`:
 ![image](https://user-images.githubusercontent.com/4021595/161412278-26bbead8-7a58-43b3-8d31-e88a892f83fa.png)
 
 This gives you more options to control access and you can also expire the access :)
@@ -75,7 +75,7 @@ Lifecycle Rules allow you to control what happens with files after a certain amo
 
 
 ## Mirroring
-Mirroring allows you to keep the bucket up-to-date with another bucket in another region (e.g. main bucket is in Europe and replica is in Australia). This is controlled under `Replication Policy`.
+Mirroring allows you to keep the bucket up-to-date with another bucket in another region (e.g. main bucket is in Europe and the replica is in Australia). This is controlled under the `Replication Policy`.
 
 You first need to create the target bucket in the other region and then you can configure it as a target:
 ![image](https://user-images.githubusercontent.com/4021595/161412505-d64a0177-e520-46f5-86b8-f08c4e60b962.png)
@@ -84,7 +84,7 @@ You first need to create the target bucket in the other region and then you can 
 
 
 ## Uploading files using CURL
-To enable this you need to create a Pre-Authenticated Request which allows access to the Bucket and it allows objects reads and writes and Object Listing:
+To enable this you need to create a Pre-Authenticated Request which allows access to the Bucket and it allows objects read and write and Object Listing:
 ![image](https://user-images.githubusercontent.com/4021595/161412582-5f0ff3c7-f207-4ca1-811f-163ef2355fd2.png)
 
 Then copy the URL, as it will never be shown again:
@@ -96,7 +96,7 @@ curl -v -X PUT --upload-file YOUR_FILE_HERE YOUR_PRE_AUTHENTICATED_REQUEST_URL_H
 ```
 
 ## Uploading files using RCLONE
-Rclone is a great tool for managing remote file storages. To link it up with Oracles object storage you need to configure a few things (full version is here: https://blogs.oracle.com/linux/post/using-rclone-to-copy-data-in-and-out-of-oracle-cloud-object-storage#:~:text=%20Using%20rclone%20to%20copy%20data%20in%20and,which%20Rclone%20will%20be%20used%20to...%20More%20):
+Rclone is a great tool for managing the remote file storages. To link it up with Oracles object storage you need to configure a few things (the full version is here: https://blogs.oracle.com/linux/post/using-rclone-to-copy-data-in-and-out-of-oracle-cloud-object-storage#:~:text=%20Using%20rclone%20to%20copy%20data%20in%20and,which%20Rclone%20will%20be%20used%20to...%20More%20):
 
 
 1) The Amazon S3 Compatibility API relies on a signing key called a Customer Secret Key. You need to create this in your User's settings:
