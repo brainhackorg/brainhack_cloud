@@ -95,6 +95,54 @@ curl -v -X PUT --upload-file YOUR_FILE_HERE YOUR_PRE_AUTHENTICATED_REQUEST_URL_H
 ```
 
 ## Uploading files using RCLONE
-Rclone is a great tool for managing remote file storages. To link it up with Oracles object storage you need to configure a few things:
+Rclone is a great tool for managing remote file storages. To link it up with Oracles object storage you need to configure a few things (full version is here: https://blogs.oracle.com/linux/post/using-rclone-to-copy-data-in-and-out-of-oracle-cloud-object-storage#:~:text=%20Using%20rclone%20to%20copy%20data%20in%20and,which%20Rclone%20will%20be%20used%20to...%20More%20):
 
-1) 
+
+1) The Amazon S3 Compatibility API relies on a signing key called a Customer Secret Key. You need to create this in your User's settings:
+![image](https://user-images.githubusercontent.com/4021595/161412892-0e9d6190-362c-41b5-9579-5f9a2371ebed.png)
+
+Then Click on `Generate Secret Key` under `Customer Secret Keys`:
+![image](https://user-images.githubusercontent.com/4021595/161412964-dd036c50-834e-436f-a8d1-a44da80f29d2.png)
+
+Save the Secret Key for later:
+![image](https://user-images.githubusercontent.com/4021595/161412970-d22661cd-b549-48ff-8c33-15ba538f02d6.png)
+
+WiQ1aYxje0F1a/5aRR0FY/a+kAU2keFEimDez2+l4jc=
+
+Then save the `Access Key` from the table as well: 
+
+6f5540d7c407e0e640260bc1665f98922346173f
+
+
+2) Find out where your rclone config file is located:
+```
+rclone config file
+```
+
+3) Add this to your rclone config file:
+
+```
+[myobjectstorage]
+type = s3
+provider = Other
+env_auth = false
+access_key_id = <ACCESS KEY>
+secret_access_key = <SECRET KEY>
+endpoint = froi4niecnpv.compat.objectstorage.<REGION>.oraclecloud.com
+```
+Replace `ACCESS KEY` and `SECRET KEY` with the ones generated earlier. Replace `REGION` with the region where the storage bucket is located (e.g. eu-frankfurt-1).
+
+Now you can use rclone to for example list files in the bucket:
+```
+rclone ls myobjectstorage:/test-bucket
+```
+
+or you can upload files or whole directories (or download by reversing the order of Target/Source):
+```
+rclone copy YOURFILE_or_YOURDIRECTORY myobjectstorage:/test-bucket
+```
+
+or you can sync whole directories or other remote storage locations (includes deletes!):
+```
+rclone sync YOURDIRECTORY_OR_YOUR_OTHER_RCLONE_STORAGE myobjectstorage:/test-bucket
+```
