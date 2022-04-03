@@ -123,14 +123,26 @@ limitations.&lt;/p>
 &lt;p>This section describes how to setup a Github action runner on the cloud that you
 can then use to run huge Github workflows that wouldn&amp;rsquo;t run in the hosted
 runners :)&lt;/p>
-&lt;h2 id="configure-vm">Configure VM&lt;/h2>
+&lt;h2 id="create-new-vm">Create new VM&lt;/h2>
 &lt;p>See our &lt;a href="./../vm">VM Tutorial&lt;/a>&lt;/p>
 &lt;h2 id="configure-github">Configure Github&lt;/h2>
-&lt;p>-&amp;gt; setup custom runner&lt;/p>
-&lt;h2 id="configure-vm-github-connection">Configure VM-Github connection&lt;/h2>
-&lt;p>-&amp;gt; start Runner service&lt;/p>
-&lt;h2 id="use-custom-runner-in-action">Use custom runner in Action&lt;/h2>
-&lt;p>-&amp;gt; Example QSMxT&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
+&lt;p>Go to the repository settings and under &lt;code>Actions&lt;/code> you will find &lt;code>Runners&lt;/code> where you can add a self-hosted runner:
+&lt;img src="https://user-images.githubusercontent.com/4021595/161414358-b5487e21-daec-4f04-b008-26664a19f8f8.png" alt="image">&lt;/p>
+&lt;p>After clicking on &lt;code>New self-hosted runner&lt;/code> and selecting Linux you can copy and paste the first section to the VM created in Step 1:
+&lt;img src="https://user-images.githubusercontent.com/4021595/161414412-a7ec45c5-1283-430c-aab3-3fe99717da9a.png" alt="image">&lt;/p>
+&lt;p>run the commands listed on that page in your VM and accept the defaults.&lt;/p>
+&lt;p>To keep the session running you can use either tmux:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo install tmux
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tmux new -s runner
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./run.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>CTRL-B d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Or as an alternative start it as a service, because this will then survive restarts of the VM:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo ./svc.sh install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo ./svc.sh start
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="use-custom-runner-in-action">Use custom runner in Action&lt;/h2>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Use this YAML in your workflow file for each job
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>runs-on: self-hosted
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is an example: &lt;a href="https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml">https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml&lt;/a>&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup
 your own HPC cluster in the cloud&lt;/p>
