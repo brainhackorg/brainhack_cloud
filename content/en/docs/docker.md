@@ -57,6 +57,11 @@ docker run hello-world
 and we could now run everything we like, e.g. https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/
 ```
 mkdir /home/opc/neurodesktop-storage
+sudo yum install tmux
+```
+
+```
+tmux new -s neurodesk
 sudo docker run \
   --shm-size=1gb -it --privileged --name neurodesktop \
   -v ~/neurodesktop-storage:/neurodesktop-storage \
@@ -64,6 +69,8 @@ sudo docker run \
   -p 8080:8080 \
   -h neurodesktop-20220302 docker.io/vnmd/neurodesktop:20220329
  ```
+ 
+ Hit CTRL-b and then d to detach from the tmux session (re-attaching is possible using `tmux attach-session -t neurodesk`).
  
  and this is how easy it is to run a container on the cloud :)
  
