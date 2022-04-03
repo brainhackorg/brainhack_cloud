@@ -38,6 +38,8 @@ cluster user add test
 
 These users can then login using a password.
 
+There is a shared file storage (which can also be configured in size in the stack settings) in /nfs/cluster
+
 More information can be found here:
 https://github.com/oracle-quickstart/oci-hpc
 
