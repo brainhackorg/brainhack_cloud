@@ -75,17 +75,7 @@ the cloudshell.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
 &lt;p>To cleanup the storage as well, you can select
 &lt;code>Permanently delete the attached boot volume&lt;/code> and click &lt;code>Terminate Instance&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Object Storage</title><link>http://brainhack.org/brainhack_cloud/tutorials/object_storage/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/object_storage/</guid><description>
-&lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>Object Storage is like Dropbox, but bigger &amp;hellip; it basically allows you to simply
-store files and they can be accessible via links on the web (or APIs) and you
-don&amp;rsquo;t have to monitor the size of the disk (as opposed to block storage) and it
-comes with very nice features for mirroring your data to other regions or
-tiering data (making it cheaper to store if files are not accessed very often).&lt;/p>
-&lt;h2 id="setup">Setup&lt;/h2>
-&lt;h2 id="preauthenticated-urls">Preauthenticated URLs&lt;/h2>
-&lt;h2 id="tiering">Tiering&lt;/h2>
-&lt;h2 id="mirroring">Mirroring&lt;/h2></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The notebook service is like Google Colab, but without the time or resource
 limitations.&lt;/p>
