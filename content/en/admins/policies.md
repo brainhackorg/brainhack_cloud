@@ -21,6 +21,7 @@ shell: `allow group cloudshell-access to use cloud-shell in tenancy`
 
 ## Policies for Object Storage Lifecycle management
 To enable lifecycle management the local services need a policy to do this. I configured it for every possible region a user would choose:
+
 Allow service objectstorage-eu-frankfurt-1 to manage object-family in compartment projects
 
 Allow service objectstorage-ap-sydney-1 to manage object-family in compartment projects
