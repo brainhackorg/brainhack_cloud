@@ -17,6 +17,7 @@ tiering data (making it cheaper if files are not accessed very often).
 ## Setup a new Bucket
 
 Select a Region from the list where you want your files to be located:
+
 ![image](https://user-images.githubusercontent.com/4021595/161411496-e142dfdc-b84d-4e67-9ea0-71bc74a3f157.png)
 
 Then search for `Buckets` and you will find it under `Storage` -> `Object Storage & Archival Storage` -> Buckets:
@@ -37,7 +38,7 @@ Create a new Bucket:
 You could upload files via the GUI in the Oracle cloud by clicking the `Upload` button:
 ![image](https://user-images.githubusercontent.com/4021595/161412082-f95b1d4c-67f9-4b69-a360-fd7aab8bc508.png)
 
-You could also use tools like rclone or curl or the OCI CLI to upload files (more about this later)
+You could also use tools like rclone or curl or the OCI CLI to upload files (more about these tools later)
 
 ## Making a Bucket public
 
@@ -74,7 +75,7 @@ Lifecycle Rules allow you to control what happens with files after a certain amo
 
 
 ## Mirroring
-Mirroring allows you to keep the bucket up-to-date with another bucket in another region (e.g. main bucket is in the US and replica is in Europe). This is controlled under `Replication Policy`.
+Mirroring allows you to keep the bucket up-to-date with another bucket in another region (e.g. main bucket is in Europe and replica is in Australia). This is controlled under `Replication Policy`.
 
 You first need to create the target bucket in the other region and then you can configure it as a target:
 ![image](https://user-images.githubusercontent.com/4021595/161412505-d64a0177-e520-46f5-86b8-f08c4e60b962.png)
