@@ -147,7 +147,23 @@ runners :)&lt;/p>
 &lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup
 your own HPC cluster in the cloud&lt;/p>
 &lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
-&lt;p>-&amp;gt;&lt;/p>
+&lt;p>Download the Terraform configuration from here as a zip file:
+&lt;a href="https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5">https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5&lt;/a>&lt;/p>
+&lt;p>Then go to &lt;code>Stacks&lt;/code> under &lt;code>Resource Manager&lt;/code>:
+&lt;img src="https://user-images.githubusercontent.com/4021595/161415757-409d264d-39e0-41f0-8bb0-3b5adc53abde.png" alt="image">&lt;/p>
+&lt;p>Choose &lt;code>My Configuration&lt;/code> and upload the zip file.
+&lt;img src="https://user-images.githubusercontent.com/4021595/161415784-56f78544-fa20-48de-ae7c-89f2154f5e58.png" alt="image">&lt;/p>
+&lt;p>Accept the defaults and add your public SSH key, disable &lt;code>Use cluster network&lt;/code> (this is for MPI and not required for most people):
+&lt;img src="https://user-images.githubusercontent.com/4021595/161415850-906a7cbf-8243-4df4-94b9-1dac7fcb1225.png" alt="image">&lt;/p>
+&lt;p>This will then create a custom HPC for your project (it will take a couple of minutes to complete).&lt;/p>
+&lt;p>Once everything is done you find the bastion IP (the &amp;ldquo;head node&amp;rdquo; or &amp;ldquo;login node&amp;rdquo;) under Outputs:
+&lt;img src="https://user-images.githubusercontent.com/4021595/161416418-6fcf7712-646d-48ea-9861-743fd679ba28.png" alt="image">&lt;/p>
+&lt;p>Once logged in, you can create users using the &lt;code>cluster&lt;/code> command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>cluster user add test
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These users can then login using a password.&lt;/p>
+&lt;p>More information can be found here:
+&lt;a href="https://github.com/oracle-quickstart/oci-hpc">https://github.com/oracle-quickstart/oci-hpc&lt;/a>&lt;/p>
 &lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
 &lt;p>Your first need to request access to those resources with this
-&lt;a href="./../../docs/request">form&lt;/a>.&lt;/p></description></item></channel></rss>
+&lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
+&lt;p>Then follow the above instructions, but leave &lt;code>Use cluser network&lt;/code> activated.&lt;/p></description></item></channel></rss>
