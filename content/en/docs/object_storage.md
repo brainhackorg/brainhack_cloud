@@ -107,12 +107,7 @@ Then Click on `Generate Secret Key` under `Customer Secret Keys`:
 Save the Secret Key for later:
 ![image](https://user-images.githubusercontent.com/4021595/161412970-d22661cd-b549-48ff-8c33-15ba538f02d6.png)
 
-WiQ1aYxje0F1a/5aRR0FY/a+kAU2keFEimDez2+l4jc=
-
-Then save the `Access Key` from the table as well: 
-
-6f5540d7c407e0e640260bc1665f98922346173f
-
+Then save the `Access Key` from the table as well.
 
 2) Find out where your rclone config file is located:
 ```
