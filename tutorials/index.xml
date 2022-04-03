@@ -161,6 +161,7 @@ your own HPC cluster in the cloud&lt;/p>
 &lt;p>Once logged in, you can create users using the &lt;code>cluster&lt;/code> command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>cluster user add test
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These users can then login using a password.&lt;/p>
+&lt;p>There is a shared file storage (which can also be configured in size in the stack settings) in /nfs/cluster&lt;/p>
 &lt;p>More information can be found here:
 &lt;a href="https://github.com/oracle-quickstart/oci-hpc">https://github.com/oracle-quickstart/oci-hpc&lt;/a>&lt;/p>
 &lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
