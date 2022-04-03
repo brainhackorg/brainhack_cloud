@@ -156,11 +156,14 @@ go to &lt;code>Virtual Cloud Networks&lt;/code>, select the VCN you don&amp;rsqu
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/160227372-0012e396-a2ca-4f80-8455-d4b2c8616b19.png" alt="image">&lt;/p>
 &lt;p>and we could now run everything we like, e.g. &lt;a href="https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/">https://neurodesk.github.io/docs/neurodesktop/getting-started/linux/&lt;/a>&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>mkdir /home/opc/neurodesktop-storage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install tmux
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>tmux new -s neurodesk
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo docker run \
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> --shm-size=1gb -it --privileged --name neurodesktop \
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -v ~/neurodesktop-storage:/neurodesktop-storage \
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -e HOST_UID=&amp;#34;$(id -u)&amp;#34; -e HOST_GID=&amp;#34;$(id -g)&amp;#34;\
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -p 8080:8080 \
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h neurodesktop-20220302 docker.io/vnmd/neurodesktop:20220329
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and this is how easy it is to run a container on the cloud :)&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hit CTRL-b and then d to detach from the tmux session (re-attaching is possible using &lt;code>tmux attach-session -t neurodesk&lt;/code>).&lt;/p>
+&lt;p>and this is how easy it is to run a container on the cloud :)&lt;/p>
 &lt;p>if you connect to your cloud instance using a port-forwarding &lt;code>ssh -L 8080:127.0.0.1:8080 opc@xxx.xx.xx.xx&lt;/code> then you could now use Neurodesktop via visiting http://localhost:8080/#/?username=user&amp;amp;password=password in your local browser. When done, stop the container with CTRL-C and run &lt;code>sudo docker rm neurodesktop&lt;/code> to cleanup.&lt;/p></description></item></channel></rss>
