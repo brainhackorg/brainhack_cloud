@@ -58,8 +58,8 @@ this permission, we created a group called &amp;ldquo;cloudshell-access&amp;rdqu
 user to this group. The group then has a Policy that allows opening a cloud
 shell: &lt;code>allow group cloudshell-access to use cloud-shell in tenancy&lt;/code>&lt;/p>
 &lt;h2 id="policies-for-object-storage-lifecycle-management">Policies for Object Storage Lifecycle management&lt;/h2>
-&lt;p>To enable lifecycle management the local services need a policy to do this. I configured it for every possible region a user would choose:
-Allow service objectstorage-eu-frankfurt-1 to manage object-family in compartment projects&lt;/p>
+&lt;p>To enable lifecycle management the local services need a policy to do this. I configured it for every possible region a user would choose:&lt;/p>
+&lt;p>Allow service objectstorage-eu-frankfurt-1 to manage object-family in compartment projects&lt;/p>
 &lt;p>Allow service objectstorage-ap-sydney-1 to manage object-family in compartment projects&lt;/p>
 &lt;p>Allow service objectstorage-ap-melbourne-1 to manage object-family in compartment projects&lt;/p>
 &lt;p>Allow service objectstorage-sa-saopaulo-1 to manage object-family in compartment projects&lt;/p>
