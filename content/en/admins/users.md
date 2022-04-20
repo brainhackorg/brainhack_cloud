@@ -42,9 +42,10 @@ Copy this password and send it to the user you just created.
 
 The new user has to follow this procedure: [User request](./../../docs/request).
 
-Add the User to the group `cloudshell-access`
+Add the User to the group `projects` (This group has policies for giving users access to the cloudshell and the data science notebooks): 
 
-![image](https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png)
+![image](https://user-images.githubusercontent.com/4021595/164168268-e0921fa8-8236-4816-890d-ab1dbaafe240.png)
+
 
 Repeat this procedure for every user in the project.
 
