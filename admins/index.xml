@@ -19,8 +19,8 @@ and the same for description, and add an email.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png" alt="image">&lt;/p>
 &lt;p>Copy this password and send it to the user you just created.&lt;/p>
 &lt;p>The new user has to follow this procedure: &lt;a href="./../../docs/request">User request&lt;/a>.&lt;/p>
-&lt;p>Add the User to the group &lt;code>cloudshell-access&lt;/code>&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157342248-9a63cdf0-c630-42b9-9222-c45e54916a38.png" alt="image">&lt;/p>
+&lt;p>Add the User to the group &lt;code>projects&lt;/code> (This group has policies for giving users access to the cloudshell and the data science notebooks):&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/164168268-e0921fa8-8236-4816-890d-ab1dbaafe240.png" alt="image">&lt;/p>
 &lt;p>Repeat this procedure for every user in the project.&lt;/p>
 &lt;h2 id="create-project-group">Create Project Group&lt;/h2>
 &lt;p>Go back to Identity and click &lt;code>Create Group&lt;/code>&lt;/p>
