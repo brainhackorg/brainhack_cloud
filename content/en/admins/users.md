@@ -68,9 +68,10 @@ Then add the User(s) to the group.
 
 Go back to `Identity` and head to `Compartments` and click `Create Compartment`.
 Name it like the group just created and add the Github issue link as
-the description. Parent compartment is brainhack (root).
+the description. Parent compartment is `projects` a sub-compartment under the main compartment `brainhack (root)`.
 
-![image](https://user-images.githubusercontent.com/4021595/157342561-71a6ba34-7dd8-4d81-a382-621d0c4e10fa.png)
+![image](https://user-images.githubusercontent.com/4021595/164388946-72ae0980-6975-4b2b-bdb1-e1442a0da344.png)
+
 
 ## Create Policy for group and compartment
 
