@@ -42,6 +42,38 @@ That's how easy it can be to setup a whole Kubernetes cluster :) Thanks OCI team
 
 It will take a few minutes until everything is up and running -> Coffee break?
 
+Once everything is ready:
+![image](https://user-images.githubusercontent.com/4021595/164396586-28f044db-f7fa-45f9-a454-ce47b41b3255.png)
+
+
+you can access the cluster and the settings are given when clicking `Access Cluster`:
+![image](https://user-images.githubusercontent.com/4021595/164396652-d56916ae-c822-4a03-a0de-471ffc550599.png)
+
 
 ## Customizing nodes using Init-scripts
+If you configured Public IP addresses for the worker nodes, then you can connect to the nodes for troubleshooting - Click on the node under `Nodes` -> `pool1`:
+![image](https://user-images.githubusercontent.com/4021595/164403035-67eebf45-82a2-4627-8461-457e63ad0468.png)
+
+By default the disks are NOT expanded to the Bootvolume size you configured, so this can be fixed via init scripts. Edit the node pool and under advanced set the inits script:
+![image](https://user-images.githubusercontent.com/4021595/164403545-b43aca42-6185-4713-8faa-0a02762ad5b7.png)
+
+This script will expand the disk:
+```
+#!/bin/bash
+curl --fail -H "Authorization: Bearer Oracle" -L0 http://169.254.169.254/opc/v2/instance/metadata/oke_init_script | base64 --decode >/var/run/oke-init.sh
+bash /var/run/oke-init.sh
+sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+echo "1" | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d'/' -f 2`/device/rescan
+sudo /usr/libexec/oci-growfs -y
+```
+
+Then hit `Save Changes`. To apply these configuration changes you need to Scale the pool to 0 and then backup to 1:
+![image](https://user-images.githubusercontent.com/4021595/164403744-30b40a8a-1e3a-428d-9a7e-14e7a3414d33.png)
+
+
+## Cleanup
+You can delete the whole cluster to cleanup:
+![image](https://user-images.githubusercontent.com/4021595/164403933-41d231a9-e157-4dca-b770-e0d903813f8c.png)
+
+But be aware that Kubernetes can create resources via API calls, which is great, but it also means that these additionally created resources (like load balancers or storage volumes) will NOT be cleaned up automatically and need to cleaned up manually!
 
