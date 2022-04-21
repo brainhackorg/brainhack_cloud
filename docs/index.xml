@@ -166,4 +166,29 @@ go to &lt;code>Virtual Cloud Networks&lt;/code>, select the VCN you don&amp;rsqu
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h neurodesktop-20220302 docker.io/vnmd/neurodesktop:20220329
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Hit CTRL-b and then d to detach from the tmux session (re-attaching is possible using &lt;code>tmux attach-session -t neurodesk&lt;/code>).&lt;/p>
 &lt;p>and this is how easy it is to run a container on the cloud :)&lt;/p>
-&lt;p>if you connect to your cloud instance using a port-forwarding &lt;code>ssh -L 8080:127.0.0.1:8080 opc@xxx.xx.xx.xx&lt;/code> then you could now use Neurodesktop via visiting http://localhost:8080/#/?username=user&amp;amp;password=password in your local browser. When done, stop the container with CTRL-C and run &lt;code>sudo docker rm neurodesktop&lt;/code> to cleanup.&lt;/p></description></item></channel></rss>
+&lt;p>if you connect to your cloud instance using a port-forwarding &lt;code>ssh -L 8080:127.0.0.1:8080 opc@xxx.xx.xx.xx&lt;/code> then you could now use Neurodesktop via visiting http://localhost:8080/#/?username=user&amp;amp;password=password in your local browser. When done, stop the container with CTRL-C and run &lt;code>sudo docker rm neurodesktop&lt;/code> to cleanup.&lt;/p></description></item><item><title>Docs: Kubernetes</title><link>http://brainhack.org/brainhack_cloud/docs/kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/docs/kubernetes/</guid><description>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>Kubernetes enables running and orchestrating multiple software containers.&lt;/p>
+&lt;h2 id="setup-kubernetes-cluster-on-oracle-cloud-using-oke">Setup Kubernetes Cluster on Oracle Cloud using OKE&lt;/h2>
+&lt;p>Search for &lt;code>OKE&lt;/code> in the menu and then go to &lt;code>Kubernetes Clusters (OKE)&lt;/code> under &lt;code>Containers &amp;amp; Artifacts&lt;/code>:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164392430-231652d9-abf3-4cc0-ac90-4b2dd5c000ea.png" alt="image">&lt;/p>
+&lt;p>Select the region where you would like to create the Cluster:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164392545-765fc2bd-50c1-460f-9615-213b81d3ae54.png" alt="image">&lt;/p>
+&lt;p>Select the compartment where you would like to create the Cluster:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164392623-6bfc0561-7d6c-4e32-aa70-fef8259961bc.png" alt="image">&lt;/p>
+&lt;p>&lt;code>Quick Create&lt;/code> is great and gives a good starting point that works for most applications:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164392731-1f23834c-9be3-40f8-b2c9-24ea65c13fc4.png" alt="image">&lt;/p>
+&lt;p>The defaults are sensible, but Public Workers make it easier to troubleshoot things in the beginning:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164392860-eb050636-e820-46e2-a98a-cfdaf45a9281.png" alt="image">&lt;/p>
+&lt;p>Select the shape you like and 1 worker is good to start (can be increased and changed later!)
+&lt;img src="https://user-images.githubusercontent.com/4021595/164393030-561bf2d1-1af2-408b-9e38-51802efdd976.png" alt="image">&lt;/p>
+&lt;p>Under advanced you can configure the boot-volume size:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164393130-65e48e2e-605f-4d6f-9fe3-78518fba0d14.png" alt="image">&lt;/p>
+&lt;p>Add an SSH key for troubleshooting worker nodes:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164393220-77da1837-5407-476c-a971-1b3dc69b3d14.png" alt="image">&lt;/p>
+&lt;p>Review everything and then hit &lt;code>Create&lt;/code> and it should go and set-up everything :)
+&lt;img src="https://user-images.githubusercontent.com/4021595/164393349-2b34f99a-5ea0-462e-95c4-4dd2f6d7c16e.png" alt="image">&lt;/p>
+&lt;p>That&amp;rsquo;s how easy it can be to setup a whole Kubernetes cluster :) Thanks OCI team for creating OKE!
+&lt;img src="https://user-images.githubusercontent.com/4021595/164393450-1abc92f1-7dad-4e77-a5b5-0c72e7b0c08f.png" alt="image">&lt;/p>
+&lt;p>It will take a few minutes until everything is up and running -&amp;gt; Coffee break?&lt;/p>
+&lt;h2 id="customizing-nodes-using-init-scripts">Customizing nodes using Init-scripts&lt;/h2></description></item></channel></rss>
