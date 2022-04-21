@@ -40,8 +40,8 @@ the description. Parent compartment is &lt;code>projects&lt;/code> a sub-compart
 policy like the group and compartment just created. The description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
-&lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png" alt="image">&lt;/p>
+&lt;code>Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME&lt;/code>. Make sure that this policies is at the &lt;code>project&lt;/code> level and not in the &lt;code>brainhack (root)&lt;/code> compartment:&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/164389533-8f18ee73-c474-476d-8ed5-a0428b7e5aac.png" alt="image">&lt;/p>
 &lt;h2 id="create-a-budget-for-compartment">Create a Budget for compartment&lt;/h2>
 &lt;p>Budgets help us to control and monitor costs. For every compartment, we need a
 budget with someone being alerted when things go crazy:&lt;/p>
