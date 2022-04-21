@@ -79,9 +79,9 @@ Go back to `Identity` and click on `Policies`. Click `Create Policy`. Name the
 policy like the group and compartment just created. The description is the Github
 issue link. You can either use the policy builder or switch to manual. The
 resulting policy needs to be
-`Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`.
+`Allow group REPLACEWITHGROUPNAME to manage all-resources in compartment REPALCEWITHCOMPARTMENTNAME`. Make sure that this policies is at the `project` level and not in the `brainhack (root)` compartment:
 
-![image](https://user-images.githubusercontent.com/4021595/157343055-f726641a-ae85-4eab-9cff-5b1f08a70db3.png)
+![image](https://user-images.githubusercontent.com/4021595/164389533-8f18ee73-c474-476d-8ed5-a0428b7e5aac.png)
 
 ## Create a Budget for compartment
 
