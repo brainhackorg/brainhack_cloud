@@ -191,4 +191,25 @@ go to &lt;code>Virtual Cloud Networks&lt;/code>, select the VCN you don&amp;rsqu
 &lt;p>That&amp;rsquo;s how easy it can be to setup a whole Kubernetes cluster :) Thanks OCI team for creating OKE!
 &lt;img src="https://user-images.githubusercontent.com/4021595/164393450-1abc92f1-7dad-4e77-a5b5-0c72e7b0c08f.png" alt="image">&lt;/p>
 &lt;p>It will take a few minutes until everything is up and running -&amp;gt; Coffee break?&lt;/p>
-&lt;h2 id="customizing-nodes-using-init-scripts">Customizing nodes using Init-scripts&lt;/h2></description></item></channel></rss>
+&lt;p>Once everything is ready:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164396586-28f044db-f7fa-45f9-a454-ce47b41b3255.png" alt="image">&lt;/p>
+&lt;p>you can access the cluster and the settings are given when clicking &lt;code>Access Cluster&lt;/code>:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164396652-d56916ae-c822-4a03-a0de-471ffc550599.png" alt="image">&lt;/p>
+&lt;h2 id="customizing-nodes-using-init-scripts">Customizing nodes using Init-scripts&lt;/h2>
+&lt;p>If you configured Public IP addresses for the worker nodes, then you can connect to the nodes for troubleshooting - Click on the node under &lt;code>Nodes&lt;/code> -&amp;gt; &lt;code>pool1&lt;/code>:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164403035-67eebf45-82a2-4627-8461-457e63ad0468.png" alt="image">&lt;/p>
+&lt;p>By default the disks are NOT expanded to the Bootvolume size you configured, so this can be fixed via init scripts. Edit the node pool and under advanced set the inits script:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164403545-b43aca42-6185-4713-8faa-0a02762ad5b7.png" alt="image">&lt;/p>
+&lt;p>This script will expand the disk:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>curl --fail -H &lt;span style="color:#4e9a06">&amp;#34;Authorization: Bearer Oracle&amp;#34;&lt;/span> -L0 http://169.254.169.254/opc/v2/instance/metadata/oke_init_script &lt;span style="color:#000;font-weight:bold">|&lt;/span> base64 --decode &amp;gt;/var/run/oke-init.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bash /var/run/oke-init.sh
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#000">iflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>direct &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/oracleoci/oraclevda &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#000">count&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /sys/class/block/&lt;span style="color:#4e9a06">`&lt;/span>readlink /dev/oracleoci/oraclevda &lt;span style="color:#000;font-weight:bold">|&lt;/span> cut -d&lt;span style="color:#4e9a06">&amp;#39;/&amp;#39;&lt;/span> -f 2&lt;span style="color:#4e9a06">`&lt;/span>/device/rescan
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then hit &lt;code>Save Changes&lt;/code>. To apply these configuration changes you need to Scale the pool to 0 and then backup to 1:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164403744-30b40a8a-1e3a-428d-9a7e-14e7a3414d33.png" alt="image">&lt;/p>
+&lt;h2 id="cleanup">Cleanup&lt;/h2>
+&lt;p>You can delete the whole cluster to cleanup:
+&lt;img src="https://user-images.githubusercontent.com/4021595/164403933-41d231a9-e157-4dca-b770-e0d903813f8c.png" alt="image">&lt;/p>
+&lt;p>But be aware that Kubernetes can create resources via API calls, which is great, but it also means that these additionally created resources (like load balancers or storage volumes) will NOT be cleaned up automatically and need to cleaned up manually!&lt;/p></description></item></channel></rss>
