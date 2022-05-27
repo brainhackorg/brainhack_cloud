@@ -28,7 +28,9 @@ on github. For issues with the _brainhack cloud_, please open a
 Thank you to Oracle for Research for providing Oracle Cloud credits and related
 resources to support this project.
 
-<img src="https://user-images.githubusercontent.com/4021595/119061922-db877080-ba18-11eb-9882-d53a25ec88ee.png" width="250">
+<a href="https://www.oracle.com/research/?source=:pp:sn:::::RC_WWMK211117P00113:Evergreen_General_WWMK211117P00113_Sponshorship">
+  <img src="https://user-images.githubusercontent.com/4021595/119061922-db877080-ba18-11eb-9882-d53a25ec88ee.png" width="250">
+</a>
 
 ## License
 
