@@ -145,7 +145,7 @@ runners :)&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is an example: &lt;a href="https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml">https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml&lt;/a>&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup
-your own HPC cluster in the cloud&lt;/p>
+your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: &lt;a href="https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&amp;amp;SC=:so:ch:or:awr::::Cloud&amp;amp;pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358">https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&amp;amp;SC=:so:ch:or:awr::::Cloud&amp;amp;pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358&lt;/a>)&lt;/p>
 &lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
 &lt;p>Download the Terraform configuration from here as a zip file:
 &lt;a href="https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5">https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5&lt;/a>&lt;/p>
