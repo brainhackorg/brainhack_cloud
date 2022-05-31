@@ -9,7 +9,7 @@ description: >
 ## Overview
 
 Oracle cloud supports High Performance Computing and makes it very easy to setup
-your own HPC cluster in the cloud
+your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358)
 
 ## Configure HPC cluster
 

@@ -2,9 +2,11 @@
 # ***Brainhack Cloud*** 
 
 
-Brainhack Global is bringing exciting cloud computing facilities to its community in a collaboration with Oracle Cloud! :tada:
+Brainhack Global is bringing exciting cloud computing facilities to its community in a collaboration with Oracle for Research! :tada:
 
-As the Brainhack Global organizaton, we applied for funding this project with Oracle Cloud for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024. 
+
+
+As the Brainhack Global organizaton, we applied for funding this project with Oracle for Research and the project is funded with $230,000.00 AUD from 29th of January 2022 until 28th of January, 2024. 
 
 
 We are so excited to think what amazing projects this opportunity will bring to the Brainhack Global community!:brain: 👩‍🔬 👨‍🔬
@@ -15,5 +17,6 @@ Then the admins will review your request and arrange the credientials regarding 
 
 ![](https://github.com/brainhackorg/brainhack_cloud/blob/main/assets/images/oracle_logo.png)
 
-
+What is Oracle for Research?
+"Oracle for Research supports academic, educational, and institutional researchers in all aspects of discovery. We’ve made it simple for them to host, store and analyze their data with our cloud infrastructure solutions. Our research customers are changing the world – and we’re proud to help them do it.”
 

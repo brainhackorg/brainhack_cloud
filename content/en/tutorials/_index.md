@@ -32,6 +32,9 @@ resources to support this project.
   <img src="https://user-images.githubusercontent.com/4021595/119061922-db877080-ba18-11eb-9882-d53a25ec88ee.png" width="250">
 </a>
 
+What is Oracle for Research?
+"Oracle for Research supports academic, educational, and institutional researchers in all aspects of discovery. We’ve made it simple for them to host, store and analyze their data with our cloud infrastructure solutions. Our research customers are changing the world – and we’re proud to help them do it.”
+
 ## License
 
 CC BY License 4.0
