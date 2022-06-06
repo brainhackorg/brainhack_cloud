@@ -15,7 +15,8 @@ For help and support, please join the mattermost channel:
 - https://mattermost.brainhack.org/brainhack/channels/ofr-support
 
 
-If you would like to join the admin team, please join this mattermost channel: https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle
+If you would like to join the admin team, please join this mattermost channel: 
+- https://mattermost.brainhack.org/brainhack/channels/brainhack_global-oracle
 
 The team behind the scenes:
 - Johanna Bayer https://github.com/likeajumprope
