@@ -74,6 +74,10 @@ Paste it in the Add SSH keys section
 
 ![image](https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png)
 
+{{% alert title="Warning" color="warning" %}}
+Make sure to generate the key pair via `ssh-keygen` in the cloud shell (or your local shell). The option `generate key pairs` will not work and result in generating a .key file, which is used for APIs and not for `ssh` connection.
+{{% /alert %}} 
+
 ### Disk size
 
 You can specify a custom boot volume size, but you can also increase this easily
