@@ -84,8 +84,15 @@ the cloudshell.&lt;/p>
 &lt;p>The notebook service is like Google Colab, but without the time or resource
 limitations.&lt;/p>
 &lt;h2 id="starting-a-notebook-environment">Starting a notebook environment&lt;/h2>
-&lt;p>Select the geographic region where you want to run this (e.g. close to you).
-&lt;img src="https://user-images.githubusercontent.com/4021595/159638803-174b68ad-c545-4539-8d01-b0952a0e7de4.png" alt="image">&lt;/p>
+&lt;p>Select the geographic region where you want to run this (e.g. closest to you).&lt;/p>
+&lt;p>!!! Important: If you want to use GPUs you need to select a region that has GPUs availabe!!!!&lt;/p>
+&lt;ol>
+&lt;li>Nvidia GPUs V100 are available in Tokyo, London, Seoul&lt;/li>
+&lt;li>Nvidia GPUs P100 are available in Frankfurt&lt;/li>
+&lt;li>Nvidia GPUs V100 AND P100 are available in Ashburn&lt;/li>
+&lt;li>CPU only instances are availabe in Sydney, Zurich, Stockholm, Singapore, Hyderabat, Marseille, Santiago, Toronto, Sao Paulo&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/159638803-174b68ad-c545-4539-8d01-b0952a0e7de4.png" alt="image">&lt;/p>
 &lt;p>Then search for &lt;code>Data Science&lt;/code> under &lt;code>Machine Learning&lt;/code>
 &lt;img src="https://user-images.githubusercontent.com/4021595/159638307-552138c0-01c1-43d3-823c-3a783e03ef5d.png" alt="image">&lt;/p>
 &lt;p>then select your project compartment (in this example &lt;code>testproject&lt;/code>)
