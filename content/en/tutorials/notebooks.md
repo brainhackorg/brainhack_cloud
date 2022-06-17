@@ -15,7 +15,7 @@ limitations.
 Select the geographic region where you want to run this (e.g. closest to you). 
 
 !!! Important: If you want to use GPUs you need to select a region that has GPUs availabe!!!!
-1) Nvidia GPUs V100 are available in Tokyo, London, Seoul
+1) Nvidia GPUs V100 are available in Tokyo, London, (Seoul)
 2) Nvidia GPUs P100 are available in Frankfurt 
 3) Nvidia GPUs V100 AND P100 are available in Ashburn
 4) CPU only instances are availabe in Sydney, Zurich, Stockholm, Singapore, Hyderabat, Marseille, Santiago, Toronto, Sao Paulo
