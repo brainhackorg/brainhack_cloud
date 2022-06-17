@@ -12,7 +12,14 @@ The notebook service is like Google Colab, but without the time or resource
 limitations.
 
 ## Starting a notebook environment
-Select the geographic region where you want to run this (e.g. close to you). 
+Select the geographic region where you want to run this (e.g. closest to you). 
+
+!!! Important: If you want to use GPUs you need to select a region that has GPUs availabe!!!!
+1) Nvidia GPUs V100 are available in Tokyo, London, Seoul
+2) Nvidia GPUs P100 are available in Frankfurt 
+3) Nvidia GPUs V100 AND P100 are available in Ashburn
+4) CPU only instances are availabe in Sydney, Zurich, Stockholm, Singapore, Hyderabat, Marseille, Santiago, Toronto, Sao Paulo
+
 ![image](https://user-images.githubusercontent.com/4021595/159638803-174b68ad-c545-4539-8d01-b0952a0e7de4.png)
 
 
