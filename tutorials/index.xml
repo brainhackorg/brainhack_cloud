@@ -87,7 +87,7 @@ limitations.&lt;/p>
 &lt;p>Select the geographic region where you want to run this (e.g. closest to you).&lt;/p>
 &lt;p>!!! Important: If you want to use GPUs you need to select a region that has GPUs availabe!!!!&lt;/p>
 &lt;ol>
-&lt;li>Nvidia GPUs V100 are available in Tokyo, London, Seoul&lt;/li>
+&lt;li>Nvidia GPUs V100 are available in Tokyo, London, (Seoul)&lt;/li>
 &lt;li>Nvidia GPUs P100 are available in Frankfurt&lt;/li>
 &lt;li>Nvidia GPUs V100 AND P100 are available in Ashburn&lt;/li>
 &lt;li>CPU only instances are availabe in Sydney, Zurich, Stockholm, Singapore, Hyderabat, Marseille, Santiago, Toronto, Sao Paulo&lt;/li>
