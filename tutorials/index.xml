@@ -61,6 +61,8 @@ the cloudshell.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351454-d888fd88-130b-40fe-986f-46e451d569ae.png" alt="image">&lt;/p>
 &lt;p>So in this case you would connect to your instance by typing.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh opc@130.61.212.59
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are planning on running web services on the instance (like a jupyter notebook service) - then it&amp;rsquo;s easiest to connect to the instance via a port forwarding and then opening the web service in your local browser at localhost:portnumber.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -L portnumber:127.0.0.1:portnumber opc@130.61.212.59
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Accept the fingerprint and you should be connected.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png" alt="image">&lt;/p>
 &lt;h2 id="expand-disk">Expand disk&lt;/h2>
