@@ -112,6 +112,12 @@ So in this case you would connect to your instance by typing.
 ssh opc@130.61.212.59
 ```
 
+If you are planning on running web services on the instance (like a jupyter notebook service) - then it's easiest to connect to the instance via a port forwarding and then opening the web service in your local browser at localhost:portnumber.
+
+```bash
+ssh -L portnumber:127.0.0.1:portnumber opc@130.61.212.59
+```
+
 Accept the fingerprint and you should be connected.
 
 ![image](https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png)
