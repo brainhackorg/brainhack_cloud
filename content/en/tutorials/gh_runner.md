@@ -12,7 +12,7 @@ This section describes how to setup a Github action runner on the cloud that you
 can then use to run huge Github workflows that wouldn't run in the hosted
 runners :)
 
-## Create a new VM or HCP
+## Create a new VM or HPC
 
 See our [VM](./../vm) or [HPC](./../hpc) Tutorials.
 
