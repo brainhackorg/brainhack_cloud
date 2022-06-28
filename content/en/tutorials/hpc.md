@@ -61,10 +61,10 @@ error: Memory specification can not be satisfied
 ```
 
 This is happening as the `RealMemory` for each node (e.g. the amount of memory each compute node may use) has not yet been specified and defaults to a very low value. To rectify this, first work out how much memory to allocate to each node by running `scontrol show nodes` and looking at `FreeMem`.
-![image](MARKER)
+![image](https://user-images.githubusercontent.com/4021595/176095292-c17e658b-0372-4c04-9f51-32d00c2e0f1c.png)
 
 To change the `RealMemory`, you must edit the slurm configuration file (which may be found in `/etc/slurm/slurm.conf`). Inside the slurm configuration file you will find several lines which begin `NodeName=`. These specify the settings for each node. To fix the error, on each of these lines, add `RealMemory=AMOUNT` where `AMOUNT` is the amount of memory you wish to allow the node to use.
-![image](MARKER)
+![image](https://user-images.githubusercontent.com/4021595/176095320-b9f55fb1-7365-4e8a-9a30-eee5117c12dc.png)
 
 Once you have done this, you must reconfigure slurm by running the following command:
 ```
