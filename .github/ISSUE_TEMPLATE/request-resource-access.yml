@@ -40,7 +40,7 @@ body:
 
   - type: textarea
     attributes:
-      label: People involved and contact details (including email adress!)
+      label: People involved and contact details (including email address!)
       description: Add the full name of the people involved in the project with Github IDs and a contact email (we need to send a registration email! You can also post your email in the mattermost channel https://mattermost.brainhack.org/brainhack/channels/brainhack_cloud).
     validations:
       required: true
