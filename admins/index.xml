@@ -26,6 +26,9 @@ and the same for description, and add an email.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your temporary password is:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your project compartment name is:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>When logging in (https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack) make sure to use “Direct Sign-In” (the SECOND sign-in option -&amp;gt; NOT SSO).
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Let us know if you have any questions here: https://mattermost.brainhack.org/brainhack/channels/brainhack_cloud
