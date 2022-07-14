@@ -18,7 +18,18 @@ and the same for description, and add an email.&lt;/p>
 &lt;p>Now, generate a password for the user by Clicking &lt;code>Create/Reset Password&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157340057-14baf64d-4737-4dae-ad6a-c31694eac9ab.png" alt="image">&lt;/p>
 &lt;p>Copy this password and send it to the user you just created.&lt;/p>
-&lt;p>The new user has to follow this procedure: &lt;a href="./../../docs/request">User request&lt;/a>.&lt;/p>
+&lt;p>Here is an email template:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Dear
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>You should have gotten an email for the Oracle account verification a few minutes ago – check your spam folder if it’s not there 😊
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Your temporary password is:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>When logging in (https://cloud.oracle.com/?region=eu-frankfurt-1&amp;amp;tenant=brainhack) make sure to use “Direct Sign-In” (the SECOND sign-in option -&amp;gt; NOT SSO).
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Let us know if you have any questions here: https://mattermost.brainhack.org/brainhack/channels/brainhack_cloud
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The new user has to follow this procedure: &lt;a href="./../../docs/request">User request&lt;/a>.&lt;/p>
 &lt;p>Add the User to the group &lt;code>projects&lt;/code> (This group has policies for giving users access to the cloudshell and the data science notebooks):&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/164168268-e0921fa8-8236-4816-890d-ab1dbaafe240.png" alt="image">&lt;/p>
 &lt;p>Repeat this procedure for every user in the project.&lt;/p>
