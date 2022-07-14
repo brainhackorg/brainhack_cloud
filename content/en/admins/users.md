@@ -40,6 +40,22 @@ Now, generate a password for the user by Clicking `Create/Reset Password`
 
 Copy this password and send it to the user you just created.
 
+Here is an email template:
+
+```
+Dear 
+
+You should have gotten an email for the Oracle account verification a few minutes ago – check your spam folder if it’s not there 😊
+ 
+Your temporary password is:
+ 
+ 
+When logging in (https://cloud.oracle.com/?region=eu-frankfurt-1&tenant=brainhack) make sure to use “Direct Sign-In” (the SECOND sign-in option -> NOT SSO).
+
+Let us know if you have any questions here: https://mattermost.brainhack.org/brainhack/channels/brainhack_cloud
+
+```
+
 The new user has to follow this procedure: [User request](./../../docs/request).
 
 Add the User to the group `projects` (This group has policies for giving users access to the cloudshell and the data science notebooks): 
