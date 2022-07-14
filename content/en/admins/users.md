@@ -48,7 +48,10 @@ Dear
 You should have gotten an email for the Oracle account verification a few minutes ago – check your spam folder if it’s not there 😊
  
 Your temporary password is:
- 
+
+
+Your project compartment name is: 
+
  
 When logging in (https://cloud.oracle.com/?region=eu-frankfurt-1&tenant=brainhack) make sure to use “Direct Sign-In” (the SECOND sign-in option -> NOT SSO).
 
