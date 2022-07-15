@@ -37,7 +37,7 @@ Cloud) and select a Shape.
 
 ![image](https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png)
 
-VM.Standard.E4.Flex is a good starting point
+VM.Standard.E4.Flex is a good starting point. The default is Ampere in some instances and this is an ARM architecture, so some of your applications wouldn't work out of the box - it is therefore important to change the default Shape to an x86 architecture, like the VM.Standard.E4.Flex.
 
 ![image](https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png)
 
