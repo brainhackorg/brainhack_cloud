@@ -35,11 +35,10 @@ This will then create a custom HPC for your project (it will take a couple of mi
 Once everything is done you find the bastion IP (the "head node" or "login node") under Outputs: 
 ![image](https://user-images.githubusercontent.com/4021595/161416418-6fcf7712-646d-48ea-9861-743fd679ba28.png)
 
-If you selected the default options, you can now ssh into the HPC as follows:
+If you selected the default options (make sure to setup your SSH keys: http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key), you can now ssh into the HPC as follows:
 ```
 ssh opc@ipbastion
 ```
-
 
 Once logged in, you can create users using the `cluster` command:
 ```
