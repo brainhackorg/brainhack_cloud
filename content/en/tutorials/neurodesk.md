@@ -8,7 +8,7 @@ description: >
 
 ## Overview
 
-This section describes how to setup a Neurodesk instance on the cloud
+This section describes how to setup a Neurodesk instance on the cloud. Neurodesk provides a containerised data analysis environment to facilitate reproducible analysis of neuroimaging data. Software included can be found here: https://www.neurodesk.org/applications/
 
 ## Create a new VM
 
