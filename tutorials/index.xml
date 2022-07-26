@@ -196,7 +196,7 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
 &lt;p>Then follow the above instructions, but leave &lt;code>Use cluser network&lt;/code> activated.&lt;/p></description></item><item><title>Tutorials: Neurodesk</title><link>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
-&lt;p>This section describes how to setup a Neurodesk instance on the cloud&lt;/p>
+&lt;p>This section describes how to setup a Neurodesk instance on the cloud. Neurodesk provides a containerised data analysis environment to facilitate reproducible analysis of neuroimaging data. Software included can be found here: &lt;a href="https://www.neurodesk.org/applications/">https://www.neurodesk.org/applications/&lt;/a>&lt;/p>
 &lt;h2 id="create-a-new-vm">Create a new VM&lt;/h2>
 &lt;p>See our &lt;a href="./../vm">VM&lt;/a> tutorial&lt;/p>
 &lt;h2 id="configure-dockerpodman">Configure Docker/Podman&lt;/h2>
