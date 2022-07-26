@@ -16,7 +16,7 @@ See our [VM](./../vm) tutorial
 
 ## Configure Docker/Podman
 
-See our [Docker](../docs/docker) documentation
+See our [Docker](../../docs/docker) documentation
 
 ## Follow the official Neurodesk instructions for running the latest container
 
