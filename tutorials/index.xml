@@ -200,6 +200,6 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;h2 id="create-a-new-vm">Create a new VM&lt;/h2>
 &lt;p>See our &lt;a href="./../vm">VM&lt;/a> tutorial&lt;/p>
 &lt;h2 id="configure-dockerpodman">Configure Docker/Podman&lt;/h2>
-&lt;p>See our &lt;a href="./../docs/docker">Docker&lt;/a> documentation&lt;/p>
+&lt;p>See our &lt;a href="../docs/docker">Docker&lt;/a> documentation&lt;/p>
 &lt;h2 id="follow-the-official-neurodesk-instructions-for-running-the-latest-container">Follow the official Neurodesk instructions for running the latest container&lt;/h2>
 &lt;p>&lt;a href="https://www.neurodesk.org/docs/neurodesktop/getting-started/cloud/">https://www.neurodesk.org/docs/neurodesktop/getting-started/cloud/&lt;/a>&lt;/p></description></item></channel></rss>
