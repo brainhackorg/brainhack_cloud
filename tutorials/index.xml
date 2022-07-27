@@ -176,9 +176,10 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;img src="https://user-images.githubusercontent.com/4021595/161416418-6fcf7712-646d-48ea-9861-743fd679ba28.png" alt="image">&lt;/p>
 &lt;p>If you selected the default options (make sure to setup your SSH keys: &lt;a href="http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key)">http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key)&lt;/a>, you can now ssh into the HPC as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ssh opc@ipbastion
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once logged in, you can create users using the &lt;code>cluster&lt;/code> command:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be aware that this &amp;ldquo;opc&amp;rdquo; account is the admin account of the cluster and should not be used to perform analyses. It is better to create a user account to perform the work in:&lt;/p>
+&lt;p>Once logged in with the opc account, you can create users using the &lt;code>cluster&lt;/code> command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>cluster user add test
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These users can then login using a password.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These users can then login using a password only.&lt;/p>
 &lt;p>There is a shared file storage (which can also be configured in size in the stack settings) in /nfs/cluster&lt;/p>
 &lt;p>More information can be found here:
 &lt;a href="https://github.com/oracle-quickstart/oci-hpc">https://github.com/oracle-quickstart/oci-hpc&lt;/a>&lt;/p>
