@@ -40,12 +40,14 @@ If you selected the default options (make sure to setup your SSH keys: http://br
 ssh opc@ipbastion
 ```
 
-Once logged in, you can create users using the `cluster` command:
+Be aware that this "opc" account is the admin account of the cluster and should not be used to perform analyses. It is better to create a user account to perform the work in:
+
+Once logged in with the opc account, you can create users using the `cluster` command:
 ```
 cluster user add test
 ```
 
-These users can then login using a password.
+These users can then login using a password only.
 
 There is a shared file storage (which can also be configured in size in the stack settings) in /nfs/cluster
 
