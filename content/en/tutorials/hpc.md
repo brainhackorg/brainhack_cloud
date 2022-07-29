@@ -11,6 +11,9 @@ description: >
 Oracle cloud supports High Performance Computing and makes it very easy to setup
 your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358)
 
+## Before you get started
+Consider if you actually need a High performance cluster (HPC) for your work. An HPC is a cluster consisting of multiple Machines and it uses a head-node  from where jobs are submitted to this cluster using for example slurm. If you have many jobs that need to be run independently than the setup described here will work well. A "real" HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (MPI). This would be needed if you have a problem that's so large that a single machine wouldn't be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single virtual machine, because it requires considerably less setup work.
+
 ## Configure HPC cluster
 
 Download the Terraform configuration from here as a zip file:
