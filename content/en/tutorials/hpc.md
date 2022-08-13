@@ -17,7 +17,7 @@ Consider if you actually need a High performance cluster (HPC) for your work. An
 ## Configure HPC cluster
 
 Download the Terraform configuration from here as a zip file:
-https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5
+[https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5](https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2)
 
 Make sure you selected the geographic region where you would like to create the resource.
 ![image](https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png)
