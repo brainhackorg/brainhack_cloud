@@ -163,7 +163,7 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;p>Consider if you actually need a High performance cluster (HPC) for your work. An HPC is a cluster consisting of multiple Machines and it uses a head-node from where jobs are submitted to this cluster using for example slurm. If you have many jobs that need to be run independently than the setup described here will work well. A &amp;ldquo;real&amp;rdquo; HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (MPI). This would be needed if you have a problem that&amp;rsquo;s so large that a single machine wouldn&amp;rsquo;t be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single virtual machine, because it requires considerably less setup work.&lt;/p>
 &lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
 &lt;p>Download the Terraform configuration from here as a zip file:
-&lt;a href="https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5">https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5&lt;/a>&lt;/p>
+&lt;a href="https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2">https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5&lt;/a>&lt;/p>
 &lt;p>Make sure you selected the geographic region where you would like to create the resource.
 &lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
 &lt;p>Then go to &lt;code>Stacks&lt;/code> under &lt;code>Resource Manager&lt;/code>:
