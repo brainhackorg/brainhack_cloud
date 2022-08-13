@@ -12,21 +12,25 @@ Oracle cloud supports High Performance Computing and makes it very easy to setup
 your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358)
 
 ## Before you get started
-Consider if you actually need a High performance cluster (HPC) for your work. An HPC is a cluster consisting of multiple Machines and it uses a head-node  from where jobs are submitted to this cluster using for example slurm. If you have many jobs that need to be run independently than the setup described here will work well. A "real" HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (MPI). This would be needed if you have a problem that's so large that a single machine wouldn't be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single virtual machine, because it requires considerably less setup work.
+Consider if you actually need High Performance Computing (HPC) for your work. An HPC is a cluster consisting of multiple machines and it uses a head-node (here bastion host) from where jobs are submitted to this cluster using a job engine (for example slurm). If you have many jobs that need to be run independently than the setup described here will work well. A "real" HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (e.g. MPI). This would be needed if you have a problem that's so large that a single machine wouldn't be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single virtual machine, because it requires considerably less setup work.
 
 ## Configure HPC cluster
 
 Download the Terraform configuration from here as a zip file:
-[https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.8.0.5](https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2)
+[https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2](https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2)
 
-Make sure you selected the geographic region where you would like to create the resource.
+Make sure you selected the geographic region where you would like to create the resource (it should be close to you for best latencies).
 ![image](https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png)
 
 Then go to `Stacks` under `Resource Manager`:
 ![image](https://user-images.githubusercontent.com/4021595/161415757-409d264d-39e0-41f0-8bb0-3b5adc53abde.png)
 
-In the `List Scope` drop down menu, select your project title.  Choose `Create Stack` and upload the zip file.
+In the `List Scope` drop down menu, select your project compartment.  Choose `Create Stack` and upload the zip file.
 ![image](https://user-images.githubusercontent.com/4021595/161415784-56f78544-fa20-48de-ae7c-89f2154f5e58.png)
+
+
+
+
 
 Accept the defaults and add your public SSH key, disable `Use cluster network` (this is for MPI and not required for most people):
 ![image](https://user-images.githubusercontent.com/4021595/161415850-906a7cbf-8243-4df4-94b9-1dac7fcb1225.png)
