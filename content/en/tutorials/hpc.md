@@ -26,41 +26,52 @@ Then go to `Stacks` under `Resource Manager`:
 ![image](https://user-images.githubusercontent.com/4021595/161415757-409d264d-39e0-41f0-8bb0-3b5adc53abde.png)
 
 In the `List Scope` drop down menu, select your project compartment.  Click `Create Stack` and upload the zip file as a Terraform configuration source.
+
 <img width="1043" alt="create stack" src="https://user-images.githubusercontent.com/4021595/184516975-a8188aa9-8337-4523-9111-fb7a1c7868ba.png">
 
 give your cluster a name, but leave the default options for the rest:
+
 <img width="846" alt="naming the cluster" src="https://user-images.githubusercontent.com/4021595/184517026-76cc8d32-b19d-48a4-b4c3-8b88d0131ba1.png">
 
 Check that the cluster is being created in your compartment again and then hit `Next`
 
 
 In `cluster configuration` you need to add your public SSH key for the opc admin account. Make sure to setup your SSH keys first [create a public key](http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key)
+
 <img width="852" alt="image" src="https://user-images.githubusercontent.com/4021595/184517096-e62de0bf-e535-4aaa-84fc-70001e142051.png">
 
 
 In `Headnode options` you need to select an Availability Domain. It doesn't matter what you select there and the options will depend on the geographic region where you launch your HPC. You can keep the headnode default size, or you can select a different flavour:
+
 <img width="849" alt="image" src="https://user-images.githubusercontent.com/4021595/184517208-247ffd57-56a6-44b2-a9a5-259ee728e00a.png">
 
 In `Compute node options` you need to disable `Use cluster network` (this is for MPI and not required for most people. It requires special network hardware that's not available in every region. If you need MPI please get in touch and we can help you setting this up). Select a compute node size that fits your problem size. Drop the initial compute size node to 1, because we will scale the cluster using autoscaling.
+
 <img width="829" alt="image" src="https://user-images.githubusercontent.com/4021595/184517285-b6805297-1a16-4f29-aa4c-816334b28e86.png">
 
 In `Autoscaling` you should enable `scheduler based autoscaling`, `monitor the autoscaling` and disable `RDMA latency check` if you are not using MPI.
+
 <img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">
 
 For `API authentication` and `Monitoring` leave the defaults:
+
 <img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
 
 
 For `Additional file system` tick `Add another NFS filesystem` and accept the defaults:
+
 <img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">
 
 For `Advanced bastion options`, `Avanced storage options` and `Network options` you can accept the defaults:
+
 <img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">
 
 For `Software` enable `Install Spack package manager` in addition to the defaults:
+
 <img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">
 
 The hit `next` and on the next page scroll to the end and tick `Run apply`:
+
 <img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">
 
 Then hit `Create`
@@ -105,6 +116,12 @@ To change the `RealMemory`, you must edit the slurm configuration file (which ma
 Once you have done this, you must reconfigure slurm by running the following command:
 ```
 sudo scontrol reconfigure
+```
+
+## Configuring X11 forwarding
+If you want to use graphical aplications you need to install:
+```
+sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
 ```
 
 ## Advanced: Use MPI networking
