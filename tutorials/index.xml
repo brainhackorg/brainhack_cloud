@@ -183,13 +183,13 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">
 &lt;p>For &lt;code>API authentication&lt;/code> and &lt;code>Monitoring&lt;/code> leave the defaults:&lt;/p>
 &lt;img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
-&lt;p>For &lt;code>Additional file system&lt;/code> tick &lt;code>Add another NFS filesystem&lt;/code> and accept the defaults:&lt;/p>
-&lt;img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">
+&lt;p>For &lt;code>Additional file system&lt;/code> accept the defaults:&lt;/p>
+&lt;img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517726-d07ad10f-dc95-48ec-97fd-85e5ee19a6b9.png">
 &lt;p>For &lt;code>Advanced bastion options&lt;/code>, &lt;code>Avanced storage options&lt;/code> and &lt;code>Network options&lt;/code> you can accept the defaults:&lt;/p>
 &lt;img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">
 &lt;p>For &lt;code>Software&lt;/code> enable &lt;code>Install Spack package manager&lt;/code> in addition to the defaults:&lt;/p>
 &lt;img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">
-&lt;p>The hit &lt;code>next&lt;/code> and on the next page scroll to the end and tick &lt;code>Run apply&lt;/code>:&lt;/p>
+&lt;p>Then hit &lt;code>next&lt;/code> and on the next page scroll to the end and tick &lt;code>Run apply&lt;/code>:&lt;/p>
 &lt;img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">
 &lt;p>Then hit &lt;code>Create&lt;/code>&lt;/p>
 &lt;p>This will then create a custom HPC for your project (it will take a couple of minutes to complete).&lt;/p>
