@@ -9,10 +9,10 @@ description: >
 ## Overview
 
 Oracle cloud supports High Performance Computing and makes it very easy to setup
-your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358)
+your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: [GPU cluster](https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358))
 
 ## Before you get started
-Consider if you actually need High Performance Computing (HPC) for your work. An HPC is a cluster consisting of multiple machines and it uses a head-node (here bastion host) from where jobs are submitted to this cluster using a job engine (for example slurm). If you have many jobs that need to be run independently than the setup described here will work well. A "real" HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (e.g. MPI). This would be needed if you have a problem that's so large that a single machine wouldn't be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single virtual machine, because it requires considerably less setup work.
+Consider if you actually need High Performance Computing (HPC) for your work. An HPC is a cluster consisting of multiple machines and it uses a head-node (here bastion host) from where jobs are submitted to this cluster using a job engine (for example slurm). If you have many jobs that need to be run independently than the setup described here will work well. A "real" HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (e.g. MPI). This would be needed if you have a problem that's so large that a single machine wouldn't be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single [virtual machine](http://brainhack.org/brainhack_cloud/tutorials/vm/), because it requires considerably less setup work and easier to maintain.
 
 ## Configure HPC cluster
 
@@ -25,36 +25,64 @@ Make sure you selected the geographic region where you would like to create the 
 Then go to `Stacks` under `Resource Manager`:
 ![image](https://user-images.githubusercontent.com/4021595/161415757-409d264d-39e0-41f0-8bb0-3b5adc53abde.png)
 
-In the `List Scope` drop down menu, select your project compartment.  Choose `Create Stack` and upload the zip file.
-![image](https://user-images.githubusercontent.com/4021595/161415784-56f78544-fa20-48de-ae7c-89f2154f5e58.png)
+In the `List Scope` drop down menu, select your project compartment.  Click `Create Stack` and upload the zip file as a Terraform configuration source.
+<img width="1043" alt="create stack" src="https://user-images.githubusercontent.com/4021595/184516975-a8188aa9-8337-4523-9111-fb7a1c7868ba.png">
+
+give your cluster a name, but leave the default options for the rest:
+<img width="846" alt="naming the cluster" src="https://user-images.githubusercontent.com/4021595/184517026-76cc8d32-b19d-48a4-b4c3-8b88d0131ba1.png">
+
+Check that the cluster is being created in your compartment again and then hit `Next`
 
 
+In `cluster configuration` you need to add your public SSH key for the opc admin account. Make sure to setup your SSH keys first [create a public key](http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key)
+<img width="852" alt="image" src="https://user-images.githubusercontent.com/4021595/184517096-e62de0bf-e535-4aaa-84fc-70001e142051.png">
 
 
+In `Headnode options` you need to select an Availability Domain. It doesn't matter what you select there and the options will depend on the geographic region where you launch your HPC. You can keep the headnode default size, or you can select a different flavour:
+<img width="849" alt="image" src="https://user-images.githubusercontent.com/4021595/184517208-247ffd57-56a6-44b2-a9a5-259ee728e00a.png">
 
-Accept the defaults and add your public SSH key, disable `Use cluster network` (this is for MPI and not required for most people):
-![image](https://user-images.githubusercontent.com/4021595/161415850-906a7cbf-8243-4df4-94b9-1dac7fcb1225.png)
+In `Compute node options` you need to disable `Use cluster network` (this is for MPI and not required for most people. It requires special network hardware that's not available in every region. If you need MPI please get in touch and we can help you setting this up). Select a compute node size that fits your problem size. Drop the initial compute size node to 1, because we will scale the cluster using autoscaling.
+<img width="829" alt="image" src="https://user-images.githubusercontent.com/4021595/184517285-b6805297-1a16-4f29-aa4c-816334b28e86.png">
 
-Specify the number of compute nodes you would like the HPC to have using `Initial cluster size`.
+In `Autoscaling` you should enable `scheduler based autoscaling`, `monitor the autoscaling` and disable `RDMA latency check` if you are not using MPI.
+<img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">
+
+For `API authentication` and `Monitoring` leave the defaults:
+<img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
+
+
+For `Additional file system` tick `Add another NFS filesystem` and accept the defaults:
+<img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">
+
+For `Advanced bastion options`, `Avanced storage options` and `Network options` you can accept the defaults:
+<img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">
+
+For `Software` enable `Install Spack package manager` in addition to the defaults:
+<img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">
+
+The hit `next` and on the next page scroll to the end and tick `Run apply`:
+<img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">
+
+Then hit `Create`
 
 This will then create a custom HPC for your project (it will take a couple of minutes to complete).
 
 Once everything is done you find the bastion IP (the "head node" or "login node") under Outputs: 
 ![image](https://user-images.githubusercontent.com/4021595/161416418-6fcf7712-646d-48ea-9861-743fd679ba28.png)
 
-If you selected the default options (make sure to setup your SSH keys: http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key), you can now ssh into the HPC as follows:
+You can now ssh into the HPC as follows:
 ```
 ssh opc@ipbastion
 ```
 
-Be aware that this "opc" account is the admin account of the cluster and should not be used to perform analyses. It is better to create a user account to perform the work in:
+Be aware that this "opc" account is the admin account with sudo access of the cluster and should not be used to perform analyses. It is better to create a user account to perform the work in:
 
-Once logged in with the opc account, you can create users using the `cluster` command:
+Once logged in with the opc account, you can create normal cluster users using the `cluster` command:
 ```
 cluster user add test
 ```
 
-These users can then login using a password only.
+These users can then login using a password only and do not require an SSH key.
 
 There is a shared file storage (which can also be configured in size in the stack settings) in /nfs/cluster
 
@@ -84,4 +112,4 @@ sudo scontrol reconfigure
 Your first need to request access to those resources with this
 [form](./../../docs/request).
 
-Then follow the above instructions, but leave `Use cluser network` activated.
+Then follow the above instructions, but leave `Use cluser network` activated and `RDMA options enabled`.
