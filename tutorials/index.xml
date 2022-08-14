@@ -272,7 +272,7 @@ As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/go/bin/go
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-singularity">Install Singularity&lt;/h3>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>GO_VERSION=&amp;#34;1.17.2&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SINGULARITY_VERSION=&amp;#34;3.9.3&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SINGULARITY_VERSION=&amp;#34;3.10.2&amp;#34;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export VERSION=${GO_VERSION} OS=linux ARCH=amd64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
@@ -284,11 +284,11 @@ As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd singularity-ce-${SINGULARITY_VERSION}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /nfs/cluster/singularity-ce-3.9.3
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./mconfig --prefix=/nfs/cluster/singularity-ce-3.9.3
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./mconfig --prefix=/nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make -C builddir
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make -C builddir install
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /nfs/cluster/singularity-ce-3.9.3/bin/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}/bin/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./singularity
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># check if this all works
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;export PATH=\$PATH:$PWD&amp;#34; &amp;gt;&amp;gt; ~/.bashrc
