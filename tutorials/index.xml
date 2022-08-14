@@ -255,7 +255,7 @@ As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo tar -C /nfs/cluster -xzf go1.19.linux-amd64.tar.gz
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ rm go1.19.linux-amd64.tar.gz
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then add the go bin to your bash profile (&lt;code>vim ~/.bash_profile&lt;/code>) as follows:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">PATH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$PATH&lt;/span>:/nfs/cluster/go/bin
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">PATH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/nfs/cluster/go/bin:&lt;span style="color:#000">$PATH&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and when you open a new shell or &lt;code>source ~/.bash_profile&lt;/code> you should be able to see go on your path:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ which go
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/go/bin/go
@@ -271,52 +271,31 @@ As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ which go
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/go/bin/go
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-singularity">Install Singularity&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum groupinstall -y &amp;#39;Development Tools&amp;#39;
+&lt;p>First, system dependencies. Follow the example above in &lt;a href="#installing-custom-software">install custom software&lt;/a> to install Go.
+Next, install Singularity dependencies. These will need to be installed to each node.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo yum groupinstall -y &lt;span style="color:#4e9a06">&amp;#39;Development Tools&amp;#39;&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GO_VERSION=&amp;#34;1.17.2&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SINGULARITY_VERSION=&amp;#34;3.10.2&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export VERSION=${GO_VERSION} OS=linux ARCH=amd64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rm go$VERSION.$OS-$ARCH.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export GOPATH=${HOME}/go
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir -p $GOPATH/src/github.com/sylabs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd $GOPATH/src/github.com/sylabs
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd singularity-ce-${SINGULARITY_VERSION}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./mconfig --prefix=/nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make -C builddir
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make -C builddir install
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}/bin/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./singularity
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># check if this all works
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;export PATH=\$PATH:$PWD&amp;#34; &amp;gt;&amp;gt; ~/.bashrc
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-apptainer">Install Apptainer&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>export APPTAINER_VERSION=&amp;#34;v1.1.0-rc.1&amp;#34;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export GOVERSION=1.18.4 OS=linux ARCH=amd64 # change this as you need
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum groupinstall -y &amp;#39;Development Tools&amp;#39;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export VERSION=${GO_VERSION} OS=linux ARCH=amd64
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo tar -C /usr/local -xzf /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export GOPATH=${HOME}/go
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/apptainer/apptainer.git
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd apptainer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout ${APPTAINER_VERSION}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /nfs/cluster/apptainer-${APPTAINER_VERSION}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./mconfig --prefix=/nfs/cluster/apptainer-${APPTAINER_VERSION} --with-suid
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ./builddir
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x /nfs/cluster/apptainer/scripts/go-generate
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo make install
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /nfs/cluster/apptainer-${APPTAINER_VERSION}/bin/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./apptainer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># check if this all works
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;export PATH=\$PATH:$PWD&amp;#34; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install glib2-devel -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Ensure Go is on your path (as shown above). Then install Singularity. We will install from source.&lt;/p>
+&lt;p>&lt;strong>Important&lt;/strong> ensure you don&amp;rsquo;t have anything (e.g., pkg-config) loaded from spack, as this can interfere with installing Singularity using system libs. Also note that installing with system libs is a workaround for spack singularity not working perfectly (due to setuid). This means you&amp;rsquo;ll need to do these steps on each of your head login and worker nodes.&lt;/p>
+&lt;p>You can do the same with an official &lt;a href="https://github.com/sylabs/singularity/releases/">release&lt;/a>.
+Note that you don&amp;rsquo;t need to compile this on the nfs node - you can compile it anywhere and make install
+to /nfs/cluster.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ git clone https://github.com/sylabs/singularity
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">cd&lt;/span> singularity
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ git submodule update --init
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># You can also set prefix to be it&amp;#39;s own directory, e.g., /nfs/cluster/singularity-&amp;lt;version&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ ./mconfig --prefix&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/nfs/cluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">cd&lt;/span> ./builddir
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ make install
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Once you install, make sure you add the newly created bin to your path (wherever that happens to be). E.g.,
+that might look like:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">PATH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/nfs/cluster/go/bin:/nfs/cluster/bin:&lt;span style="color:#000">$PATH&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then when you source your &lt;code>~/.bash_profile&lt;/code> you can test:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ which singularity
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/bin/singularity
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
 &lt;p>Your first need to request access to those resources with this
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
