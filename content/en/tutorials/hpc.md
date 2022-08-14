@@ -213,6 +213,31 @@ $ which go
 /nfs/cluster/go/bin/go
 ```
 
+### Install Singularity
+```
+GO_VERSION="1.17.2"
+SINGULARITY_VERSION="3.9.3"
+export VERSION=${GO_VERSION} OS=linux ARCH=amd64
+wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
+sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
+rm go$VERSION.$OS-$ARCH.tar.gz
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+mkdir -p $GOPATH/src/github.com/sylabs
+cd $GOPATH/src/github.com/sylabs
+wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
+tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
+cd singularity-ce-${SINGULARITY_VERSION}
+mkdir /nfs/cluster/singularity-ce-3.9.3
+./mconfig --prefix=/nfs/cluster/singularity-ce-3.9.3
+make -C builddir
+make -C builddir install
+cd /nfs/cluster/singularity-ce-3.9.3/bin/
+./singularity 
+# check if this all works
+echo "export PATH=\$PATH:$PWD" >> ~/.bashrc
+```
+
 ## Advanced: Use MPI networking
 
 Your first need to request access to those resources with this
