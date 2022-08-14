@@ -215,6 +215,8 @@ $ which go
 
 ### Install Singularity
 ```
+sudo yum groupinstall -y 'Development Tools'
+sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
 GO_VERSION="1.17.2"
 SINGULARITY_VERSION="3.10.2"
 export VERSION=${GO_VERSION} OS=linux ARCH=amd64
@@ -234,6 +236,32 @@ make -C builddir
 make -C builddir install
 cd /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}/bin/
 ./singularity 
+# check if this all works
+echo "export PATH=\$PATH:$PWD" >> ~/.bashrc
+```
+
+### Install Apptainer
+```
+export APPTAINER_VERSION="v1.1.0-rc.1"
+export GOVERSION=1.18.4 OS=linux ARCH=amd64  # change this as you need
+sudo yum groupinstall -y 'Development Tools'
+sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
+export VERSION=${GO_VERSION} OS=linux ARCH=amd64
+wget -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
+sudo tar -C /usr/local -xzf /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz
+export GOPATH=${HOME}/go
+export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+git clone https://github.com/apptainer/apptainer.git
+cd apptainer
+git checkout ${APPTAINER_VERSION}
+mkdir /nfs/cluster/apptainer-${APPTAINER_VERSION}
+./mconfig --prefix=/nfs/cluster/apptainer-${APPTAINER_VERSION} --with-suid
+cd ./builddir
+make
+chmod +x /nfs/cluster/apptainer/scripts/go-generate
+sudo make install
+cd /nfs/cluster/apptainer-${APPTAINER_VERSION}/bin/
+./apptainer 
 # check if this all works
 echo "export PATH=\$PATH:$PWD" >> ~/.bashrc
 ```
