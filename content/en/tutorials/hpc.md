@@ -133,6 +133,19 @@ If you want to use graphical aplications you need to install:
 ```
 sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
 ```
+## Troublehsooting: Editing a deployd stack fails
+This can have many reasons, but the first one to check is:
+```
+Error: 409-Conflict, The Instance Configuration ocid1.instanceconfiguration.oc1.phx.aaaaaaaabycbnzxq4uskt4f7mklp4g4fcqk4m42aabj2r2fkchjygppdudua is associated to one or more Instance Pools.
+```
+This means that the Instance Pool blocks the terraform script. To get it back working you need to destroy the stack first and then rebuild it.
+
+Another option is that the resource type you used is not supported:
+```
+Error: 400-InvalidParameter, Shape VM.Standard1.4 is incompatible with image ocid1.image.oc1..aaaaaaaamy4z6turov5otuvb3wlej2ipv3534agxcd7loajk2f54bfmlyhnq
+Suggestion: Please update the parameter(s) in the Terraform config as per error message Shape VM.Standard1.4 is incompatible with image ocid1.image.oc1..aaaaaaaamy4z6turov5otuvb3wlej2ipv3534agxcd7loajk2f54bfmlyhnq
+```
+Here, I selected a shape that is too "small" and it fails. It needs at least VM.Standard2.4
 
 ## Advanced: Use MPI networking
 
