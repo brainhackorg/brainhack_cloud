@@ -45,32 +45,42 @@ In `Headnode options` you need to select an Availability Domain. It doesn't matt
 
 <img width="849" alt="image" src="https://user-images.githubusercontent.com/4021595/184517208-247ffd57-56a6-44b2-a9a5-259ee728e00a.png">
 
+
+
 In `Compute node options` you need to disable `Use cluster network` (this is for MPI and not required for most people. It requires special network hardware that's not available in every region. If you need MPI please get in touch and we can help you setting this up). Select a compute node size that fits your problem size. Drop the initial compute size node to 1, because we will scale the cluster using autoscaling.
 
 <img width="829" alt="image" src="https://user-images.githubusercontent.com/4021595/184517285-b6805297-1a16-4f29-aa4c-816334b28e86.png">
 
+
 In `Autoscaling` you should enable `scheduler based autoscaling`, `monitor the autoscaling` and disable `RDMA latency check` if you are not using MPI.
 
 <img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">
+
+
 
 For `API authentication` and `Monitoring` leave the defaults:
 
 <img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
 
 
-For `Additional file system` tick `Add another NFS filesystem` and accept the defaults:
 
-<img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">
+For `Additional file system` accept the defaults:
+
+<img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517726-d07ad10f-dc95-48ec-97fd-85e5ee19a6b9.png">
+
 
 For `Advanced bastion options`, `Avanced storage options` and `Network options` you can accept the defaults:
 
 <img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">
 
+
+
 For `Software` enable `Install Spack package manager` in addition to the defaults:
 
 <img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">
 
-The hit `next` and on the next page scroll to the end and tick `Run apply`:
+
+Then hit `next` and on the next page scroll to the end and tick `Run apply`:
 
 <img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">
 
