@@ -168,6 +168,51 @@ Suggestion: Please update the parameter(s) in the Terraform config as per error 
 ```
 Here, I selected a shape that is too "small" and it fails. It needs at least VM.Standard2.4
 
+## Installing Custom Software
+
+If you don't want to use spack (or cannot) then a good strategy is to install under `/nfs/cluster`, add any relevant "bin" directories it to your path, and install there.
+As an example we will install [go](https://go.dev/doc/install):
+
+```bash
+$ cd /nfs/cluster
+$ wget https://go.dev/dl/go1.19.linux-amd64.tar.gz
+$ sudo tar -C /nfs/cluster -xzf go1.19.linux-amd64.tar.gz
+$ rm go1.19.linux-amd64.tar.gz
+```
+
+And then add the go bin to your bash profile (`vim ~/.bash_profile`) as follows:
+
+```bash
+export PATH=$PATH:/nfs/cluster/go/bin
+```
+and when you open a new shell or `source ~/.bash_profile` you should be able to see go on your path:
+
+```bash
+$ which go
+/nfs/cluster/go/bin/go
+```
+```bash
+$ go version
+go version go1.19 linux/amd64
+```
+
+Further, since it's located in the /nfs/cluster directory, it will be available on other nodes! Here is how to see the other nodes you have:
+
+```bash
+$ sinfo
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+compute*     up   infinite      1   idle compute-permanent-node-941
+```
+
+And then shell into one, and also find the go binary.
+
+```bash
+$ ssh compute-permanent-node-941
+Last login: Sun Aug 14 02:30:01 2022 from relative-flamingo-bastion.public.cluster.oraclevcn.com
+$ which go
+/nfs/cluster/go/bin/go
+```
+
 ## Advanced: Use MPI networking
 
 Your first need to request access to those resources with this
