@@ -216,7 +216,7 @@ $ which go
 ### Install Singularity
 ```
 GO_VERSION="1.17.2"
-SINGULARITY_VERSION="3.9.3"
+SINGULARITY_VERSION="3.10.2"
 export VERSION=${GO_VERSION} OS=linux ARCH=amd64
 wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
 sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
@@ -228,11 +228,11 @@ cd $GOPATH/src/github.com/sylabs
 wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
 tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
 cd singularity-ce-${SINGULARITY_VERSION}
-mkdir /nfs/cluster/singularity-ce-3.9.3
-./mconfig --prefix=/nfs/cluster/singularity-ce-3.9.3
+mkdir /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
+./mconfig --prefix=/nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
 make -C builddir
 make -C builddir install
-cd /nfs/cluster/singularity-ce-3.9.3/bin/
+cd /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}/bin/
 ./singularity 
 # check if this all works
 echo "export PATH=\$PATH:$PWD" >> ~/.bashrc
