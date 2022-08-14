@@ -168,29 +168,29 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
 &lt;p>Then go to &lt;code>Stacks&lt;/code> under &lt;code>Resource Manager&lt;/code>:
 &lt;img src="https://user-images.githubusercontent.com/4021595/161415757-409d264d-39e0-41f0-8bb0-3b5adc53abde.png" alt="image">&lt;/p>
-&lt;p>In the &lt;code>List Scope&lt;/code> drop down menu, select your project compartment. Click &lt;code>Create Stack&lt;/code> and upload the zip file as a Terraform configuration source.
-&lt;img width="1043" alt="create stack" src="https://user-images.githubusercontent.com/4021595/184516975-a8188aa9-8337-4523-9111-fb7a1c7868ba.png">&lt;/p>
-&lt;p>give your cluster a name, but leave the default options for the rest:
-&lt;img width="846" alt="naming the cluster" src="https://user-images.githubusercontent.com/4021595/184517026-76cc8d32-b19d-48a4-b4c3-8b88d0131ba1.png">&lt;/p>
+&lt;p>In the &lt;code>List Scope&lt;/code> drop down menu, select your project compartment. Click &lt;code>Create Stack&lt;/code> and upload the zip file as a Terraform configuration source.&lt;/p>
+&lt;img width="1043" alt="create stack" src="https://user-images.githubusercontent.com/4021595/184516975-a8188aa9-8337-4523-9111-fb7a1c7868ba.png">
+&lt;p>give your cluster a name, but leave the default options for the rest:&lt;/p>
+&lt;img width="846" alt="naming the cluster" src="https://user-images.githubusercontent.com/4021595/184517026-76cc8d32-b19d-48a4-b4c3-8b88d0131ba1.png">
 &lt;p>Check that the cluster is being created in your compartment again and then hit &lt;code>Next&lt;/code>&lt;/p>
-&lt;p>In &lt;code>cluster configuration&lt;/code> you need to add your public SSH key for the opc admin account. Make sure to setup your SSH keys first &lt;a href="http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key">create a public key&lt;/a>
-&lt;img width="852" alt="image" src="https://user-images.githubusercontent.com/4021595/184517096-e62de0bf-e535-4aaa-84fc-70001e142051.png">&lt;/p>
-&lt;p>In &lt;code>Headnode options&lt;/code> you need to select an Availability Domain. It doesn&amp;rsquo;t matter what you select there and the options will depend on the geographic region where you launch your HPC. You can keep the headnode default size, or you can select a different flavour:
-&lt;img width="849" alt="image" src="https://user-images.githubusercontent.com/4021595/184517208-247ffd57-56a6-44b2-a9a5-259ee728e00a.png">&lt;/p>
-&lt;p>In &lt;code>Compute node options&lt;/code> you need to disable &lt;code>Use cluster network&lt;/code> (this is for MPI and not required for most people. It requires special network hardware that&amp;rsquo;s not available in every region. If you need MPI please get in touch and we can help you setting this up). Select a compute node size that fits your problem size. Drop the initial compute size node to 1, because we will scale the cluster using autoscaling.
-&lt;img width="829" alt="image" src="https://user-images.githubusercontent.com/4021595/184517285-b6805297-1a16-4f29-aa4c-816334b28e86.png">&lt;/p>
-&lt;p>In &lt;code>Autoscaling&lt;/code> you should enable &lt;code>scheduler based autoscaling&lt;/code>, &lt;code>monitor the autoscaling&lt;/code> and disable &lt;code>RDMA latency check&lt;/code> if you are not using MPI.
-&lt;img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">&lt;/p>
-&lt;p>For &lt;code>API authentication&lt;/code> and &lt;code>Monitoring&lt;/code> leave the defaults:
-&lt;img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">&lt;/p>
-&lt;p>For &lt;code>Additional file system&lt;/code> tick &lt;code>Add another NFS filesystem&lt;/code> and accept the defaults:
-&lt;img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">&lt;/p>
-&lt;p>For &lt;code>Advanced bastion options&lt;/code>, &lt;code>Avanced storage options&lt;/code> and &lt;code>Network options&lt;/code> you can accept the defaults:
-&lt;img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">&lt;/p>
-&lt;p>For &lt;code>Software&lt;/code> enable &lt;code>Install Spack package manager&lt;/code> in addition to the defaults:
-&lt;img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">&lt;/p>
-&lt;p>The hit &lt;code>next&lt;/code> and on the next page scroll to the end and tick &lt;code>Run apply&lt;/code>:
-&lt;img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">&lt;/p>
+&lt;p>In &lt;code>cluster configuration&lt;/code> you need to add your public SSH key for the opc admin account. Make sure to setup your SSH keys first &lt;a href="http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key">create a public key&lt;/a>&lt;/p>
+&lt;img width="852" alt="image" src="https://user-images.githubusercontent.com/4021595/184517096-e62de0bf-e535-4aaa-84fc-70001e142051.png">
+&lt;p>In &lt;code>Headnode options&lt;/code> you need to select an Availability Domain. It doesn&amp;rsquo;t matter what you select there and the options will depend on the geographic region where you launch your HPC. You can keep the headnode default size, or you can select a different flavour:&lt;/p>
+&lt;img width="849" alt="image" src="https://user-images.githubusercontent.com/4021595/184517208-247ffd57-56a6-44b2-a9a5-259ee728e00a.png">
+&lt;p>In &lt;code>Compute node options&lt;/code> you need to disable &lt;code>Use cluster network&lt;/code> (this is for MPI and not required for most people. It requires special network hardware that&amp;rsquo;s not available in every region. If you need MPI please get in touch and we can help you setting this up). Select a compute node size that fits your problem size. Drop the initial compute size node to 1, because we will scale the cluster using autoscaling.&lt;/p>
+&lt;img width="829" alt="image" src="https://user-images.githubusercontent.com/4021595/184517285-b6805297-1a16-4f29-aa4c-816334b28e86.png">
+&lt;p>In &lt;code>Autoscaling&lt;/code> you should enable &lt;code>scheduler based autoscaling&lt;/code>, &lt;code>monitor the autoscaling&lt;/code> and disable &lt;code>RDMA latency check&lt;/code> if you are not using MPI.&lt;/p>
+&lt;img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">
+&lt;p>For &lt;code>API authentication&lt;/code> and &lt;code>Monitoring&lt;/code> leave the defaults:&lt;/p>
+&lt;img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
+&lt;p>For &lt;code>Additional file system&lt;/code> tick &lt;code>Add another NFS filesystem&lt;/code> and accept the defaults:&lt;/p>
+&lt;img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">
+&lt;p>For &lt;code>Advanced bastion options&lt;/code>, &lt;code>Avanced storage options&lt;/code> and &lt;code>Network options&lt;/code> you can accept the defaults:&lt;/p>
+&lt;img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">
+&lt;p>For &lt;code>Software&lt;/code> enable &lt;code>Install Spack package manager&lt;/code> in addition to the defaults:&lt;/p>
+&lt;img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">
+&lt;p>The hit &lt;code>next&lt;/code> and on the next page scroll to the end and tick &lt;code>Run apply&lt;/code>:&lt;/p>
+&lt;img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">
 &lt;p>Then hit &lt;code>Create&lt;/code>&lt;/p>
 &lt;p>This will then create a custom HPC for your project (it will take a couple of minutes to complete).&lt;/p>
 &lt;p>Once everything is done you find the bastion IP (the &amp;ldquo;head node&amp;rdquo; or &amp;ldquo;login node&amp;rdquo;) under Outputs:
@@ -213,6 +213,9 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;img src="https://user-images.githubusercontent.com/4021595/176095320-b9f55fb1-7365-4e8a-9a30-eee5117c12dc.png" alt="image">&lt;/p>
 &lt;p>Once you have done this, you must reconfigure slurm by running the following command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo scontrol reconfigure
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuring-x11-forwarding">Configuring X11 forwarding&lt;/h2>
+&lt;p>If you want to use graphical aplications you need to install:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
 &lt;p>Your first need to request access to those resources with this
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
