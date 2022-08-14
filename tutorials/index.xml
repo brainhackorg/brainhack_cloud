@@ -216,7 +216,15 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="configuring-x11-forwarding">Configuring X11 forwarding&lt;/h2>
 &lt;p>If you want to use graphical aplications you need to install:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="troublehsooting-editing-a-deployd-stack-fails">Troublehsooting: Editing a deployd stack fails&lt;/h2>
+&lt;p>This can have many reasons, but the first one to check is:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Error: 409-Conflict, The Instance Configuration ocid1.instanceconfiguration.oc1.phx.aaaaaaaabycbnzxq4uskt4f7mklp4g4fcqk4m42aabj2r2fkchjygppdudua is associated to one or more Instance Pools.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>This means that the Instance Pool blocks the terraform script. To get it back working you need to destroy the stack first and then rebuild it.&lt;/p>
+&lt;p>Another option is that the resource type you used is not supported:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Error: 400-InvalidParameter, Shape VM.Standard1.4 is incompatible with image ocid1.image.oc1..aaaaaaaamy4z6turov5otuvb3wlej2ipv3534agxcd7loajk2f54bfmlyhnq
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Suggestion: Please update the parameter(s) in the Terraform config as per error message Shape VM.Standard1.4 is incompatible with image ocid1.image.oc1..aaaaaaaamy4z6turov5otuvb3wlej2ipv3534agxcd7loajk2f54bfmlyhnq
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here, I selected a shape that is too &amp;ldquo;small&amp;rdquo; and it fails. It needs at least VM.Standard2.4&lt;/p>
+&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
 &lt;p>Your first need to request access to those resources with this
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
 &lt;p>Then follow the above instructions, but leave &lt;code>Use cluser network&lt;/code> activated and &lt;code>RDMA options enabled&lt;/code>.&lt;/p></description></item><item><title>Tutorials: Neurodesk</title><link>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</guid><description>
