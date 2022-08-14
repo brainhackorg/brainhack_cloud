@@ -247,7 +247,30 @@ For &lt;code>Additional file system&lt;/code> accept the defaults:&lt;/h1>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>Error: 400-InvalidParameter, Shape VM.Standard1.4 is incompatible with image ocid1.image.oc1..aaaaaaaamy4z6turov5otuvb3wlej2ipv3534agxcd7loajk2f54bfmlyhnq
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Suggestion: Please update the parameter(s) in the Terraform config as per error message Shape VM.Standard1.4 is incompatible with image ocid1.image.oc1..aaaaaaaamy4z6turov5otuvb3wlej2ipv3534agxcd7loajk2f54bfmlyhnq
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here, I selected a shape that is too &amp;ldquo;small&amp;rdquo; and it fails. It needs at least VM.Standard2.4&lt;/p>
-&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
+&lt;h2 id="installing-custom-software">Installing Custom Software&lt;/h2>
+&lt;p>If you don&amp;rsquo;t want to use spack (or cannot) then a good strategy is to install under &lt;code>/nfs/cluster&lt;/code>, add any relevant &amp;ldquo;bin&amp;rdquo; directories it to your path, and install there.
+As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ &lt;span style="color:#204a87">cd&lt;/span> /nfs/cluster
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ wget https://go.dev/dl/go1.19.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ sudo tar -C /nfs/cluster -xzf go1.19.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ rm go1.19.linux-amd64.tar.gz
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then add the go bin to your bash profile (&lt;code>vim ~/.bash_profile&lt;/code>) as follows:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">export&lt;/span> &lt;span style="color:#000">PATH&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$PATH&lt;/span>:/nfs/cluster/go/bin
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and when you open a new shell or &lt;code>source ~/.bash_profile&lt;/code> you should be able to see go on your path:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ which go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/go/bin/go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ go version
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>go version go1.19 linux/amd64
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Further, since it&amp;rsquo;s located in the /nfs/cluster directory, it will be available on other nodes! Here is how to see the other nodes you have:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ sinfo
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>compute* up infinite &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> idle compute-permanent-node-941
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>And then shell into one, and also find the go binary.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>$ ssh compute-permanent-node-941
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Last login: Sun Aug &lt;span style="color:#0000cf;font-weight:bold">14&lt;/span> 02:30:01 &lt;span style="color:#0000cf;font-weight:bold">2022&lt;/span> from relative-flamingo-bastion.public.cluster.oraclevcn.com
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ which go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/go/bin/go
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
 &lt;p>Your first need to request access to those resources with this
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
 &lt;p>Then follow the above instructions, but leave &lt;code>Use cluser network&lt;/code> activated and &lt;code>RDMA options enabled&lt;/code>.&lt;/p></description></item><item><title>Tutorials: Neurodesk</title><link>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</guid><description>
