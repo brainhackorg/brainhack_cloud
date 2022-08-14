@@ -63,6 +63,10 @@ For `API authentication` and `Monitoring` leave the defaults:
 <img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
 
 
+<<<<<<< HEAD
+For `Additional file system` accept the defaults:
+=======
+>>>>>>> b71ef942fec07b0ce836aba52ecdd8ea478afeb8
 
 For `Additional file system` accept the defaults:
 
@@ -131,8 +135,25 @@ sudo scontrol reconfigure
 ## Configuring X11 forwarding
 If you want to use graphical aplications you need to install:
 ```
-sudo yum install xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
+sudo yum install install mesa-dri-drivers xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
 ```
+
+```
+sudo vi /etc/ssh/sshd_config
+```
+
+change to:
+```
+X11Forwarding yes 
+X11UseLocalhost no
+```
+
+then
+```
+sudo systemctl restart sshd
+```
+
+
 ## Troublehsooting: Editing a deployd stack fails
 This can have many reasons, but the first one to check is:
 ```
