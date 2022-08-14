@@ -271,7 +271,9 @@ As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>$ which go
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/nfs/cluster/go/bin/go
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-singularity">Install Singularity&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>GO_VERSION=&amp;#34;1.17.2&amp;#34;
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum groupinstall -y &amp;#39;Development Tools&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GO_VERSION=&amp;#34;1.17.2&amp;#34;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>SINGULARITY_VERSION=&amp;#34;3.10.2&amp;#34;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export VERSION=${GO_VERSION} OS=linux ARCH=amd64
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
@@ -290,6 +292,29 @@ As an example we will install &lt;a href="https://go.dev/doc/install">go&lt;/a>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make -C builddir install
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}/bin/
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./singularity
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># check if this all works
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;export PATH=\$PATH:$PWD&amp;#34; &amp;gt;&amp;gt; ~/.bashrc
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="install-apptainer">Install Apptainer&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>export APPTAINER_VERSION=&amp;#34;v1.1.0-rc.1&amp;#34;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export GOVERSION=1.18.4 OS=linux ARCH=amd64 # change this as you need
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum groupinstall -y &amp;#39;Development Tools&amp;#39;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export VERSION=${GO_VERSION} OS=linux ARCH=amd64
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>wget -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo tar -C /usr/local -xzf /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export GOPATH=${HOME}/go
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/apptainer/apptainer.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd apptainer
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git checkout ${APPTAINER_VERSION}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>mkdir /nfs/cluster/apptainer-${APPTAINER_VERSION}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./mconfig --prefix=/nfs/cluster/apptainer-${APPTAINER_VERSION} --with-suid
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd ./builddir
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>make
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>chmod +x /nfs/cluster/apptainer/scripts/go-generate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo make install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd /nfs/cluster/apptainer-${APPTAINER_VERSION}/bin/
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./apptainer
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># check if this all works
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;export PATH=\$PATH:$PWD&amp;#34; &amp;gt;&amp;gt; ~/.bashrc
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
