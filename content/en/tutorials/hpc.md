@@ -183,7 +183,7 @@ $ rm go1.19.linux-amd64.tar.gz
 And then add the go bin to your bash profile (`vim ~/.bash_profile`) as follows:
 
 ```bash
-export PATH=$PATH:/nfs/cluster/go/bin
+export PATH=/nfs/cluster/go/bin:$PATH
 ```
 and when you open a new shell or `source ~/.bash_profile` you should be able to see go on your path:
 
@@ -214,56 +214,45 @@ $ which go
 ```
 
 ### Install Singularity
-```
-sudo yum groupinstall -y 'Development Tools'
-sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
-GO_VERSION="1.17.2"
-SINGULARITY_VERSION="3.10.2"
-export VERSION=${GO_VERSION} OS=linux ARCH=amd64
-wget -q https://dl.google.com/go/go$VERSION.$OS-$ARCH.tar.gz
-sudo tar -C /usr/local -xzvf go$VERSION.$OS-$ARCH.tar.gz
-rm go$VERSION.$OS-$ARCH.tar.gz
-export GOPATH=${HOME}/go
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
-mkdir -p $GOPATH/src/github.com/sylabs
-cd $GOPATH/src/github.com/sylabs
-wget -q https://github.com/sylabs/singularity/releases/download/v${SINGULARITY_VERSION}/singularity-ce-${SINGULARITY_VERSION}.tar.gz
-tar -xzvf singularity-ce-${SINGULARITY_VERSION}.tar.gz
-cd singularity-ce-${SINGULARITY_VERSION}
-mkdir /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
-./mconfig --prefix=/nfs/cluster/singularity-ce-${SINGULARITY_VERSION}
-make -C builddir
-make -C builddir install
-cd /nfs/cluster/singularity-ce-${SINGULARITY_VERSION}/bin/
-./singularity 
-# check if this all works
-echo "export PATH=\$PATH:$PWD" >> ~/.bashrc
-```
 
-### Install Apptainer
-```
-export APPTAINER_VERSION="v1.1.0-rc.1"
-export GOVERSION=1.18.4 OS=linux ARCH=amd64  # change this as you need
+First, system dependencies. Follow the example above in [install custom software](#installing-custom-software) to install Go.
+Next, install Singularity dependencies. These will need to be installed to each node.
+
+```bash
 sudo yum groupinstall -y 'Development Tools'
 sudo yum install libseccomp-devel squashfs-tools cryptsetup -y
-export VERSION=${GO_VERSION} OS=linux ARCH=amd64
-wget -O /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz https://dl.google.com/go/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-sudo tar -C /usr/local -xzf /tmp/go${GOVERSION}.${OS}-${ARCH}.tar.gz
-export GOPATH=${HOME}/go
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
-git clone https://github.com/apptainer/apptainer.git
-cd apptainer
-git checkout ${APPTAINER_VERSION}
-mkdir /nfs/cluster/apptainer-${APPTAINER_VERSION}
-./mconfig --prefix=/nfs/cluster/apptainer-${APPTAINER_VERSION} --with-suid
-cd ./builddir
-make
-chmod +x /nfs/cluster/apptainer/scripts/go-generate
-sudo make install
-cd /nfs/cluster/apptainer-${APPTAINER_VERSION}/bin/
-./apptainer 
-# check if this all works
-echo "export PATH=\$PATH:$PWD" >> ~/.bashrc
+sudo yum install glib2-devel -y
+```
+Ensure Go is on your path (as shown above). Then install Singularity. We will install from source.
+
+**Important** ensure you don't have anything (e.g., pkg-config) loaded from spack, as this can interfere with installing Singularity using system libs. Also note that installing with system libs is a workaround for spack singularity not working perfectly (due to setuid). This means you'll need to do these steps on each of your head login and worker nodes.
+
+You can do the same with an official [release](https://github.com/sylabs/singularity/releases/).
+Note that you don't need to compile this on the nfs node - you can compile it anywhere and make install
+to /nfs/cluster.
+
+```bash
+$ git clone https://github.com/sylabs/singularity
+$ cd singularity
+$ git submodule update --init
+
+# You can also set prefix to be it's own directory, e.g., /nfs/cluster/singularity-<version>
+$ ./mconfig --prefix=/nfs/cluster
+$ cd ./builddir
+$ make
+$ make install
+```
+Once you install, make sure you add the newly created bin to your path (wherever that happens to be). E.g.,
+that might look like:
+
+```bash
+export PATH=/nfs/cluster/go/bin:/nfs/cluster/bin:$PATH
+```
+And then when you source your `~/.bash_profile` you can test:
+
+```bash
+$ which singularity
+/nfs/cluster/bin/singularity
 ```
 
 ## Advanced: Use MPI networking
