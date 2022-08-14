@@ -158,9 +158,9 @@ runners :)&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is an example: &lt;a href="https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml">https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml&lt;/a>&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup
-your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: &lt;a href="https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&amp;amp;SC=:so:ch:or:awr::::Cloud&amp;amp;pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358">https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&amp;amp;SC=:so:ch:or:awr::::Cloud&amp;amp;pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358&lt;/a>)&lt;/p>
+your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: &lt;a href="https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&amp;amp;SC=:so:ch:or:awr::::Cloud&amp;amp;pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358">GPU cluster&lt;/a>)&lt;/p>
 &lt;h2 id="before-you-get-started">Before you get started&lt;/h2>
-&lt;p>Consider if you actually need High Performance Computing (HPC) for your work. An HPC is a cluster consisting of multiple machines and it uses a head-node (here bastion host) from where jobs are submitted to this cluster using a job engine (for example slurm). If you have many jobs that need to be run independently than the setup described here will work well. A &amp;ldquo;real&amp;rdquo; HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (e.g. MPI). This would be needed if you have a problem that&amp;rsquo;s so large that a single machine wouldn&amp;rsquo;t be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single virtual machine, because it requires considerably less setup work.&lt;/p>
+&lt;p>Consider if you actually need High Performance Computing (HPC) for your work. An HPC is a cluster consisting of multiple machines and it uses a head-node (here bastion host) from where jobs are submitted to this cluster using a job engine (for example slurm). If you have many jobs that need to be run independently than the setup described here will work well. A &amp;ldquo;real&amp;rdquo; HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (e.g. MPI). This would be needed if you have a problem that&amp;rsquo;s so large that a single machine wouldn&amp;rsquo;t be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single &lt;a href="http://brainhack.org/brainhack_cloud/tutorials/vm/">virtual machine&lt;/a>, because it requires considerably less setup work and easier to maintain.&lt;/p>
 &lt;h2 id="configure-hpc-cluster">Configure HPC cluster&lt;/h2>
 &lt;p>Download the Terraform configuration from here as a zip file:
 &lt;a href="https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2">https://github.com/oracle-quickstart/oci-hpc/releases/tag/v2.9.2&lt;/a>&lt;/p>
@@ -168,20 +168,39 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
 &lt;p>Then go to &lt;code>Stacks&lt;/code> under &lt;code>Resource Manager&lt;/code>:
 &lt;img src="https://user-images.githubusercontent.com/4021595/161415757-409d264d-39e0-41f0-8bb0-3b5adc53abde.png" alt="image">&lt;/p>
-&lt;p>In the &lt;code>List Scope&lt;/code> drop down menu, select your project compartment. Choose &lt;code>Create Stack&lt;/code> and upload the zip file.
-&lt;img src="https://user-images.githubusercontent.com/4021595/161415784-56f78544-fa20-48de-ae7c-89f2154f5e58.png" alt="image">&lt;/p>
-&lt;p>Accept the defaults and add your public SSH key, disable &lt;code>Use cluster network&lt;/code> (this is for MPI and not required for most people):
-&lt;img src="https://user-images.githubusercontent.com/4021595/161415850-906a7cbf-8243-4df4-94b9-1dac7fcb1225.png" alt="image">&lt;/p>
-&lt;p>Specify the number of compute nodes you would like the HPC to have using &lt;code>Initial cluster size&lt;/code>.&lt;/p>
+&lt;p>In the &lt;code>List Scope&lt;/code> drop down menu, select your project compartment. Click &lt;code>Create Stack&lt;/code> and upload the zip file as a Terraform configuration source.
+&lt;img width="1043" alt="create stack" src="https://user-images.githubusercontent.com/4021595/184516975-a8188aa9-8337-4523-9111-fb7a1c7868ba.png">&lt;/p>
+&lt;p>give your cluster a name, but leave the default options for the rest:
+&lt;img width="846" alt="naming the cluster" src="https://user-images.githubusercontent.com/4021595/184517026-76cc8d32-b19d-48a4-b4c3-8b88d0131ba1.png">&lt;/p>
+&lt;p>Check that the cluster is being created in your compartment again and then hit &lt;code>Next&lt;/code>&lt;/p>
+&lt;p>In &lt;code>cluster configuration&lt;/code> you need to add your public SSH key for the opc admin account. Make sure to setup your SSH keys first &lt;a href="http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key">create a public key&lt;/a>
+&lt;img width="852" alt="image" src="https://user-images.githubusercontent.com/4021595/184517096-e62de0bf-e535-4aaa-84fc-70001e142051.png">&lt;/p>
+&lt;p>In &lt;code>Headnode options&lt;/code> you need to select an Availability Domain. It doesn&amp;rsquo;t matter what you select there and the options will depend on the geographic region where you launch your HPC. You can keep the headnode default size, or you can select a different flavour:
+&lt;img width="849" alt="image" src="https://user-images.githubusercontent.com/4021595/184517208-247ffd57-56a6-44b2-a9a5-259ee728e00a.png">&lt;/p>
+&lt;p>In &lt;code>Compute node options&lt;/code> you need to disable &lt;code>Use cluster network&lt;/code> (this is for MPI and not required for most people. It requires special network hardware that&amp;rsquo;s not available in every region. If you need MPI please get in touch and we can help you setting this up). Select a compute node size that fits your problem size. Drop the initial compute size node to 1, because we will scale the cluster using autoscaling.
+&lt;img width="829" alt="image" src="https://user-images.githubusercontent.com/4021595/184517285-b6805297-1a16-4f29-aa4c-816334b28e86.png">&lt;/p>
+&lt;p>In &lt;code>Autoscaling&lt;/code> you should enable &lt;code>scheduler based autoscaling&lt;/code>, &lt;code>monitor the autoscaling&lt;/code> and disable &lt;code>RDMA latency check&lt;/code> if you are not using MPI.
+&lt;img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">&lt;/p>
+&lt;p>For &lt;code>API authentication&lt;/code> and &lt;code>Monitoring&lt;/code> leave the defaults:
+&lt;img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">&lt;/p>
+&lt;p>For &lt;code>Additional file system&lt;/code> tick &lt;code>Add another NFS filesystem&lt;/code> and accept the defaults:
+&lt;img width="845" alt="image" src="https://user-images.githubusercontent.com/4021595/184517339-720d3011-31bc-4fba-8a8c-bc2b78e0abc5.png">&lt;/p>
+&lt;p>For &lt;code>Advanced bastion options&lt;/code>, &lt;code>Avanced storage options&lt;/code> and &lt;code>Network options&lt;/code> you can accept the defaults:
+&lt;img width="836" alt="image" src="https://user-images.githubusercontent.com/4021595/184517368-589f1876-d703-4560-86c9-60cb23a0c711.png">&lt;/p>
+&lt;p>For &lt;code>Software&lt;/code> enable &lt;code>Install Spack package manager&lt;/code> in addition to the defaults:
+&lt;img width="843" alt="image" src="https://user-images.githubusercontent.com/4021595/184517390-d36d605d-e51b-46aa-84bf-140b2b711065.png">&lt;/p>
+&lt;p>The hit &lt;code>next&lt;/code> and on the next page scroll to the end and tick &lt;code>Run apply&lt;/code>:
+&lt;img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517402-a02367f8-d3df-4436-9cf6-356994172b1e.png">&lt;/p>
+&lt;p>Then hit &lt;code>Create&lt;/code>&lt;/p>
 &lt;p>This will then create a custom HPC for your project (it will take a couple of minutes to complete).&lt;/p>
 &lt;p>Once everything is done you find the bastion IP (the &amp;ldquo;head node&amp;rdquo; or &amp;ldquo;login node&amp;rdquo;) under Outputs:
 &lt;img src="https://user-images.githubusercontent.com/4021595/161416418-6fcf7712-646d-48ea-9861-743fd679ba28.png" alt="image">&lt;/p>
-&lt;p>If you selected the default options (make sure to setup your SSH keys: &lt;a href="http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key)">http://brainhack.org/brainhack_cloud/tutorials/vm/#create-a-public-key)&lt;/a>, you can now ssh into the HPC as follows:&lt;/p>
+&lt;p>You can now ssh into the HPC as follows:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>ssh opc@ipbastion
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be aware that this &amp;ldquo;opc&amp;rdquo; account is the admin account of the cluster and should not be used to perform analyses. It is better to create a user account to perform the work in:&lt;/p>
-&lt;p>Once logged in with the opc account, you can create users using the &lt;code>cluster&lt;/code> command:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Be aware that this &amp;ldquo;opc&amp;rdquo; account is the admin account with sudo access of the cluster and should not be used to perform analyses. It is better to create a user account to perform the work in:&lt;/p>
+&lt;p>Once logged in with the opc account, you can create normal cluster users using the &lt;code>cluster&lt;/code> command:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>cluster user add test
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These users can then login using a password only.&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>These users can then login using a password only and do not require an SSH key.&lt;/p>
 &lt;p>There is a shared file storage (which can also be configured in size in the stack settings) in /nfs/cluster&lt;/p>
 &lt;p>More information can be found here:
 &lt;a href="https://github.com/oracle-quickstart/oci-hpc">https://github.com/oracle-quickstart/oci-hpc&lt;/a>&lt;/p>
@@ -197,7 +216,7 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="advanced-use-mpi-networking">Advanced: Use MPI networking&lt;/h2>
 &lt;p>Your first need to request access to those resources with this
 &lt;a href="./../../docs/request">form&lt;/a>.&lt;/p>
-&lt;p>Then follow the above instructions, but leave &lt;code>Use cluser network&lt;/code> activated.&lt;/p></description></item><item><title>Tutorials: Neurodesk</title><link>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</guid><description>
+&lt;p>Then follow the above instructions, but leave &lt;code>Use cluser network&lt;/code> activated and &lt;code>RDMA options enabled&lt;/code>.&lt;/p></description></item><item><title>Tutorials: Neurodesk</title><link>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/neurodesk/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>This section describes how to setup a Neurodesk instance on the cloud. Neurodesk provides a containerised data analysis environment to facilitate reproducible analysis of neuroimaging data. Software included can be found here: &lt;a href="https://www.neurodesk.org/applications/">https://www.neurodesk.org/applications/&lt;/a>&lt;/p>
 &lt;h2 id="create-a-new-vm">Create a new VM&lt;/h2>
