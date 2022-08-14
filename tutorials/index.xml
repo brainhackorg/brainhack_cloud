@@ -183,23 +183,6 @@ your own HPC cluster in the cloud. This tutorial here is a basic introduction to
 &lt;img width="847" alt="image" src="https://user-images.githubusercontent.com/4021595/184517301-b08cf59e-f07f-42c4-865b-64a88e466274.png">
 &lt;p>For &lt;code>API authentication&lt;/code> and &lt;code>Monitoring&lt;/code> leave the defaults:&lt;/p>
 &lt;img width="851" alt="image" src="https://user-images.githubusercontent.com/4021595/184517316-b8a93508-17a7-44a6-8024-0a01f3e01a06.png">
-&lt;h1 id="for-additional-file-system-accept-the-defaults">&amp;laquo;&amp;laquo;&amp;laquo;&amp;lt; HEAD
-For &lt;code>Additional file system&lt;/code> accept the defaults:&lt;/h1>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;blockquote>
-&lt;p>b71ef942fec07b0ce836aba52ecdd8ea478afeb8&lt;/p>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
-&lt;/blockquote>
 &lt;p>For &lt;code>Additional file system&lt;/code> accept the defaults:&lt;/p>
 &lt;img width="848" alt="image" src="https://user-images.githubusercontent.com/4021595/184517726-d07ad10f-dc95-48ec-97fd-85e5ee19a6b9.png">
 &lt;p>For &lt;code>Advanced bastion options&lt;/code>, &lt;code>Avanced storage options&lt;/code> and &lt;code>Network options&lt;/code> you can accept the defaults:&lt;/p>
