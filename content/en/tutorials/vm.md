@@ -16,7 +16,12 @@ things.
 Make sure you selected the geographic region where you would like to create the
 resource.
 
-Here I create it in the Home Region.
+Here I create it in the Home Region, Frankfurt. 
+
+
+{{% alert title="Notice" color="warning" %}}
+Ideally, you want to region to be as close to you (or your users) as possible to have low latencies. So, you should change the default here from Frankfurt to another region from the list.
+{{% /alert %}} 
 
 ![image](https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png)
 
@@ -37,7 +42,12 @@ Cloud) and select a Shape.
 
 ![image](https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png)
 
-VM.Standard.E4.Flex is a good starting point. The default is Ampere in some instances and this is an ARM architecture, so some of your applications wouldn't work out of the box - it is therefore important to change the default Shape to an x86 architecture, like the VM.Standard.E4.Flex.
+VM.Standard.E4.Flex is a good starting point. 
+
+
+{{% alert title="Warning" color="warning" %}}
+The default is Ampere and this is an ARM architecture, so most of your applications wouldn't work out of the box - it is therefore important to change the default Shape to an x86 architecture, like the VM.Standard.E4.Flex.
+{{% /alert %}} 
 
 ![image](https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png)
 
