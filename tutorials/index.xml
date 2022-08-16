@@ -5,7 +5,11 @@ things.&lt;/p>
 &lt;h2 id="setup">Setup&lt;/h2>
 &lt;p>Make sure you selected the geographic region where you would like to create the
 resource.&lt;/p>
-&lt;p>Here I create it in the Home Region.&lt;/p>
+&lt;p>Here I create it in the Home Region, Frankfurt.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Notice&lt;/h4>
+Ideally, you want to region to be as close to you (or your users) as possible to have low latencies. So, you should change the default here from Frankfurt to another region from the list.
+&lt;/div>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png" alt="image">&lt;/p>
 &lt;p>Head to &lt;code>Compute -&amp;gt; Instances&lt;/code>&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349177-12c719c9-0285-489f-9e42-9d6b82b520c0.png" alt="image">&lt;/p>
@@ -17,7 +21,11 @@ here - but you need to change this!) and click &lt;code>Create Instance&lt;/code
 starting point as it has many tools installed that make it work very well on the
 Cloud) and select a Shape.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349502-ac932a4e-82b1-410e-8785-56e6e9ae147b.png" alt="image">&lt;/p>
-&lt;p>VM.Standard.E4.Flex is a good starting point. The default is Ampere in some instances and this is an ARM architecture, so some of your applications wouldn&amp;rsquo;t work out of the box - it is therefore important to change the default Shape to an x86 architecture, like the VM.Standard.E4.Flex.&lt;/p>
+&lt;p>VM.Standard.E4.Flex is a good starting point.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+The default is Ampere and this is an ARM architecture, so most of your applications wouldn&amp;rsquo;t work out of the box - it is therefore important to change the default Shape to an x86 architecture, like the VM.Standard.E4.Flex.
+&lt;/div>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png" alt="image">&lt;/p>
 &lt;p>The network setup has sensible defaults to start with&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png" alt="image">&lt;/p>
