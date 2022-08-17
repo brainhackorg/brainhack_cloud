@@ -20,7 +20,7 @@ Here I create it in the Home Region, Frankfurt.
 
 
 {{% alert title="Notice" color="warning" %}}
-Ideally, you want to region to be as close to you (or your users) as possible to have low latencies. So, you should change the default here from Frankfurt to another region from the list.
+Ideally, you want the region to be as close to you (or your users) as possible to have low latencies. So, you should change the default from Frankfurt to another region from the list.
 {{% /alert %}} 
 
 ![image](https://user-images.githubusercontent.com/4021595/157349780-69fdf973-d4aa-4850-9f49-8ecca369f399.png)
