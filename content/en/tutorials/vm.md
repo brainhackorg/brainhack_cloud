@@ -55,9 +55,9 @@ The network setup has sensible defaults to start with
 
 ![image](https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png)
 
-Paste a public key to access this VM.
+You can either paste a public key you already have to access to this VM or create a key by choosing the option `Generate a key pair for me` under `Add SSH Keys` section. 
 
-### Create a public key
+### Connect the VM with a public key
 
 If you don't have a public key yet - this is how you can create one (for example in
 the cloudshell)
@@ -87,6 +87,54 @@ Paste it in the Add SSH keys section
 {{% alert title="Warning" color="warning" %}}
 If you chose the option `generate a key pair for me` you need to change the permission on the file after downloading (chmod 600 *.key) - otherwise it will result in a Permission denied (publickey,gssapi-keyex,gssapi-with-mic) error triggered by `Load key "*.key": bad permissions`
 {{% /alert %}} 
+
+
+
+## Connect the VM using the Oracle key pair
+
+If you would like to use the key pairs the instance creation procedure generates, you can use the following steps based on your operating system.
+
+First download and install an SSH client to your machine (for Linux and Mac, use [OpenSSH](https://www.ibm.com/links?url=https%3A%2F%2Fwww.openssh.com%2F) and for Windows use [Putty](https://www.ibm.com/links?url=https%3A%2F%2Fwww.putty.org%2F)).
+
+From the Instances dashboard, find your VM you would like to connect with ssh, and click to find and note its IP address.
+
+If you are using Linux or Mac, run the following command on your local terminal to change the file permission on the private key file that you downloaded from the Oracle dashboard. 
+
+`chmod 600 /path/privateKeyFileName`
+
+This will prevent the access to this key pair any other user but only you.
+
+Then Run the below command to access the VM via SSH by pasting the IP address of the VM you created. 
+
+`ssh opc@IPADDRESS -i /path/privateKeyFileName`
+
+
+If you are using Windows use the PuTTY Key Gen generator to generate a PuTTY Private Key file (.ppk). 
+
+Open the PuTTY Keygen Generator. 
+
+Load the downloaded private key file to the PuTTY Generator. 
+
+Enter a phasephrase if you prefer to secure the private key to the `Key passpphrase` and `Confirm passphrase` fields, otherwise leave these as empty.
+
+Then click `Save private key` to save the private key file it produces. 
+
+Go to your local command line (PowerShell) and connect to your VM with the below command
+
+`putty -i C:\Path\privateKey.ppk opc@IPADDRESS`.
+
+Now you are good to go! 
+
+
+
+
+
+
+
+
+
+
+
 
 ### Disk size
 
@@ -131,6 +179,8 @@ ssh -L portnumber:127.0.0.1:portnumber opc@130.61.212.59
 Accept the fingerprint and you should be connected.
 
 ![image](https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png)
+
+
 
 ## Expand disk
 
