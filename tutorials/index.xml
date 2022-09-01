@@ -29,8 +29,28 @@ The default is Ampere and this is an ARM architecture, so most of your applicati
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349484-eff7d3ec-3f5d-4a6d-b020-a93e63d30745.png" alt="image">&lt;/p>
 &lt;p>The network setup has sensible defaults to start with&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157349579-b23e4815-2b65-44f9-9f46-53b496b60425.png" alt="image">&lt;/p>
-&lt;p>Paste a public key to access this VM.&lt;/p>
-&lt;h3 id="create-a-public-key">Create a public key&lt;/h3>
+&lt;p>You can either paste a public key you already have to access to this VM or create a key by choosing the option &lt;code>Generate a key pair for me&lt;/code> under &lt;code>Add SSH Keys&lt;/code> section.&lt;/p>
+&lt;h3 id="connect-to-the-vm-using-the-oracle-key-pair">Connect to the VM using the Oracle key pair&lt;/h3>
+&lt;p>If you would like to use the key pairs the instance creation procedure generates, you can use the following steps based on your operating system.&lt;/p>
+&lt;p>First download and install an SSH client to your machine (for Linux and Mac, use &lt;a href="https://www.ibm.com/links?url=https%3A%2F%2Fwww.openssh.com%2F">OpenSSH&lt;/a> and for Windows use &lt;a href="https://www.ibm.com/links?url=https%3A%2F%2Fwww.putty.org%2F">Putty&lt;/a>).&lt;/p>
+&lt;p>From the Instances dashboard, find your VM you would like to connect with ssh, and click to find and note its Public IP address.&lt;/p>
+&lt;p>If you are using Linux or Mac, run the following command on your local terminal to change the file permission on the private key file that you downloaded from the Oracle dashboard.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Warning&lt;/h4>
+If you chose the option &lt;code>generate a key pair for me&lt;/code> you need to change the permission on the file after downloading - otherwise it will result in a Permission denied (publickey,gssapi-keyex,gssapi-with-mic) error triggered by &lt;code>Load key &amp;quot;*.key&amp;quot;: bad permissions&lt;/code>
+&lt;/div>
+&lt;p>&lt;code>chmod 600 /path/privateKeyFileName&lt;/code>&lt;/p>
+&lt;p>Then Run the below command to access the VM via SSH by pasting the IP address of the VM you created.&lt;/p>
+&lt;p>&lt;code>ssh opc@IPADDRESS -i /path/privateKeyFileName&lt;/code>&lt;/p>
+&lt;p>If you are using Windows use the PuTTY Key Gen generator to generate a PuTTY Private Key file (.ppk).&lt;/p>
+&lt;p>Open the PuTTY Keygen Generator.&lt;/p>
+&lt;p>Load the downloaded private key file to the PuTTY Generator.&lt;/p>
+&lt;p>Enter a phasephrase if you prefer to secure the private key to the &lt;code>Key passpphrase&lt;/code> and &lt;code>Confirm passphrase&lt;/code> fields, otherwise leave these as empty.&lt;/p>
+&lt;p>Then click &lt;code>Save private key&lt;/code> to save the private key file it produces.&lt;/p>
+&lt;p>Go to your local command line (PowerShell) and connect to your VM with the below command&lt;/p>
+&lt;p>&lt;code>putty -i C:\Path\privateKey.ppk opc@IPADDRESS&lt;/code>.&lt;/p>
+&lt;p>Now you are good to go!&lt;/p>
+&lt;h3 id="create-your-own-public-key">Create your own public key&lt;/h3>
 &lt;p>If you don&amp;rsquo;t have a public key yet - this is how you can create one (for example in
 the cloudshell)&lt;/p>
 &lt;p>Open the Cloud Shell (this will take a few seconds the first time)&lt;/p>
@@ -47,10 +67,6 @@ Never share the private key with anyone, which is in &lt;code>id_rsa&lt;/code>!
 &lt;/div>
 &lt;p>Paste it in the Add SSH keys section&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png" alt="image">&lt;/p>
-&lt;div class="alert alert-warning" role="alert">
-&lt;h4 class="alert-heading">Warning&lt;/h4>
-If you chose the option &lt;code>generate a key pair for me&lt;/code> you need to change the permission on the file after downloading (chmod 600 *.key) - otherwise it will result in a Permission denied (publickey,gssapi-keyex,gssapi-with-mic) error triggered by &lt;code>Load key &amp;quot;*.key&amp;quot;: bad permissions&lt;/code>
-&lt;/div>
 &lt;h3 id="disk-size">Disk size&lt;/h3>
 &lt;p>You can specify a custom boot volume size, but you can also increase this
 later (described below).&lt;/p>
@@ -81,12 +97,179 @@ the cloudshell.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#000">iflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>direct &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/oracleoci/oraclevda &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#000">count&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /sys/class/block/&lt;span style="color:#4e9a06">`&lt;/span>readlink /dev/oracleoci/oraclevda &lt;span style="color:#000;font-weight:bold">|&lt;/span> cut -d&lt;span style="color:#4e9a06">&amp;#39;/&amp;#39;&lt;/span> -f 2&lt;span style="color:#4e9a06">`&lt;/span>/device/rescan
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>If you are not using an Oracle Linux image, then oci-growfs will not be installed. You can create the script manually by copying this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#!/bin/bash
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># oci-utils&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic">#&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Copyright (c) 2018, 2020 Oracle and/or its affiliates. All rights reserved.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Licensed under the Universal Permissive License v 1.0 as shown at http://oss.oracle.com/licenses/upl.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ASSUME_YES&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">ASSUME_NO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Print usage message&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>usage&lt;span style="color:#ce5c00;font-weight:bold">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat &lt;span style="color:#4e9a06">&amp;lt;&amp;lt;EOF
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Usage: $0 [OPTION]
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Expand the root filesystem to its configured size.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">Option:
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> -y Assume &amp;#34;yes&amp;#34; for all questions.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> -n Assume &amp;#34;n&amp;#34; to all questions (used for preview).
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06"> -h Print this message.
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#4e9a06">EOF&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># Prompt for action confirmation&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>confirm&lt;span style="color:#ce5c00;font-weight:bold">()&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ASSUME_YES&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> -eq &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">ASSUME_NO&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> -eq &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">while&lt;/span> &lt;span style="color:#204a87">true&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># force use of a tty, if we are inside a &amp;#39;read loop&amp;#39; already the prompt is never display and we loop forever&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">read&lt;/span> -p &lt;span style="color:#4e9a06">&amp;#34;Confirm? [y/n]&amp;#34;&lt;/span> input &amp;lt; /dev/tty
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">case&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">input&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>yY&lt;span style="color:#ce5c00;font-weight:bold">][&lt;/span>eE&lt;span style="color:#ce5c00;font-weight:bold">][&lt;/span>sS&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">|&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>yY&lt;span style="color:#ce5c00;font-weight:bold">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> 0&lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>nN&lt;span style="color:#ce5c00;font-weight:bold">][&lt;/span>oO&lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">|&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span>nN&lt;span style="color:#ce5c00;font-weight:bold">])&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> 1&lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>part_growfs_preview&lt;span style="color:#ce5c00;font-weight:bold">(){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$#&lt;/span> -ne &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Invalid disk or partition.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> growpart &lt;span style="color:#000">$1&lt;/span> &lt;span style="color:#000">$2&lt;/span> --dry-run
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">$?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>part_growfs_func&lt;span style="color:#ce5c00;font-weight:bold">(){&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$#&lt;/span> -ne &lt;span style="color:#0000cf;font-weight:bold">2&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Invalid disk or partition.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> growpart &lt;span style="color:#000">$1&lt;/span> &lt;span style="color:#000">$2&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$?&lt;/span> -eq &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> xfs_growfs /
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">return&lt;/span> &lt;span style="color:#000">$?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#ce5c00;font-weight:bold">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$EUID&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -ne &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;This script needs root privileges to execute.&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">while&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$#&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> -gt &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>&lt;span style="color:#000;font-weight:bold">;&lt;/span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">case&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -n&lt;span style="color:#000;font-weight:bold">|&lt;/span>-N&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ASSUME_NO&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -y&lt;span style="color:#000;font-weight:bold">|&lt;/span>-Y&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">ASSUME_YES&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">break&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -h&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> usage
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> -* &lt;span style="color:#000;font-weight:bold">|&lt;/span> *&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;unknown option: &lt;/span>&lt;span style="color:#000">$1&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &amp;gt;&lt;span style="color:#000;font-weight:bold">&amp;amp;&lt;/span>2&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> usage&lt;span style="color:#000;font-weight:bold">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># first get storage type used for root FS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#000">_storage&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>/usr/bin/findmnt --canonicalize --noheadings --output SOURCE /&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#8f5902;font-style:italic"># expecting lvm or part,&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>/usr/bin/lsblk --noheadings -o TYPE,NAME &lt;span style="color:#000">$_storage&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> &lt;span style="color:#204a87;font-weight:bold">while&lt;/span> &lt;span style="color:#204a87">read&lt;/span> _type _sto
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">case&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_type&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> in
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part_growfs_preview /dev/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_sto&lt;/span>&lt;span style="color:#000;font-weight:bold">//[0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_sto&lt;/span>&lt;span style="color:#000;font-weight:bold">//[^0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">||&lt;/span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> confirm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$?&lt;/span> -eq &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part_growfs_func /dev/&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_sto&lt;/span>&lt;span style="color:#000;font-weight:bold">//[0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_sto&lt;/span>&lt;span style="color:#000;font-weight:bold">//[^0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#000">$?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000;font-weight:bold">;;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> lvm&lt;span style="color:#ce5c00;font-weight:bold">)&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># 1. find LV and VG of the device&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># we pipe to awk to strip away any leading space&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">_root_vg&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>/usr/sbin/lvs --noheadings --options vg_name --select &lt;span style="color:#000">lv_dm_path&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$_storage&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> awk &lt;span style="color:#4e9a06">&amp;#39;{print $1}&amp;#39;&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;root VG: &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_root_vg&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_root_vg&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">==&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Cannot find root volume group.&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># 2. find all PVs involve in the VG used for root&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">for&lt;/span> _pv in &lt;span style="color:#4e9a06">`&lt;/span>/usr/sbin/pvs --noheadings --options pv_name --select &lt;span style="color:#000">vg_name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_root_vg&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">do&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># 3. find device of PVs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>/usr/sbin/pvs --noheadings --options devices --select &lt;span style="color:#000">pv_name&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_pv&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># device is suffixed with extne number like /dev/sda3(0) , just keep disk information parts&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//([0-9]*)/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># 3.1 extend the partittion&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part_growfs_preview &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//[0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//[^0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">||&lt;/span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> confirm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">if&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$?&lt;/span> -eq &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;calling part_growfs_func &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//[0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06"> &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//[^0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> part_growfs_func &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//[0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span> &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_device&lt;/span>&lt;span style="color:#000;font-weight:bold">//[^0-9]/&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$?&lt;/span> !&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Cannot extend physical volume disk partition.&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">else&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># 3.1 extend the PV&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;calling /usr/sbin/pvresize &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_pv&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /usr/sbin/pvresize &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_pv&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#ce5c00;font-weight:bold">[&lt;/span> &lt;span style="color:#000">$?&lt;/span> !&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">0&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">]&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;Cannot extend physical volume.&amp;#34;&lt;/span> &lt;span style="color:#ce5c00;font-weight:bold">&amp;amp;&amp;amp;&lt;/span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#8f5902;font-style:italic"># 4. extend the LV and the FS&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#000">_lv_path&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>/usr/sbin/lvs --noheadings --options lv_path --select &lt;span style="color:#000">lv_dm_path&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#000">$_storage&lt;/span>&lt;span style="color:#4e9a06">`&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;calling /usr/sbin/lvextend -l +100%FREE --resizefs &lt;/span>&lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_lv_path&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>&lt;span style="color:#4e9a06">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> /usr/sbin/lvextend -l +100%FREE --resizefs &lt;span style="color:#4e9a06">${&lt;/span>&lt;span style="color:#000">_lv_path&lt;/span>&lt;span style="color:#4e9a06">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#000">$?&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#204a87;font-weight:bold">esac&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87;font-weight:bold">done&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#000">$?&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>into &lt;code>/usr/libexec/oci-growfs&lt;/code> by doing this:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo vi /usr/libexec/oci-growfs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then execute the expansion command.&lt;/p>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
 &lt;p>Now it&amp;rsquo;s using the full volume.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
 &lt;h2 id="increase-disk-size">Increase disk size&lt;/h2>
-&lt;p>If you want to increase the disk space beyond the size that you initially set you need to first change the disk size in OCI. Go to the instance and select Boot volume from the menu on the left:&lt;/p>
-&lt;h2 id="terminate-the-instance">Terminate the instance&lt;/h2>
+&lt;p>If you want to increase the disk space beyond the size that you initially set you need to first change the disk size in OCI. You can do this while the instance is running! Go to the instance and select Boot volume from the menu on the left:&lt;/p>
+&lt;img width="1052" alt="image" src="https://user-images.githubusercontent.com/4021595/187821034-f59296a2-d386-497d-8a4c-2c84edc577ec.png">
+&lt;p>Then click on the boot volume name and click the &lt;code>Edit&lt;/code> button:&lt;/p>
+&lt;img width="958" alt="image" src="https://user-images.githubusercontent.com/4021595/187821085-525e9ade-a8ce-4f36-ab0b-a3e9648137d8.png">
+&lt;p>Now set the desired size and click &lt;code>Save Changes&lt;/code>:&lt;/p>
+&lt;img width="691" alt="image" src="https://user-images.githubusercontent.com/4021595/187821161-24099d27-8218-4907-9ade-7f18d93ee0c6.png">
+&lt;p>Then login to the instance and expand the disk again to the new size:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>sudo dd &lt;span style="color:#000">iflag&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>direct &lt;span style="color:#204a87;font-weight:bold">if&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/oracleoci/oraclevda &lt;span style="color:#000">of&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>/dev/null &lt;span style="color:#000">count&lt;/span>&lt;span style="color:#ce5c00;font-weight:bold">=&lt;/span>&lt;span style="color:#0000cf;font-weight:bold">1&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">echo&lt;/span> &lt;span style="color:#4e9a06">&amp;#34;1&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">|&lt;/span> sudo tee /sys/class/block/&lt;span style="color:#4e9a06">`&lt;/span>readlink /dev/oracleoci/oraclevda &lt;span style="color:#000;font-weight:bold">|&lt;/span> cut -d&lt;span style="color:#4e9a06">&amp;#39;/&amp;#39;&lt;/span> -f 2&lt;span style="color:#4e9a06">`&lt;/span>/device/rescan
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="terminate-the-instance">Terminate the instance&lt;/h2>
 &lt;p>If you don&amp;rsquo;t need the machine anymore, you can &lt;code>Stop&lt;/code> it (you don&amp;rsquo;t pay for the compute anymore, but the disk stays and you can start it back up later) or &lt;code>Terminate&lt;/code> it (everything gets removed, including the boot volume if you want to):&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
 &lt;p>To cleanup the storage as well, you can select
