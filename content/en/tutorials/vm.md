@@ -90,8 +90,8 @@ If you chose the option `generate a key pair for me` you need to change the perm
 
 ### Disk size
 
-You can specify a custom boot volume size, but you can also increase this easily
-later.
+You can specify a custom boot volume size, but you can also increase this 
+later (described below).
 
 **Note:** it's not possible to shrink a volume! Only increasing the size is
 possible, so start small and increase when needed. Increasing the size is even possible while the instance is running and will not interrupt your work :)
@@ -154,6 +154,11 @@ Now it's using the full volume.
 
 ![image](https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png)
 
+## Increase disk size
+If you want to increase the disk space beyond the size that you initially set you need to first change the disk size in OCI. Go to the instance and select Boot volume from the menu on the left:
+
+
+
 ## Terminate the instance
 
 If you don't need the machine anymore, you can `Stop` it (you don't pay for the compute anymore, but the disk stays and you can start it back up later) or `Terminate` it (everything gets removed, including the boot volume if you want to):
@@ -164,3 +169,4 @@ To cleanup the storage as well, you can select
 `Permanently delete the attached boot volume` and click `Terminate Instance`.
 
 ![image](https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png)
+
