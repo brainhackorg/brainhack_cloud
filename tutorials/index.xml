@@ -52,8 +52,8 @@ Never share the private key with anyone, which is in &lt;code>id_rsa&lt;/code>!
 If you chose the option &lt;code>generate a key pair for me&lt;/code> you need to change the permission on the file after downloading (chmod 600 *.key) - otherwise it will result in a Permission denied (publickey,gssapi-keyex,gssapi-with-mic) error triggered by &lt;code>Load key &amp;quot;*.key&amp;quot;: bad permissions&lt;/code>
 &lt;/div>
 &lt;h3 id="disk-size">Disk size&lt;/h3>
-&lt;p>You can specify a custom boot volume size, but you can also increase this easily
-later.&lt;/p>
+&lt;p>You can specify a custom boot volume size, but you can also increase this
+later (described below).&lt;/p>
 &lt;p>&lt;strong>Note:&lt;/strong> it&amp;rsquo;s not possible to shrink a volume! Only increasing the size is
 possible, so start small and increase when needed. Increasing the size is even possible while the instance is running and will not interrupt your work :)&lt;/p>
 &lt;p>The rest of the defaults are
@@ -84,6 +84,8 @@ the cloudshell.&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
 &lt;p>Now it&amp;rsquo;s using the full volume.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
+&lt;h2 id="increase-disk-size">Increase disk size&lt;/h2>
+&lt;p>If you want to increase the disk space beyond the size that you initially set you need to first change the disk size in OCI. Go to the instance and select Boot volume from the menu on the left:&lt;/p>
 &lt;h2 id="terminate-the-instance">Terminate the instance&lt;/h2>
 &lt;p>If you don&amp;rsquo;t need the machine anymore, you can &lt;code>Stop&lt;/code> it (you don&amp;rsquo;t pay for the compute anymore, but the disk stays and you can start it back up later) or &lt;code>Terminate&lt;/code> it (everything gets removed, including the boot volume if you want to):&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
