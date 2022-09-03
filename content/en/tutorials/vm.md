@@ -345,9 +345,17 @@ into `/usr/libexec/oci-growfs` by doing this:
 
 ```
 sudo vi /usr/libexec/oci-growfs
+# hit i to activate insert mode, then paste, then hit SHIFT-Z-Z to exit and save
+sudo chmod a+x /usr/libexec/oci-growfs
 ```
 
-then execute the expansion command.
+then execute the expansion command:
+
+```
+sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+echo "1" | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d'/' -f 2`/device/rescan
+sudo /usr/libexec/oci-growfs -y
+```
 
 
 
