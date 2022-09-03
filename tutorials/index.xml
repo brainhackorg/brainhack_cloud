@@ -254,8 +254,13 @@ the cloudshell.&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#204a87">exit&lt;/span> &lt;span style="color:#000">$?&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>into &lt;code>/usr/libexec/oci-growfs&lt;/code> by doing this:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo vi /usr/libexec/oci-growfs
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then execute the expansion command.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span># hit i to activate insert mode, then paste, then hit SHIFT-Z-Z to exit and save
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod a+x /usr/libexec/oci-growfs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then execute the expansion command:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo dd iflag=direct if=/dev/oracleoci/oraclevda of=/dev/null count=1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &amp;#34;1&amp;#34; | sudo tee /sys/class/block/`readlink /dev/oracleoci/oraclevda | cut -d&amp;#39;/&amp;#39; -f 2`/device/rescan
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo /usr/libexec/oci-growfs -y
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352261-3d30774a-4052-4e12-846a-133f4f8ffa98.png" alt="image">&lt;/p>
 &lt;p>Now it&amp;rsquo;s using the full volume.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352396-a3a4a3a9-38a7-49d5-a18b-880c058bbc2d.png" alt="image">&lt;/p>
 &lt;h2 id="increase-disk-size">Increase disk size&lt;/h2>
