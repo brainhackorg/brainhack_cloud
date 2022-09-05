@@ -81,7 +81,44 @@ You first need to create the target bucket in the other region and then you can 
 ![image](https://user-images.githubusercontent.com/4021595/161412505-d64a0177-e520-46f5-86b8-f08c4e60b962.png)
 
 
+## Mounting a Bucket inside a VM:
+First we need to install a few things on the VM (assuming Oracle Linux here):
+```
+sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+sudo yum update -y
+sudo yum install -y epel-release
+sudo yum install -y redhat-lsb-core 
+sudo yum install -y s3fs-fuse
+```
 
+Create a new bucket as described in the beginning of this page above.
+
+Next we need to create a `Customer Secret Key`. For this click on the user icon in the top right corner and select `User settings`. 
+
+<img width="330" alt="image" src="https://user-images.githubusercontent.com/4021595/188381438-ac9fbfdf-1fd7-4316-bc6b-374d9f6c24e2.png">
+
+
+Then in the Resources menu on the left select "Customer Secret Keys" and click Generate Secret Key. Give it a name and then copy the secret (it will never be shown again!). Then copy the Access Key shown in the table as well in a separate notepad.
+
+<img width="594" alt="image" src="https://user-images.githubusercontent.com/4021595/188381774-647ea0de-0b26-452f-bb95-549862596b0a.png">
+
+Now you need to store these two things inside ~/.passwd-s3fs:
+```
+echo FILL_IN_YOUR_ACCESS_KEY_HERE:FILL_IN_YOUR_SECRET_HERE > ${HOME}/.passwd-s3fs
+```
+
+and then you can mount the bucket your created earlier:
+```
+chmod 600 ${HOME}/.passwd-s3fs
+
+sudo chmod +x /usr/bin/fusermount
+
+sudo mkdir /data
+sudo chmod a+rwx /data
+s3fs FILL_IN_YOUR_BUCKET_NAME /data/ -o endpoint=eu-frankfurt-1 -o passwd_file=${HOME}/.passwd-s3fs -o url=https://froi4niecnpv.compat.objectstorage.eu-frankfurt-1.oraclecloud.com/ -onomultipart -o use_path_request_style
+```
+
+The bucket is now accessible under /data and you can almost treat it like a volume mount (but it's not 100% posix complient).
 
 ## Uploading files using CURL
 To enable this you need to create a Pre-Authenticated Request which allows access to the Bucket and it allows objects read and write and Object Listing:
