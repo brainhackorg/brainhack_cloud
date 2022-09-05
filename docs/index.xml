@@ -80,6 +80,29 @@ tiering data (making it cheaper if files are not accessed very often).&lt;/p>
 &lt;p>Mirroring allows you to keep the bucket up-to-date with another bucket in another region (e.g. main bucket is in Europe and the replica is in Australia). This is controlled under the &lt;code>Replication Policy&lt;/code>.&lt;/p>
 &lt;p>You first need to create the target bucket in the other region and then you can configure it as a target:
 &lt;img src="https://user-images.githubusercontent.com/4021595/161412505-d64a0177-e520-46f5-86b8-f08c4e60b962.png" alt="image">&lt;/p>
+&lt;h2 id="mounting-a-bucket-inside-a-vm">Mounting a Bucket inside a VM:&lt;/h2>
+&lt;p>First we need to install a few things on the VM (assuming Oracle Linux here):&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum update -y
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install -y epel-release
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install -y redhat-lsb-core
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo yum install -y s3fs-fuse
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Create a new bucket as described in the beginning of this page above.&lt;/p>
+&lt;p>Next we need to create a &lt;code>Customer Secret Key&lt;/code>. For this click on the user icon in the top right corner and select &lt;code>User settings&lt;/code>.&lt;/p>
+&lt;img width="330" alt="image" src="https://user-images.githubusercontent.com/4021595/188381438-ac9fbfdf-1fd7-4316-bc6b-374d9f6c24e2.png">
+&lt;p>Then in the Resources menu on the left select &amp;ldquo;Customer Secret Keys&amp;rdquo; and click Generate Secret Key. Give it a name and then copy the secret (it will never be shown again!). Then copy the Access Key shown in the table as well in a separate notepad.&lt;/p>
+&lt;img width="594" alt="image" src="https://user-images.githubusercontent.com/4021595/188381774-647ea0de-0b26-452f-bb95-549862596b0a.png">
+&lt;p>Now you need to store these two things inside ~/.passwd-s3fs:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>echo FILL_IN_YOUR_ACCESS_KEY_HERE:FILL_IN_YOUR_SECRET_HERE &amp;gt; ${HOME}/.passwd-s3fs
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and then you can mount the bucket your created earlier:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>chmod 600 ${HOME}/.passwd-s3fs
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod +x /usr/bin/fusermount
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo mkdir /data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>sudo chmod a+rwx /data
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>s3fs FILL_IN_YOUR_BUCKET_NAME /data/ -o endpoint=eu-frankfurt-1 -o passwd_file=${HOME}/.passwd-s3fs -o url=https://froi4niecnpv.compat.objectstorage.eu-frankfurt-1.oraclecloud.com/ -onomultipart -o use_path_request_style
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>The bucket is now accessible under /data and you can almost treat it like a volume mount (but it&amp;rsquo;s not 100% posix complient).&lt;/p>
 &lt;h2 id="uploading-files-using-curl">Uploading files using CURL&lt;/h2>
 &lt;p>To enable this you need to create a Pre-Authenticated Request which allows access to the Bucket and it allows objects read and write and Object Listing:
 &lt;img src="https://user-images.githubusercontent.com/4021595/161412582-5f0ff3c7-f207-4ca1-811f-163ef2355fd2.png" alt="image">&lt;/p>
