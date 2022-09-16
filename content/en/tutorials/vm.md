@@ -166,6 +166,28 @@ Accept the fingerprint and you should be connected.
 
 ![image](https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png)
 
+### Keeping a process running even when disconnecting:
+
+For this you can use tmux:
+install tmux with: 
+```
+sudo yum install tmux
+```
+
+then start a tmux session with:
+```
+tmux
+```
+
+then run whatever process or tool you need
+
+you can disconnect from tmux by hitting CTRL-B and then d. Then you can disconnect from your SSH session (and this also happens when for example your internet connection gets disconnected).
+
+you can reconnect to the tmux session using:
+```
+tmux a
+```
+
 ## Expand disk
 
 By default, the instance will not utilize the whole disk size!
