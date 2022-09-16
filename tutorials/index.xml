@@ -89,7 +89,17 @@ the cloudshell.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>ssh -L portnumber:127.0.0.1:portnumber opc@130.61.212.59
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Accept the fingerprint and you should be connected.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png" alt="image">&lt;/p>
-&lt;h2 id="expand-disk">Expand disk&lt;/h2>
+&lt;h3 id="keeping-a-process-running-even-when-disconnecting">Keeping a process running even when disconnecting:&lt;/h3>
+&lt;p>For this you can use tmux:
+install tmux with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>sudo yum install tmux
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then start a tmux session with:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>tmux
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>then run whatever process or tool you need&lt;/p>
+&lt;p>you can disconnect from tmux by hitting CTRL-B and then d. Then you can disconnect from your SSH session (and this also happens when for example your internet connection gets disconnected).&lt;/p>
+&lt;p>you can reconnect to the tmux session using:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>tmux a
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="expand-disk">Expand disk&lt;/h2>
 &lt;p>By default, the instance will not utilize the whole disk size!&lt;/p>
 &lt;p>You can check with &lt;code>df -h&lt;/code>.&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157351914-38855be5-9b2a-4883-bfc4-768890fd1f8e.png" alt="image">&lt;/p>
