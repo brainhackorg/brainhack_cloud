@@ -57,6 +57,9 @@ The network setup has sensible defaults to start with
 
 You can either paste a public key you already have to access to this VM or create a key by choosing the option `Generate a key pair for me` under `Add SSH Keys` section. 
 
+<<<<<<< HEAD
+### Connect the VM with a public key
+=======
 ### Connect to the VM using the Oracle key pair
 
 If you would like to use the key pairs the instance creation procedure generates, you can use the following steps based on your operating system.
@@ -94,6 +97,7 @@ Go to your local command line (PowerShell) and connect to your VM with the below
 Now you are good to go! 
 
 ### Create your own public key
+>>>>>>> 6630b51e1a10a2e327a1999868e5bd2d1485cbd6
 
 If you don't have a public key yet - this is how you can create one (for example in
 the cloudshell)
@@ -119,6 +123,54 @@ Never share the private key with anyone, which is in `id_rsa`!
 Paste it in the Add SSH keys section
 
 ![image](https://user-images.githubusercontent.com/4021595/157350315-ee920db6-0bf2-45de-9dd3-3f96c9bbc8fc.png)
+
+
+
+
+
+## Connect the VM using the Oracle key pair
+
+If you would like to use the key pairs the instance creation procedure generates, you can use the following steps based on your operating system.
+
+First download and install an SSH client to your machine (for Linux and Mac, use [OpenSSH](https://www.ibm.com/links?url=https%3A%2F%2Fwww.openssh.com%2F) and for Windows use [Putty](https://www.ibm.com/links?url=https%3A%2F%2Fwww.putty.org%2F)).
+
+From the Instances dashboard, find your VM you would like to connect with ssh, and click to find and note its IP address.
+
+If you are using Linux or Mac, run the following command on your local terminal to change the file permission on the private key file that you downloaded from the Oracle dashboard. 
+
+`chmod 600 /path/privateKeyFileName`
+
+This will prevent the access to this key pair any other user but only you.
+
+Then Run the below command to access the VM via SSH by pasting the IP address of the VM you created. 
+
+`ssh opc@IPADDRESS -i /path/privateKeyFileName`
+
+
+If you are using Windows use the PuTTY Key Gen generator to generate a PuTTY Private Key file (.ppk). 
+
+Open the PuTTY Keygen Generator. 
+
+Load the downloaded private key file to the PuTTY Generator. 
+
+Enter a phasephrase if you prefer to secure the private key to the `Key passpphrase` and `Confirm passphrase` fields, otherwise leave these as empty.
+
+Then click `Save private key` to save the private key file it produces. 
+
+Go to your local command line (PowerShell) and connect to your VM with the below command
+
+`putty -i C:\Path\privateKey.ppk opc@IPADDRESS`.
+
+Now you are good to go! 
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,6 +218,9 @@ Accept the fingerprint and you should be connected.
 
 ![image](https://user-images.githubusercontent.com/4021595/157351631-ea6d6e0e-bf8c-4816-99bd-b92b89b033cd.png)
 
+<<<<<<< HEAD
+
+=======
 ### Keeping a process running even when disconnecting:
 
 For this you can use tmux:
@@ -187,6 +242,7 @@ you can reconnect to the tmux session using:
 ```
 tmux a
 ```
+>>>>>>> 6630b51e1a10a2e327a1999868e5bd2d1485cbd6
 
 ## Expand disk
 
@@ -422,3 +478,14 @@ To cleanup the storage as well, you can select
 
 ![image](https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png)
 
+
+If you aim to update the version of the Python that comes as default with VM or install environment you could install Miniconda by following below commands:
+
+```
+
+curl -o /tmp/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh; 
+bash /tmp/miniconda.sh -b;
+miniconda3/bin/conda init
+
+```
+this installation will give you all the necessary packages to start with building your own environment and project.
