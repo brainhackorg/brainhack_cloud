@@ -478,3 +478,14 @@ To cleanup the storage as well, you can select
 
 ![image](https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png)
 
+
+If you aim to update the version of the Python that comes as default with VM or install environment you could install Miniconda by following below commands:
+
+```
+
+curl -o /tmp/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh; 
+bash /tmp/miniconda.sh -b;
+miniconda3/bin/conda init
+
+```
+this installation will give you all the necessary packages to start with building your own environment and project.
