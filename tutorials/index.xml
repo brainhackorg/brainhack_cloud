@@ -289,7 +289,13 @@ install tmux with:&lt;/p>
 &lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352624-f3b2b358-1f3d-4388-bf2f-6fc417d4a439.png" alt="image">&lt;/p>
 &lt;p>To cleanup the storage as well, you can select
 &lt;code>Permanently delete the attached boot volume&lt;/code> and click &lt;code>Terminate Instance&lt;/code>.&lt;/p>
-&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
+&lt;p>&lt;img src="https://user-images.githubusercontent.com/4021595/157352698-9788c610-b5f1-43bf-95e7-ca444e8813fb.png" alt="image">&lt;/p>
+&lt;p>If you aim to update the version of the Python that comes as default with VM or install environment you could install Miniconda by following below commands:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>curl -o /tmp/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bash /tmp/miniconda.sh -b;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>miniconda3/bin/conda init
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>this installation will give you all the necessary packages to start with building your own environment and project.&lt;/p></description></item><item><title>Tutorials: Notebooks</title><link>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/notebooks/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The notebook service is like Google Colab, but without the time or resource
 limitations.&lt;/p>
