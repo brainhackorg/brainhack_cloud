@@ -129,6 +129,7 @@ sudo scontrol reconfigure
 
 ## Configuring X11 forwarding
 If you want to use graphical aplications you need to install:
+
 ```
 sudo yum install install mesa-dri-drivers xorg-x11-server-Xorg xorg-x11-xauth xorg-x11-apps mesa-libGL xorg-x11-drv-nouveau.x86_64 -y
 ```
@@ -146,8 +147,44 @@ X11UseLocalhost no
 then
 ```
 sudo systemctl restart sshd
+
+# or 
+sudo service sshd restart
 ```
 
+For full functionality, you may also need to add `PrologFlags=X11` to your `/etc/slurm/slurm.conf`, along with enabling the following
+additional parameters in you `/etc/ssh/sshd_config`:
+
+```console
+AllowAgentForwarding yes
+AllowTcpForwarding yes
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost no
+
+On you main node, to restart slurm:
+
+```console
+sudo slurmctld restart
+```
+
+And on your worker nodes:
+
+```
+sudo service slurmd restart
+```
+
+After you've updated slurm, you can confirm the Prolog setting has taken:
+
+```
+sudo scontrol reconfigre; sudo scontrol show config | grep PrologFlags
+```
+
+And also check that x11 works!
+
+```
+srun --x11 xeyes
+```
 
 ## Troublehsooting: Editing a deployd stack fails
 This can have many reasons, but the first one to check is:
