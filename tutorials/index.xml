@@ -369,7 +369,30 @@ runners :)&lt;/p>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="use-custom-runner-in-action">Use custom runner in Action&lt;/h2>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span># Use this YAML in your workflow file for each job
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>runs-on: self-hosted
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is an example: &lt;a href="https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml">https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml&lt;/a>&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Here is an example: &lt;a href="https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml">https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml&lt;/a>&lt;/p>
+&lt;h1 id="using-cirunio">Using cirun.io&lt;/h1>
+&lt;p>The next level to the above workflow is to create the runners on-demand instead of letting them run all the time. This will be more cost effective and it lets you run multiple CI workflows in parallel :). Cirun.io is a wonderful free service that lets us do this!&lt;/p>
+&lt;p>First, sign up to cirun.io: &lt;a href="https://cirun.io/auth/login">https://cirun.io/auth/login&lt;/a>&lt;/p>
+&lt;p>Second, make sure your brainhack cloud user account is in the group &amp;ldquo;cirun&amp;rdquo; (open github issue or indicate this in your request)&lt;/p>
+&lt;p>Then you need to link your cirun.io account to your github account and to the repository that should trigger the ciruns:
+&lt;img width="1228" alt="image" src="https://user-images.githubusercontent.com/4021595/196020466-fef75f01-03cd-4d96-a2ea-f046ed1a7786.png">&lt;/p>
+&lt;p>Then you need to create an API key for cirun inside oracle cloud. Go to your User Settings (little user icon in the top right corner) and then &amp;ldquo;API Keys&amp;rdquo;. Then add an API Key, download the private key and copy the Configuration File Preview to cirun and add the compartment id:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>[DEFAULT]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>user=ocid1.user.oc1..aaaaaaaaj2poftoscirunfororaclecmpcbrmvvescirunfororacle4mtq &amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt;&amp;lt; FILL IN YOUR USER ID HERE!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fingerprint=78:4c:99:1t:3d:1b:a8:ea:f2:dd:cr:01:5r:86:a2:84 &amp;lt;&amp;lt;&amp;lt;&amp;lt; FILL IN YOUR FINGERPRINT HERE!
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tenancy=ocid1.tenancy.oc1..aaaaaaaaydlj6wd4ldaamhmhcirunfororaclemocirunfororacle
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>compartment_id=ocid1.compartment.oc1..aaaaaaaawc7zqarq7xddumdzuatu3bu3ir6ytlkgauyokgxtixj2y6szrd4q
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Then copy the private key inside the textbox on cirun and hit save.&lt;/p>
+&lt;p>Now you need to create a .cirun.yml file at the top level of your github repository:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>runners:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: oracle-runner
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cloud: oracle
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instance_type: VM.Standard2.4
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> machine_image: ocid1.image.oc1.uk-london-1.aaaaaaaavy5v3inu2ho2h57vwvvsclukdh4jvhg45um2nrejyxa7s46zcwoq
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> region: uk-london-1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> labels:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - oracle
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and you need to change the &amp;ldquo;runs-on&amp;rdquo; inside your github action from &amp;ldquo;self-hosted&amp;rdquo; to &amp;ldquo;[self-hosted, oracle]&amp;rdquo;&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>Oracle cloud supports High Performance Computing and makes it very easy to setup
 your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: &lt;a href="https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&amp;amp;SC=:so:ch:or:awr::::Cloud&amp;amp;pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358">GPU cluster&lt;/a>)&lt;/p>
