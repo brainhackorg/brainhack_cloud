@@ -388,8 +388,8 @@ runners :)&lt;/p>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: oracle-runner
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cloud: oracle
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instance_type: VM.Standard2.4
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> machine_image: ocid1.image.oc1.uk-london-1.aaaaaaaavy5v3inu2ho2h57vwvvsclukdh4jvhg45um2nrejyxa7s46zcwoq
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> region: uk-london-1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> machine_image: ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakgs4qfqqd7jnkucyyokr6lfguch5gvhqk7ht4ny5ijtwtncjedsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> region: eu-frankfurt-1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> labels:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - oracle
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>and you need to change the &amp;ldquo;runs-on&amp;rdquo; inside your github action from &amp;ldquo;self-hosted&amp;rdquo; to &amp;ldquo;[self-hosted, oracle]&amp;rdquo;&lt;/p></description></item><item><title>Tutorials: HPC</title><link>http://brainhack.org/brainhack_cloud/tutorials/hpc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://brainhack.org/brainhack_cloud/tutorials/hpc/</guid><description>
