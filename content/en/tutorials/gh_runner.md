@@ -47,3 +47,40 @@ runs-on: self-hosted
 ```
 
 Here is an example: https://github.com/QSMxT/QSMxT/blob/master/.github/workflows/test_segmentation_pipeline.yml
+
+
+# Using cirun.io
+The next level to the above workflow is to create the runners on-demand instead of letting them run all the time. This will be more cost effective and it lets you run multiple CI workflows in parallel :). Cirun.io is a wonderful free service that lets us do this!
+
+First, sign up to cirun.io: https://cirun.io/auth/login
+
+Second, make sure your brainhack cloud user account is in the group "cirun" (open github issue or indicate this in your request)
+
+Then you need to link your cirun.io account to your github account and to the repository that should trigger the ciruns:
+<img width="1228" alt="image" src="https://user-images.githubusercontent.com/4021595/196020466-fef75f01-03cd-4d96-a2ea-f046ed1a7786.png">
+
+Then you need to create an API key for cirun inside oracle cloud. Go to your User Settings (little user icon in the top right corner) and then "API Keys". Then add an API Key, download the private key and copy the Configuration File Preview to cirun and add the compartment id:
+
+```
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaaj2poftoscirunfororaclecmpcbrmvvescirunfororacle4mtq <<<<<< FILL IN YOUR USER ID HERE!
+fingerprint=78:4c:99:1t:3d:1b:a8:ea:f2:dd:cr:01:5r:86:a2:84 <<<< FILL IN YOUR FINGERPRINT HERE!
+tenancy=ocid1.tenancy.oc1..aaaaaaaaydlj6wd4ldaamhmhcirunfororaclemocirunfororacle
+compartment_id=ocid1.compartment.oc1..aaaaaaaawc7zqarq7xddumdzuatu3bu3ir6ytlkgauyokgxtixj2y6szrd4q
+```
+
+Then copy the private key inside the textbox on cirun and hit save.
+
+Now you need to create a .cirun.yml file at the top level of your github repository:
+```
+runners:
+  - name: oracle-runner
+    cloud: oracle
+    instance_type: VM.Standard2.4
+    machine_image: ocid1.image.oc1.uk-london-1.aaaaaaaavy5v3inu2ho2h57vwvvsclukdh4jvhg45um2nrejyxa7s46zcwoq
+    region: uk-london-1
+    labels:
+      - oracle
+```
+
+and you need to change the "runs-on" inside your github action from "self-hosted" to "[self-hosted, oracle]"
