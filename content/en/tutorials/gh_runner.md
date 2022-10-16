@@ -57,7 +57,8 @@ First, sign up to cirun.io: https://cirun.io/auth/login
 Second, make sure your brainhack cloud user account is in the group "cirun" (open github issue or indicate this in your request)
 
 Then you need to link your cirun.io account to your github account and to the repository that should trigger the ciruns:
-<img width="1228" alt="image" src="https://user-images.githubusercontent.com/4021595/196020466-fef75f01-03cd-4d96-a2ea-f046ed1a7786.png">
+<img width="1212" alt="image" src="https://user-images.githubusercontent.com/4021595/196021304-120d5a18-a7c9-4615-a17e-9f63ca6467ea.png">
+
 
 Then you need to create an API key for cirun inside oracle cloud. Go to your User Settings (little user icon in the top right corner) and then "API Keys". Then add an API Key, download the private key and copy the Configuration File Preview to cirun and add the compartment id:
 
