@@ -387,8 +387,8 @@ runners :)&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-fallback" data-lang="fallback">&lt;span style="display:flex;">&lt;span>runners:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - name: oracle-runner
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> cloud: oracle
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instance_type: VM.Standard2.4
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> machine_image: ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakgs4qfqqd7jnkucyyokr6lfguch5gvhqk7ht4ny5ijtwtncjedsa
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> instance_type: VM.Standard2.1
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> machine_image: ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa6m57xzoztlide4653fjavkm6dpksmz3kaa4gig4h34jod76aapva
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> region: eu-frankfurt-1
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> labels:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> - oracle
