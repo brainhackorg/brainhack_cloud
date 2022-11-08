@@ -77,8 +77,8 @@ Now you need to create a .cirun.yml file at the top level of your github reposit
 runners:
   - name: oracle-runner
     cloud: oracle
-    instance_type: VM.Standard2.4
-    machine_image: ocid1.image.oc1.eu-frankfurt-1.aaaaaaaakgs4qfqqd7jnkucyyokr6lfguch5gvhqk7ht4ny5ijtwtncjedsa
+    instance_type: VM.Standard2.1
+    machine_image: ocid1.image.oc1.eu-frankfurt-1.aaaaaaaa6m57xzoztlide4653fjavkm6dpksmz3kaa4gig4h34jod76aapva
     region: eu-frankfurt-1
     labels:
       - oracle
