@@ -9,7 +9,12 @@ description: >
 ## Overview
 
 Oracle cloud supports High Performance Computing and makes it very easy to setup
-your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. You can find an alternative setup (tailored at deep learning and GPUs here: [GPU cluster](https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358))
+your own HPC cluster in the cloud. This tutorial here is a basic introduction to get your started. 
+
+This is a tutorial about SLURM on OCI with more background information: [SLURM on OCI tutorial](https://blogs.oracle.com/research/post/a-beginners-guide-to-slurm?source=:so:ch:or:awr::::OfR_Ambassadors_FY24Q1_SLURMBlog_CS&SC=:so:ch:or:awr::::OfR_Ambassadors_FY24Q1_SLURMBlog_CS&pcode=)
+
+
+You can find an alternative setup (tailored at deep learning and GPUs here: [GPU cluster](https://docs.oracle.com/en/solutions/hpc-bare-metal-gpu-cluster/?source=:so:ch:or:awr::::Cloud&SC=:so:ch:or:awr::::Cloud&pcode=#GUID-F00DA828-106C-40CB-9279-B90D10807358))
 
 ## Before you get started
 Consider if you actually need High Performance Computing (HPC) for your work. An HPC is a cluster consisting of multiple machines and it uses a head-node (here bastion host) from where jobs are submitted to this cluster using a job engine (for example slurm). If you have many jobs that need to be run independently than the setup described here will work well. A "real" HPC does more on top: There is a high-performance network between machines and it enables to run jobs that combine multiple machines (e.g. MPI). This would be needed if you have a problem that's so large that a single machine wouldn't be big enough. In this example here we build a cluster without this advanced networking. Most people will not need an HPC for their work and they should use a single [virtual machine](http://brainhack.org/brainhack_cloud/tutorials/vm/), because it requires considerably less setup work and easier to maintain.
